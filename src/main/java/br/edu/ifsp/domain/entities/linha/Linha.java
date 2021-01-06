@@ -2,9 +2,7 @@ package br.edu.ifsp.domain.entities.linha;
 
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
-import br.edu.ifsp.domain.entities.viagem.Viagem;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -14,21 +12,19 @@ public class Linha {
     private Long id;
     private String nome;
 
-    private Viagem viagem;
-    private List<TrechoLinha> trechoLinha;
+    private List<TrechoLinha> listTrechoLinha;
 
     public Linha() {
     }
 
-    public Linha(String nome, Viagem viagem, TrechoLinha trechoLinha) {
-        this(null, nome, viagem, trechoLinha);
+    public Linha(String nome, List<TrechoLinha> listTrechoLinha) {
+        this(null, nome, listTrechoLinha);
     }
 
-    public Linha(Long id, String nome, Viagem viagem, TrechoLinha trechoLinha) {
+    public Linha(Long id, String nome, List<TrechoLinha> listTrechoLinha) {
+        this.listTrechoLinha = listTrechoLinha;
         this.id = id;
         this.nome = nome;
-        this.viagem = viagem;
-        this.trechoLinha.add(trechoLinha);
     }
 
     public Long getId() {
@@ -43,12 +39,30 @@ public class Linha {
         this.nome = nome;
     }
 
-    public Viagem getViagem() {
-        return viagem;
-    }
-
     public List<TrechoLinha> gerarTrechosViagem(String cidadeOrigem, String cidadeDestino, LocalDate data) {
-        return null;
+        List<TrechoLinha> returnTrechoLinha = new ArrayList<>();
+
+        for (TrechoLinha trechoLinha : listTrechoLinha) {
+            String trechoCidadeOrigem = trechoLinha.getTrecho().getCidadeOrigem();
+            if(trechoCidadeOrigem.equals(cidadeOrigem)){
+                returnTrechoLinha.add(trechoLinha);
+            }
+        }
+
+        if(returnTrechoLinha.isEmpty())
+            return null;
+
+        String trechoCidadeDestino = returnTrechoLinha.get(0).getTrecho().getCidadeDestino();
+        if(trechoCidadeDestino.equals(cidadeDestino))
+            return returnTrechoLinha;
+
+        int index = returnTrechoLinha.get(0).getOrdem();
+        for (int i = index + 1; i < listTrechoLinha.size(); i++) {
+            TrechoLinha trechoLinha = listTrechoLinha.get(i);
+            returnTrechoLinha.add(trechoLinha);
+
+
+        }
     }
 
     public void addTrechoLinha(Trecho trecho, LocalTime horarioSaida) {
@@ -60,8 +74,7 @@ public class Linha {
         return "Linha{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", viagem=" + viagem +
-                ", trechoLinha=" + trechoLinha +
+                ", trechoLinha=" + listTrechoLinha +
                 '}';
     }
 }

@@ -7,8 +7,10 @@ import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.UUID;
 
 public class Viagem {
+    private UUID id;
     private LocalDate data;
     private LocalTime horarioSaida;
     private String cidadeOrigem;
@@ -33,6 +35,7 @@ public class Viagem {
         this.linha = linha;
         this.data = LocalDate.now();
         this.horarioSaida = LocalTime.now();
+        this.id = UUID.randomUUID();
     }
 
     public LocalDate getData() {
