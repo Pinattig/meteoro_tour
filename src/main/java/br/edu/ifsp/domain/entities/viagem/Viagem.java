@@ -6,6 +6,7 @@ import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 public class Viagem {
     private LocalDate data;
@@ -16,7 +17,7 @@ public class Viagem {
     private boolean assentosPrefDisponiveis;
 
     private Passagem passagem;
-    private TrechoLinha trechoLinha;
+    private List<TrechoLinha> trechoLinhas;
     private Linha linha;
 
     public Viagem() {
@@ -28,7 +29,7 @@ public class Viagem {
         this.assentosDisponiveis = assentosDisponiveis;
         this.assentosPrefDisponiveis = assentosPrefDisponiveis;
         this.passagem = passagem;
-        this.trechoLinha = trechoLinha;
+        this.trechoLinhas.add(trechoLinha);
         this.linha = linha;
         this.data = LocalDate.now();
         this.horarioSaida = LocalTime.now();
@@ -78,10 +79,6 @@ public class Viagem {
         return passagem;
     }
 
-    public TrechoLinha getTrechoLinha() {
-        return trechoLinha;
-    }
-
     public Linha getLinha() {
         return linha;
     }
@@ -100,7 +97,7 @@ public class Viagem {
                 ", assentosDisponiveis=" + assentosDisponiveis +
                 ", assentosPrefDisponiveis=" + assentosPrefDisponiveis +
                 ", passagem=" + passagem +
-                ", trechoLinha=" + trechoLinha +
+                ", trechoLinha=" + trechoLinhas+
                 ", linha=" + linha +
                 '}';
     }

@@ -13,8 +13,6 @@ public class Passagem {
 
     private Viagem viagem;
 
-
-
     public Passagem() {
     }
 

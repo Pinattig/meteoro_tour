@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         LocalTime time = LocalTime.now();
         System.out.println(time);
 
@@ -14,5 +15,9 @@ public class Main {
 
         LocalDate data = LocalDate.now();
         System.out.println(data);
+        */
+
+        Date data = new Date();
+        System.out.println("Data Agora: "+data);
     }
 }

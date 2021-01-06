@@ -1,5 +1,7 @@
 package br.edu.ifsp.domain.entities.trecho;
 
+import java.util.List;
+
 public class Trecho {
     private String cidadeOrigem;
     private String cidadeDestino;
@@ -9,12 +11,12 @@ public class Trecho {
     private double taxaEmbarque;
     private double valorSeguro;
 
-    private TrechoLinha trechoLinha;
+    private List<TrechoLinha> trechoLinhas;
 
     public Trecho() {
     }
 
-    public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, double tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro, TrechoLinha trechoLinha) {
+    public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, double tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro) {
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
         this.quilometragem = quilometragem;
@@ -22,7 +24,6 @@ public class Trecho {
         this.valorPassagem = valorPassagem;
         this.taxaEmbarque = taxaEmbarque;
         this.valorSeguro = valorSeguro;
-        this.trechoLinha = trechoLinha;
     }
 
     public String getCidadeOrigem() {
@@ -81,10 +82,6 @@ public class Trecho {
         this.valorSeguro = valorSeguro;
     }
 
-    public TrechoLinha getTrechoLinha() {
-        return trechoLinha;
-    }
-
     @Override
     public String toString() {
         return "Trecho{" +
@@ -95,7 +92,7 @@ public class Trecho {
                 ", valorPassagem=" + valorPassagem +
                 ", taxaEmbarque=" + taxaEmbarque +
                 ", valorSeguro=" + valorSeguro +
-                ", trechoLinha=" + trechoLinha +
+                ", trechoLinha=" + trechoLinhas +
                 '}';
     }
 }
