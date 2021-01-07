@@ -30,8 +30,8 @@ public class Administrador extends Vendedor {
         return login;
     }
 
-    public String getSenha() {
-        return senha;
+    public Boolean validateSenha(String senha){
+        return this.senha.equals(senha);
     }
 
     @Override
