@@ -6,7 +6,8 @@ import br.edu.ifsp.utils.DAO;
 import java.util.List;
 
 public class GerenciarTrechosUseCase {
-    TrechoDAO trechoDAO;
+
+    private TrechoDAO trechoDAO;
 
     public GerenciarTrechosUseCase(TrechoDAO trechoDAO){
         this.trechoDAO = trechoDAO;

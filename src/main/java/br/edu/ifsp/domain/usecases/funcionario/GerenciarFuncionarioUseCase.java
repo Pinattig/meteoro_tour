@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GerenciarFuncionarioUseCase {
 
-    DAO funcionarioDao;
+    private DAO funcionarioDao;
 
     public GerenciarFuncionarioUseCase(DAO funcionarioDao) {
         this.funcionarioDao = funcionarioDao;

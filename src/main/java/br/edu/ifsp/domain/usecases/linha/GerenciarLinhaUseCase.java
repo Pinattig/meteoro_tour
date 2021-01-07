@@ -7,7 +7,7 @@ import java.util.List;
 
 public class GerenciarLinhaUseCase {
 
-    DAO linhaDAO;
+    private DAO linhaDAO;
 
     public GerenciarLinhaUseCase(DAO linhaDAO) {
         this.linhaDAO = linhaDAO;

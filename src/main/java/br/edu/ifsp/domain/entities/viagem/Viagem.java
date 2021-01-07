@@ -7,7 +7,9 @@ import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class Viagem {
     private UUID id;
@@ -86,8 +88,12 @@ public class Viagem {
         return linha;
     }
 
-    public void verificarDisponibilidade() {
-
+    public Map<String, Boolean> verificarDisponibilidade() {
+        Map<String, Boolean> totalAssentos = trechoLinhas.get(0).getAssentosTrechoLinha().getAssentosVendidos();
+        return totalAssentos.entrySet()
+                .stream()
+                .filter(x -> x.getValue() == false)
+                .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
     }
 
     @Override

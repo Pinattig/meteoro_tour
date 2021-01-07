@@ -6,7 +6,8 @@ import br.edu.ifsp.utils.DAO;
 import java.util.List;
 
 public class GerenciarOnibusUseCase {
-    DAO onibusDAO;
+
+    private DAO onibusDAO;
 
     public GerenciarOnibusUseCase(DAO onibusDAO) {
         this.onibusDAO = onibusDAO;
