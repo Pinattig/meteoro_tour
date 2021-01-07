@@ -86,7 +86,7 @@ public class Passagem {
     }
 
     public boolean verificarValidade() {
-        return LocalDate.now() == this.viagem.getData();
+        return LocalDate.now().isAfter(this.viagem.getData());
     }
 
     @Override
