@@ -17,7 +17,7 @@ public class GerenciarLinhaUseCase {
         return linhaDAO.findAll();
     }
 
-    public Object create(Linha linha){
+    public Object insert(Linha linha){
         return linhaDAO.create(linha);
     }
 

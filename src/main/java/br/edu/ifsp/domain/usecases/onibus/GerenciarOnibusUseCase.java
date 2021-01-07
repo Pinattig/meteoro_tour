@@ -16,7 +16,7 @@ public class GerenciarOnibusUseCase {
         return onibusDAO.findAll();
     }
 
-    public Object create(Onibus onibus){
+    public Object insert(Onibus onibus){
         return onibusDAO.create(onibus);
     }
 

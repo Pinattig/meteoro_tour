@@ -8,7 +8,7 @@ import java.util.List;
 public class GerenciarTrechosUseCase {
     TrechoDAO trechoDAO;
 
-    public GerenciarTrechosUseCase(TrechoDAO trechoDAO) {
+    public GerenciarTrechosUseCase(TrechoDAO trechoDAO){
         this.trechoDAO = trechoDAO;
     }
 
@@ -16,7 +16,7 @@ public class GerenciarTrechosUseCase {
         return trechoDAO.findAll();
     }
 
-    public Object create(Trecho trecho){
+    public Object insert(Trecho trecho){
         return trechoDAO.create(trecho);
     }
 
@@ -25,7 +25,6 @@ public class GerenciarTrechosUseCase {
     }
 
     public boolean delete(Trecho trecho){
-
 
         return trechoDAO.delete(trecho);
     }
