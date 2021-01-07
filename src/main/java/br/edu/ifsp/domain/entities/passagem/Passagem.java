@@ -2,6 +2,8 @@ package br.edu.ifsp.domain.entities.passagem;
 
 import br.edu.ifsp.domain.entities.viagem.Viagem;
 
+import java.time.LocalDate;
+
 public class Passagem {
     private Long numPassagem;
     private double precoTotal;
@@ -84,7 +86,7 @@ public class Passagem {
     }
 
     public boolean verificarValidade() {
-        return true;
+        return LocalDate.now() == this.viagem.getData();
     }
 
     @Override
