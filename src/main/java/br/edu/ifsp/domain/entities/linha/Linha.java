@@ -40,29 +40,33 @@ public class Linha {
     }
 
     public List<TrechoLinha> gerarTrechosViagem(String cidadeOrigem, String cidadeDestino, LocalDate data) {
-        List<TrechoLinha> returnTrechoLinha = new ArrayList<>();
+        List<TrechoLinha> trechosViagem = new ArrayList<>();
 
         for (TrechoLinha trechoLinha : listTrechoLinha) {
             String trechoCidadeOrigem = trechoLinha.getTrecho().getCidadeOrigem();
             if(trechoCidadeOrigem.equals(cidadeOrigem)){
-                returnTrechoLinha.add(trechoLinha);
+                trechosViagem.add(trechoLinha);
+                break;
             }
         }
 
-        if(returnTrechoLinha.isEmpty())
+        if(trechosViagem.isEmpty())
             return null;
 
-        String trechoCidadeDestino = returnTrechoLinha.get(0).getTrecho().getCidadeDestino();
+        String trechoCidadeDestino = trechosViagem.get(0).getTrecho().getCidadeDestino();
         if(trechoCidadeDestino.equals(cidadeDestino))
-            return returnTrechoLinha;
+            return trechosViagem;
 
-        int index = returnTrechoLinha.get(0).getOrdem();
+        int index = trechosViagem.get(0).getOrdem();
         for (int i = index + 1; i < listTrechoLinha.size(); i++) {
             TrechoLinha trechoLinha = listTrechoLinha.get(i);
-            returnTrechoLinha.add(trechoLinha);
-
-
+            trechosViagem.add(trechoLinha);
+            String destinoTrechoLinha = trechoLinha.getTrecho().getCidadeDestino();
+            if(destinoTrechoLinha.equals(cidadeDestino))
+                break;
         }
+
+        return trechosViagem;
     }
 
     public void addTrechoLinha(Trecho trecho, LocalTime horarioSaida) {
