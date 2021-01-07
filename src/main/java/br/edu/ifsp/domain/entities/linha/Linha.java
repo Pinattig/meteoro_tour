@@ -1,9 +1,11 @@
 package br.edu.ifsp.domain.entities.linha;
 
+import br.edu.ifsp.domain.entities.trecho.AssentosTrechoLinha;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +72,9 @@ public class Linha {
     }
 
     public void addTrechoLinha(Trecho trecho, LocalTime horarioSaida) {
-
+        AssentosTrechoLinha assentos = new AssentosTrechoLinha(LocalDate.now());
+        TrechoLinha trechoLinha = new TrechoLinha(horarioSaida, listTrechoLinha.size()+1, this, assentos, trecho);
+        listTrechoLinha.add(trechoLinha);
     }
 
     @Override
