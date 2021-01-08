@@ -6,19 +6,18 @@ import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Viagem {
-    private UUID id;
     private LocalDate data;
     private LocalTime horarioSaida;
     private String cidadeOrigem;
     private String cidadeDestino;
-    private boolean assentosDisponiveis;
-    private boolean assentosPrefDisponiveis;
+
 
     private Passagem passagem;
     private List<TrechoLinha> trechoLinhas;
@@ -27,17 +26,14 @@ public class Viagem {
     public Viagem() {
     }
 
-    public Viagem(String cidadeOrigem, String cidadeDestino, boolean assentosDisponiveis, boolean assentosPrefDisponiveis, Passagem passagem, TrechoLinha trechoLinha, Linha linha) {
+    public Viagem(String cidadeOrigem, String cidadeDestino, Passagem passagem, TrechoLinha trechoLinha, Linha linha) {
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
-        this.assentosDisponiveis = assentosDisponiveis;
-        this.assentosPrefDisponiveis = assentosPrefDisponiveis;
         this.passagem = passagem;
         this.trechoLinhas.add(trechoLinha);
         this.linha = linha;
         this.data = LocalDate.now();
         this.horarioSaida = LocalTime.now();
-        this.id = UUID.randomUUID();
     }
 
     public LocalDate getData() {
@@ -64,22 +60,6 @@ public class Viagem {
         this.cidadeDestino = cidadeDestino;
     }
 
-    public boolean isAssentosDisponiveis() {
-        return assentosDisponiveis;
-    }
-
-    public void setAssentosDisponiveis(boolean assentosDisponiveis) {
-        this.assentosDisponiveis = assentosDisponiveis;
-    }
-
-    public boolean isAssentosPrefDisponiveis() {
-        return assentosPrefDisponiveis;
-    }
-
-    public void setAssentosPrefDisponiveis(boolean assentosPrefDisponiveis) {
-        this.assentosPrefDisponiveis = assentosPrefDisponiveis;
-    }
-
     public Passagem getPassagem() {
         return passagem;
     }
@@ -88,13 +68,52 @@ public class Viagem {
         return linha;
     }
 
-    public Map<String, Boolean> verificarDisponibilidade() {
-        Map<String, Boolean> totalAssentos = trechoLinhas.get(0).getAssentosTrechoLinha().getAssentosVendidos();
-        return totalAssentos.entrySet()
-                .stream()
-                .filter(x -> x.getValue() == false)
-                .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
+    public Map<String, Boolean> getAssentosDisponiveis(){
+        Map<String, Boolean> responseMap = new LinkedHashMap<>();
+
+        for (TrechoLinha trechoLinha : trechoLinhas) {
+
+            if(responseMap.isEmpty()){
+                responseMap = trechoLinha.getAssentosTrechoLinha().getAssentosVendidos();
+                responseMap = responseMap.entrySet()
+                            .stream()
+                            .filter(x -> x.getValue() == false)
+                            .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
+            }else{
+                for (String key : responseMap.keySet()) {
+                    if(trechoLinha.getAssentosTrechoLinha().getAssentosVendidos().get(key)){
+                        responseMap.remove(key);
+                    }
+                }
+            }
+        }
+
+        return responseMap;
     }
+
+    public boolean verificarAssentosPrefDisponiveis(){
+
+        for (TrechoLinha trechoLinha : trechoLinhas) {
+            if(trechoLinha.getAssentosTrechoLinha().getAssentosPrefDisponiveis() == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void ocuparAssentos(String key){
+        for (TrechoLinha trechoLinha : trechoLinhas) {
+            trechoLinha.ocuparAssento(key);
+        }
+    }
+
+    public void ocuparAssentosPref(String key){
+        for (TrechoLinha trechoLinha : trechoLinhas) {
+            trechoLinha.ocuparAssento(key);
+            trechoLinha.getAssentosTrechoLinha().decreaseAssentoPref();
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -103,8 +122,6 @@ public class Viagem {
                 ", horarioSaida=" + horarioSaida +
                 ", cidadeOrigem='" + cidadeOrigem + '\'' +
                 ", cidadeDestino='" + cidadeDestino + '\'' +
-                ", assentosDisponiveis=" + assentosDisponiveis +
-                ", assentosPrefDisponiveis=" + assentosPrefDisponiveis +
                 ", passagem=" + passagem +
                 ", trechoLinha=" + trechoLinhas+
                 ", linha=" + linha +
