@@ -13,7 +13,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Viagem {
-    private String id;
+    private UUID id;
     private LocalDate data;
     private LocalTime horarioSaida;
     private String cidadeOrigem;
@@ -24,13 +24,26 @@ public class Viagem {
     public Viagem() {
     }
 
-    public Viagem(String id,String cidadeOrigem, String cidadeDestino, Linha linha, LocalDate data, LocalTime horarioSaida) {
+    public Viagem(String cidadeOrigem, String cidadeDestino,Linha linha, LocalDate data, LocalTime horarioSaida) {
+        this(UUID.randomUUID(), cidadeOrigem, cidadeDestino, linha, data, horarioSaida);
+    }
+
+    public Viagem(UUID id, String cidadeOrigem, String cidadeDestino, Linha linha, LocalDate data, LocalTime horarioSaida) {
+        this.id = id;
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
         this.trechoLinhas = linha.gerarTrechosViagem(cidadeOrigem, cidadeDestino, data);
         this.linha = linha;
         this.data = LocalDate.now();
         this.horarioSaida = LocalTime.now();
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public LocalDate getData() {

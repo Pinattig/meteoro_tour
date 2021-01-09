@@ -3,8 +3,10 @@ package br.edu.ifsp.domain.entities.trecho;
 import br.edu.ifsp.domain.entities.linha.Linha;
 
 import java.time.LocalTime;
+import java.util.UUID;
 
 public class TrechoLinha {
+    private UUID id;
     private LocalTime horarioSaida;
     private int ordem;
 
@@ -16,11 +18,20 @@ public class TrechoLinha {
     }
 
     public TrechoLinha(LocalTime horarioSaida, int ordem, Linha linha, AssentosTrechoLinha assentosTrechoLinha, Trecho trecho) {
+        this.id = UUID.randomUUID();
         this.horarioSaida = horarioSaida;
         this.ordem = ordem;
         this.linha = linha;
         this.assentosTrechoLinha = assentosTrechoLinha;
         this.trecho = trecho;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public LocalTime getHorarioSaida() {
@@ -43,12 +54,20 @@ public class TrechoLinha {
         return linha;
     }
 
+    public void setLinha(Linha linha) {
+        this.linha = linha;
+    }
+
     public AssentosTrechoLinha getAssentosTrechoLinha() {
         return assentosTrechoLinha;
     }
 
     public Trecho getTrecho() {
         return trecho;
+    }
+
+    public void setTrecho(Trecho trecho) {
+        this.trecho = trecho;
     }
 
     public void ocuparAssento(String key){

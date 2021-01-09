@@ -1,8 +1,10 @@
 package br.edu.ifsp.domain.entities.trecho;
 
 import java.util.List;
+import java.util.UUID;
 
 public class Trecho {
+    private UUID id;
     private String cidadeOrigem;
     private String cidadeDestino;
     private double quilometragem;
@@ -17,6 +19,7 @@ public class Trecho {
     }
 
     public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, double tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro) {
+        this.id = UUID.randomUUID();
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
         this.quilometragem = quilometragem;
@@ -24,6 +27,10 @@ public class Trecho {
         this.valorPassagem = valorPassagem;
         this.taxaEmbarque = taxaEmbarque;
         this.valorSeguro = valorSeguro;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getCidadeOrigem() {

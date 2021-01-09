@@ -23,8 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c799456b-b38a-410b-8e56-6da588a0d77e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/trecho/TrechoLinhaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/linha/Linha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/linha/Linha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/trecho/Trecho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/trecho/Trecho.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/trecho/TrechoLinha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/trecho/TrechoLinha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/viagem/Viagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/viagem/Viagem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linha/LinhaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linha/LinhaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/EmitirRelatoriosUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/EmitirRelatoriosUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/trecho/TrechoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/trecho/TrechoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/viagem/GerarViagemUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/viagem/GerarViagemUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/viagem/ViagemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/viagem/ViagemDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
