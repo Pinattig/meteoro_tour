@@ -13,24 +13,21 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Viagem {
+    private String id;
     private LocalDate data;
     private LocalTime horarioSaida;
     private String cidadeOrigem;
     private String cidadeDestino;
-
-
-    private Passagem passagem;
     private List<TrechoLinha> trechoLinhas;
     private Linha linha;
 
     public Viagem() {
     }
 
-    public Viagem(String cidadeOrigem, String cidadeDestino, Passagem passagem, TrechoLinha trechoLinha, Linha linha) {
+    public Viagem(String id,String cidadeOrigem, String cidadeDestino, Linha linha, LocalDate data, LocalTime horarioSaida) {
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
-        this.passagem = passagem;
-        this.trechoLinhas.add(trechoLinha);
+        this.trechoLinhas = linha.gerarTrechosViagem(cidadeOrigem, cidadeDestino, data);
         this.linha = linha;
         this.data = LocalDate.now();
         this.horarioSaida = LocalTime.now();
@@ -58,10 +55,6 @@ public class Viagem {
 
     public void setCidadeDestino(String cidadeDestino) {
         this.cidadeDestino = cidadeDestino;
-    }
-
-    public Passagem getPassagem() {
-        return passagem;
     }
 
     public Linha getLinha() {
@@ -122,7 +115,6 @@ public class Viagem {
                 ", horarioSaida=" + horarioSaida +
                 ", cidadeOrigem='" + cidadeOrigem + '\'' +
                 ", cidadeDestino='" + cidadeDestino + '\'' +
-                ", passagem=" + passagem +
                 ", trechoLinha=" + trechoLinhas+
                 ", linha=" + linha +
                 '}';
