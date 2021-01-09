@@ -7,9 +7,9 @@ import java.util.List;
 
 public class GerenciarOnibusUseCase {
 
-    private DAO onibusDAO;
+    private OnibusDAO onibusDAO;
 
-    public GerenciarOnibusUseCase(DAO onibusDAO) {
+    public GerenciarOnibusUseCase(OnibusDAO onibusDAO) {
         this.onibusDAO = onibusDAO;
     }
 
@@ -29,7 +29,7 @@ public class GerenciarOnibusUseCase {
         return onibusDAO.delete(onibus);
     }
 
-    public boolean deleteByKey(Object key){
+    public boolean deleteByKey(String key){
         return onibusDAO.deleteByKey(key);
     }
 }

@@ -7,9 +7,9 @@ import java.util.List;
 
 public class GerenciarFuncionarioUseCase {
 
-    private DAO funcionarioDao;
+    private FuncionarioDAO funcionarioDao;
 
-    public GerenciarFuncionarioUseCase(DAO funcionarioDao) {
+    public GerenciarFuncionarioUseCase(FuncionarioDAO funcionarioDao) {
         this.funcionarioDao = funcionarioDao;
     }
 
@@ -21,7 +21,7 @@ public class GerenciarFuncionarioUseCase {
         return  this.funcionarioDao.update(funcionario);
     }
 
-    public Object insert(Funcionario funcionario){
+    public boolean insert(Funcionario funcionario){
         return this.funcionarioDao.create(funcionario);
     }
 
@@ -29,7 +29,7 @@ public class GerenciarFuncionarioUseCase {
         return this.funcionarioDao.delete(funcionario);
     }
 
-    public boolean delete(Object key){
+    public boolean deleteByKey(String key){
         return this.funcionarioDao.deleteByKey(key);
     }
 }

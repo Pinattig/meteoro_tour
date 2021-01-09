@@ -51,6 +51,10 @@ public class TrechoLinha {
         return trecho;
     }
 
+    public void ocuparAssento(String key){
+        this.assentosTrechoLinha.setAssento(key);
+    }
+
     @Override
     public String toString() {
         return "TrechoLinha{" +

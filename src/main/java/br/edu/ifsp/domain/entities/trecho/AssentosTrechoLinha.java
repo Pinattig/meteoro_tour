@@ -7,6 +7,7 @@ import java.util.Map;
 public class AssentosTrechoLinha {
     private LocalDate data;
     private Map<String, Boolean> assentosVendidos;
+    private Integer assentosPrefDisponiveis;
 
 
     public AssentosTrechoLinha() {
@@ -15,6 +16,7 @@ public class AssentosTrechoLinha {
     public AssentosTrechoLinha(LocalDate data) {
         this.data = data;
         this.assentosVendidos = initializeSeats();
+        this.assentosPrefDisponiveis = 2;
     }
 
     public LocalDate getData() {
@@ -25,12 +27,29 @@ public class AssentosTrechoLinha {
         return assentosVendidos;
     }
 
+    public Integer getAssentosPrefDisponiveis() {
+        return assentosPrefDisponiveis;
+    }
+
+    public void setAssentosPrefDisponiveis(Integer assentosPrefDisponiveis) {
+        this.assentosPrefDisponiveis = assentosPrefDisponiveis;
+    }
+
     private Map<String, Boolean> initializeSeats() {
         Map<String, Boolean> map = new LinkedHashMap<>();
         for (int i = 1; i < 44; i++) {
             map.put(String.valueOf(i), false);
         }
         return map;
+    }
+
+    public void decreaseAssentoPref(){
+        if(this.assentosPrefDisponiveis > 0)
+            this.assentosPrefDisponiveis--;
+    }
+
+    public void setAssento(String key){
+        this.assentosVendidos.put(key, true);
     }
 
     @Override

@@ -7,9 +7,9 @@ import java.util.List;
 
 public class GerenciarLinhaUseCase {
 
-    private DAO linhaDAO;
+    private LinhaDAO linhaDAO;
 
-    public GerenciarLinhaUseCase(DAO linhaDAO) {
+    public GerenciarLinhaUseCase(LinhaDAO linhaDAO) {
         this.linhaDAO = linhaDAO;
     }
 
@@ -17,7 +17,7 @@ public class GerenciarLinhaUseCase {
         return linhaDAO.findAll();
     }
 
-    public Object insert(Linha linha){
+    public boolean insert(Linha linha){
         return linhaDAO.create(linha);
     }
 
@@ -29,7 +29,7 @@ public class GerenciarLinhaUseCase {
         return linhaDAO.delete(linha);
     }
 
-    public boolean deleteByKey(Object key){
+    public boolean deleteByKey(Long key){
         return linhaDAO.deleteByKey(key);
     }
 }

@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public interface DAO <T, K>{
 
-    K create(T type);
+    boolean create(T type);
 
     Optional<T> findOne(K key);
 
