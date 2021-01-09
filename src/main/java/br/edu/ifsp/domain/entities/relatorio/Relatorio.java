@@ -19,9 +19,10 @@ public class Relatorio {
     public Relatorio() {
     }
 
-    public Relatorio(LocalDate dataInicio, LocalDate dataFinal) {
+    public Relatorio(LocalDate dataInicio, LocalDate dataFinal, List<InfoLinhaRelatorio> infolinhaRelatorios) {
         this.dataInicio = dataInicio;
         this.dataFinal = dataFinal;
+        this.infolinhaRelatorios = infolinhaRelatorios;
     }
 
     public LocalDate getDataInicio() {

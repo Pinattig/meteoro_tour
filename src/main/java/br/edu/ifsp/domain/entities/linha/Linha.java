@@ -30,6 +30,14 @@ public class Linha {
         this.nome = nome;
     }
 
+    public List<TrechoLinha> getListTrechoLinha() {
+        return listTrechoLinha;
+    }
+
+    public void setListTrechoLinha(List<TrechoLinha> listTrechoLinha) {
+        this.listTrechoLinha = listTrechoLinha;
+    }
+
     public Long getId() {
         return id;
     }

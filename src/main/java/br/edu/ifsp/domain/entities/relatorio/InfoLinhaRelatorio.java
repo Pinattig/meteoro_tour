@@ -1,9 +1,12 @@
 package br.edu.ifsp.domain.entities.relatorio;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class InfoLinhaRelatorio {
-    private int data;
+    private LocalDate data;
     private String nomeLinha;
 
     private List<InfoTrechoRelatorio> infoTrechoRelatorios;
@@ -11,17 +14,22 @@ public class InfoLinhaRelatorio {
     public InfoLinhaRelatorio() {
     }
 
-    public InfoLinhaRelatorio(int data, String nomeLinha, InfoTrechoRelatorio infoTrechoRelatorio) {
-        this.data = data;
-        this.nomeLinha = nomeLinha;
-        this.infoTrechoRelatorios.add(infoTrechoRelatorio);
+
+    public InfoLinhaRelatorio(LocalDate data, String nomeLinha){
+        this(data, nomeLinha, new ArrayList<>());
     }
 
-    public int getData() {
+    public InfoLinhaRelatorio(LocalDate data, String nomeLinha, List<InfoTrechoRelatorio> infoTrechoRelatorioList) {
+        this.data = data;
+        this.nomeLinha = nomeLinha;
+        this.infoTrechoRelatorios = infoTrechoRelatorioList;
+    }
+
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
@@ -31,6 +39,26 @@ public class InfoLinhaRelatorio {
 
     public void setNomeLinha(String nomeLinha) {
         this.nomeLinha = nomeLinha;
+    }
+
+
+    public List<InfoTrechoRelatorio> getInfoTrechoRelatorios() {
+        return infoTrechoRelatorios;
+    }
+
+    public void setInfoTrechoRelatorios(List<InfoTrechoRelatorio> infoTrechoRelatorios) {
+        this.infoTrechoRelatorios = infoTrechoRelatorios;
+    }
+
+
+    public InfoTrechoRelatorio getInfoTrechoRelatorioByName(String name){
+
+        for (InfoTrechoRelatorio infoTrechoRelatorio : infoTrechoRelatorios) {
+            if(infoTrechoRelatorio.getNomeTrecho().equals(name))
+                return infoTrechoRelatorio;
+        }
+
+        return null;
     }
 
     @Override

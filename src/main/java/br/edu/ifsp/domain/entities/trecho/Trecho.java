@@ -5,6 +5,7 @@ import java.util.UUID;
 
 public class Trecho {
     private UUID id;
+    private String nome;
     private String cidadeOrigem;
     private String cidadeDestino;
     private double quilometragem;
@@ -18,7 +19,7 @@ public class Trecho {
     public Trecho() {
     }
 
-    public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, double tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro) {
+    public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, double tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro, String nome) {
         this.id = UUID.randomUUID();
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
@@ -27,10 +28,19 @@ public class Trecho {
         this.valorPassagem = valorPassagem;
         this.taxaEmbarque = taxaEmbarque;
         this.valorSeguro = valorSeguro;
+        this.nome = nome;
     }
 
     public UUID getId() {
         return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCidadeOrigem() {
