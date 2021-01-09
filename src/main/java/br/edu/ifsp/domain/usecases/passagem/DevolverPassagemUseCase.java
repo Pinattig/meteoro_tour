@@ -19,7 +19,7 @@ public class DevolverPassagemUseCase {
 
     }
     public void devolverPassagem(Optional<Passagem> passagem) {
-        
+
         if(consultarPassagemVendidaUseCase.consultarPassagem(passagem.get().getNumPassagem(),passagem.get().getNome()).isEmpty())
             throw new PassageNotFoundException("A passagem não foi encontrada");
 

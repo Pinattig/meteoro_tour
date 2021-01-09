@@ -18,4 +18,7 @@ public class ConsultarPassagemVendidaUseCase {
             passagem = passagemDAO.findByCpf(cpf);
         return passagem;
     }
+    public Optional<Passagem> consultarPassagemByCpf(String cpf){
+        return passagemDAO.findByCpf(cpf);
+    }
 }
