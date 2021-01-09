@@ -120,6 +120,9 @@ public class Viagem {
         }
     }
 
+    public List<TrechoLinha> getTrechoLinhas() {
+        return trechoLinhas;
+    }
 
     @Override
     public String toString() {

@@ -2,6 +2,7 @@ package br.edu.ifsp.application.main;
 
 import br.edu.ifsp.domain.entities.trecho.AssentosTrechoLinha;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
@@ -27,11 +28,18 @@ public class Main {
         System.out.println("Data Agora: "+data2);
         System.out.println("===================");
         System.out.println(UUID.randomUUID());
-        */
+        
         AssentosTrechoLinha assentos = new AssentosTrechoLinha(LocalDate.now());
         Map<String, Boolean> map = assentos.getAssentosVendidos();
         map.put("1", true);
         Map<String, Boolean> map2 = map.entrySet().stream().filter(x -> x.getValue() == false).collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
         System.out.println(map2.toString());
+         */
+        
+        UUID teste = UUID.randomUUID();
+        //System.out.println("teste = " + teste);
+
+        String lUUID = String.format("%040d", new BigInteger(UUID.randomUUID().toString().replace("-", ""), 16));
+        System.out.println("lUUID = " + lUUID);
     }
 }
