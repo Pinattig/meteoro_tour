@@ -10,17 +10,14 @@ public class InfoTrechoRelatorio {
     private int fluxoUso;
     private double lucro;
 
-    private InfoLinhaRelatorio infoLinhaRelatorio;
-
     public InfoTrechoRelatorio() {
     }
 
-    public InfoTrechoRelatorio(LocalTime horario, String nomeTrecho, int fluxoUso, double lucro, InfoLinhaRelatorio infoLinhaRelatorio) {
+    public InfoTrechoRelatorio(LocalTime horario, String nomeTrecho, int fluxoUso, double lucro) {
         this.horario = horario;
         this.nomeTrecho = nomeTrecho;
         this.fluxoUso = fluxoUso;
         this.lucro = lucro;
-        this.infoLinhaRelatorio = infoLinhaRelatorio;
     }
 
     public LocalTime getHorario() {
@@ -39,8 +36,12 @@ public class InfoTrechoRelatorio {
         return fluxoUso;
     }
 
-    public void setFluxoUso(int fluxoUso) {
-        this.fluxoUso = fluxoUso;
+    public void increaseFluxoUso(int qtd){
+        fluxoUso += qtd;
+    }
+
+    public void increaseLucro(double qtd){
+        lucro += qtd;
     }
 
     public double getLucro() {
@@ -54,7 +55,6 @@ public class InfoTrechoRelatorio {
                 ", nomeTrecho='" + nomeTrecho + '\'' +
                 ", fluxoUso=" + fluxoUso +
                 ", lucro=" + lucro +
-                ", infoLinhaRelatorio=" + infoLinhaRelatorio +
                 '}';
     }
 }
