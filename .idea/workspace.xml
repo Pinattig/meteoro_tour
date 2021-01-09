@@ -23,10 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c799456b-b38a-410b-8e56-6da588a0d77e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/login/AutenticarSenhaUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/login/FazerLoginUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/login/LoginDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linha/LinhaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linha/LinhaDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +106,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
