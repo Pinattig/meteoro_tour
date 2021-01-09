@@ -91,6 +91,10 @@ public class Passagem {
         return LocalDate.now().isAfter(this.viagem.getData());
     }
 
+    public TipoEspecial getTipoEspecial() {
+        return tipoEspecial;
+    }
+
     @Override
     public String toString() {
         return "Passagem{" +
