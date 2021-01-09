@@ -17,11 +17,11 @@ public class ReagendarPassagensUseCase {
     private VenderPassagemUseCase venderPassagemUseCase;
     private DevolverPassagemUseCase devolverPassagemUseCase;
 
-    public ReagendarPassagensUseCase(PassagemDAO passagemDAO, ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase,VenderPassagemUseCase venderPassagemUseCase,DevolverPassagemUseCase devolverPassagemUseCase) {
+    public ReagendarPassagensUseCase(PassagemDAO passagemDAO, VenderPassagemUseCase venderPassagemUseCase) {
         this.passagemDAO = passagemDAO;
-        this.consultarPassagemVendidaUseCase = consultarPassagemVendidaUseCase;
+        this.consultarPassagemVendidaUseCase = new ConsultarPassagemVendidaUseCase(passagemDAO);
         this.venderPassagemUseCase = venderPassagemUseCase;
-        this.devolverPassagemUseCase = devolverPassagemUseCase;
+        this.devolverPassagemUseCase = new DevolverPassagemUseCase(passagemDAO);
 
     }
 

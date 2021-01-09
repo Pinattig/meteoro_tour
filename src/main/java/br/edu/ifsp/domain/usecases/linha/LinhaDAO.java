@@ -6,7 +6,7 @@ import br.edu.ifsp.domain.entities.viagem.Viagem;
 import br.edu.ifsp.utils.DAO;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 public interface LinhaDAO extends DAO<Linha, Long> {
-    public Viagem verifyPatch(Trecho trecho);
 }

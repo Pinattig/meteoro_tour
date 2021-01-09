@@ -13,9 +13,9 @@ public class DevolverPassagemUseCase {
     private ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase;
 
 
-    public DevolverPassagemUseCase(PassagemDAO passagemDAO, ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase) {
+    public DevolverPassagemUseCase(PassagemDAO passagemDAO) {
         this.passagemDAO = passagemDAO;
-        this.consultarPassagemVendidaUseCase = consultarPassagemVendidaUseCase;
+        this.consultarPassagemVendidaUseCase = new ConsultarPassagemVendidaUseCase(passagemDAO);
 
     }
     public void devolverPassagem(Optional<Passagem> passagem) {

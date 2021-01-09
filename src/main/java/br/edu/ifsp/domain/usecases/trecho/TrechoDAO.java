@@ -4,10 +4,9 @@ import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.utils.DAO;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
-public interface TrechoDAO extends DAO<Trecho, Integer> {
+public interface TrechoDAO extends DAO<Trecho, UUID> {
 
-    public boolean trechoIsUsed(Integer id);
-
-    public Trecho getByCities(String cidadeOrigem, String cidadeDestino, LocalDate data);
+    public Trecho getByCities(String cidadeOrigem, String cidadeDestino);
 }

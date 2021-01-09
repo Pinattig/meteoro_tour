@@ -1,5 +1,7 @@
 package br.edu.ifsp.domain.entities.trecho;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -9,17 +11,16 @@ public class Trecho {
     private String cidadeOrigem;
     private String cidadeDestino;
     private double quilometragem;
-    private double tempoDuracao;
+    private LocalTime tempoDuracao;
     private double valorPassagem;
     private double taxaEmbarque;
     private double valorSeguro;
 
-    private List<TrechoLinha> trechoLinhas;
 
     public Trecho() {
     }
 
-    public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, double tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro, String nome) {
+    public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, LocalTime tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro, String nome) {
         this.id = UUID.randomUUID();
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
@@ -67,11 +68,11 @@ public class Trecho {
         this.quilometragem = quilometragem;
     }
 
-    public double getTempoDuracao() {
+    public LocalTime getTempoDuracao() {
         return tempoDuracao;
     }
 
-    public void setTempoDuracao(double tempoDuracao) {
+    public void setTempoDuracao(LocalTime tempoDuracao) {
         this.tempoDuracao = tempoDuracao;
     }
 
@@ -109,7 +110,6 @@ public class Trecho {
                 ", valorPassagem=" + valorPassagem +
                 ", taxaEmbarque=" + taxaEmbarque +
                 ", valorSeguro=" + valorSeguro +
-                ", trechoLinha=" + trechoLinhas +
                 '}';
     }
 }

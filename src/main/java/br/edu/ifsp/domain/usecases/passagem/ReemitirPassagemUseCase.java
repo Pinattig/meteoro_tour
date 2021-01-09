@@ -8,8 +8,8 @@ import java.util.Optional;
 public class ReemitirPassagemUseCase {
     private ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase;
 
-    public ReemitirPassagemUseCase(ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase) {
-        this.consultarPassagemVendidaUseCase = consultarPassagemVendidaUseCase;
+    public ReemitirPassagemUseCase(PassagemDAO passagemDAO) {
+        this.consultarPassagemVendidaUseCase = new ConsultarPassagemVendidaUseCase(passagemDAO);
     }
 
     public Optional<Passagem> reemitirPassagem(String cpf){
