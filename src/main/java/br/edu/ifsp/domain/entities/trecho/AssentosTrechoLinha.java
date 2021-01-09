@@ -8,6 +8,7 @@ public class AssentosTrechoLinha {
     private LocalDate data;
     private Map<String, Boolean> assentosVendidos;
     private Integer assentosPrefDisponiveis;
+    private Integer assentosDisponiveis;
 
 
     public AssentosTrechoLinha() {
@@ -17,6 +18,7 @@ public class AssentosTrechoLinha {
         this.data = data;
         this.assentosVendidos = initializeSeats();
         this.assentosPrefDisponiveis = 2;
+        this.assentosDisponiveis = 44;
     }
 
     public LocalDate getData() {
@@ -46,6 +48,14 @@ public class AssentosTrechoLinha {
     public void decreaseAssentoPref(){
         if(this.assentosPrefDisponiveis > 0)
             this.assentosPrefDisponiveis--;
+    }
+    public void decreaseAssento(){
+        if(this.assentosPrefDisponiveis > 0)
+            this.assentosPrefDisponiveis--;
+    }
+
+    public Integer getAssentosDisponiveis() {
+        return assentosPrefDisponiveis;
     }
 
     public void setAssento(String key){

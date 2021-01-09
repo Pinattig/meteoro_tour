@@ -97,6 +97,14 @@ public class Viagem {
         return responseMap;
     }
 
+    public boolean verificarAssentosDisponiveis(){
+        for (TrechoLinha trechoLinha : trechoLinhas) {
+            if(trechoLinha.getAssentosTrechoLinha().getAssentosDisponiveis() == 0)
+                return false;
+        }
+        return true;
+    }
+
     public boolean verificarAssentosPrefDisponiveis(){
 
         for (TrechoLinha trechoLinha : trechoLinhas) {

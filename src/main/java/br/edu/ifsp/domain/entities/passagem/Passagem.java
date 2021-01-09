@@ -12,17 +12,18 @@ public class Passagem {
     private String rg;
     private String telefone;
     private boolean seguro;
+    private TipoEspecial tipoEspecial;
 
     private Viagem viagem;
 
     public Passagem() {
     }
 
-    public Passagem(double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem) {
-        this(null, precoTotal, nome, cpf, rg, telefone, seguro, viagem);
+    public Passagem(double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem,TipoEspecial tipoEspecial) {
+        this(null, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial);
     }
 
-    public Passagem(Long numPassagem, double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem) {
+    public Passagem(Long numPassagem, double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem, TipoEspecial tipoEspecial) {
         this.numPassagem = numPassagem;
         this.precoTotal = precoTotal;
         this.nome = nome;
@@ -31,6 +32,7 @@ public class Passagem {
         this.telefone = telefone;
         this.seguro = seguro;
         this.viagem = viagem;
+        this.tipoEspecial = tipoEspecial;
     }
 
     public long getNumPassagem() {

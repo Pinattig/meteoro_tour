@@ -1,11 +1,13 @@
 package br.edu.ifsp.domain.usecases.passagem;
 
 import br.edu.ifsp.domain.entities.passagem.Passagem;
+import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
 import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
-import br.edu.ifsp.utils.exceptions.PassageIsNotCreated;
+import br.edu.ifsp.utils.exceptions.NotAvaliableSeatException;
+import br.edu.ifsp.utils.exceptions.PassageIsNotCreatedException;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -23,16 +25,40 @@ public class VenderPassagemUseCase {
     }
 
 
-    public Passagem venderPassagem(String cidadeOrigem, String cidadeDestino, LocalDate dataViagem, LocalTime horarioSaida, String assento, String nome, String cpf, String rg, String telefone, boolean seguro) {
+    public Passagem venderPassagem(String cidadeOrigem, String cidadeDestino, LocalDate dataViagem, LocalTime horarioSaida, String assento, String nome, String cpf, String rg, String telefone, boolean seguro, TipoEspecial tipoEspecial) {
         Viagem viagem = gerarViagemUseCase.gerarViagem(dataViagem,cidadeOrigem,cidadeDestino,horarioSaida);
-        Map<String, Boolean> assentosDisponiveis  = viagem.getAssentosDisponiveis();
 
-        viagem.ocuparAssentos(assento);
-        Long numeroPassagem = randomNumber();
+        if(!viagem.verificarAssentosPrefDisponiveis() && !viagem.verificarAssentosDisponiveis())
+            throw new NotAvaliableSeatException("não há assentos disponiveis");
+
+
+        Map<String, Boolean> assentosDisponiveis  = viagem.getAssentosDisponiveis();
         double precoTotal = getAmount(viagem.getTrechoLinhas());
-        Passagem passagem = new Passagem(numeroPassagem, precoTotal, nome, cpf, rg, telefone, seguro, viagem);
+
+        if(tipoEspecial.equals("Idoso")){
+            if(viagem.verificarAssentosPrefDisponiveis()) {
+            precoTotal = 0;
+            viagem.ocuparAssentosPref(assento);
+            }
+            else{
+                precoTotal = precoTotal / 2;
+                viagem.ocuparAssentos(assento);
+            }
+        }
+
+        if(tipoEspecial.equals("Deficiente")){
+            precoTotal = 0;
+            tipoEspecial.equals("Deficiente");
+        }
+
+        if(tipoEspecial.equals("Não"))
+            viagem.ocuparAssentos(assento);
+
+        Long numeroPassagem = randomNumber();
+        Passagem passagem = new Passagem(numeroPassagem, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial);
+
         if(!passagemDAO.create(passagem))
-            throw new PassageIsNotCreated("A passagem não foi criada");
+            throw new PassageIsNotCreatedException("A passagem não foi criada");
         return passagem;
     }
 
