@@ -212,7 +212,7 @@ public class Main {
         ViagemDAO viagemDAO = new InMemoryViagemDAO();
 
         gerenciarFuncionarioUseCase = new GerenciarFuncionarioUseCase(funcionarioDAO);
-        gerenciarLinhaUseCase = new GerenciarLinhaUseCase(linhaDAO);
+        gerenciarLinhaUseCase = new GerenciarLinhaUseCase(linhaDAO, trechoLinhaDAO);
         fazerLoginUseCase = new FazerLoginUseCase(loginDAO);
         gerenciarOnibusUseCase = new GerenciarOnibusUseCase(onibusDAO);
         consultarPassagemVendidaUseCase = new ConsultarPassagemVendidaUseCase(passagemDAO);
