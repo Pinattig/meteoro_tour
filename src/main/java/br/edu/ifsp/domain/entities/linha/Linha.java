@@ -20,22 +20,13 @@ public class Linha {
     public Linha() {
     }
 
-    public Linha(String nome, List<TrechoLinha> listTrechoLinha) {
-        this(null, nome, listTrechoLinha);
+    public Linha(String nome) {
+        this(null, nome);
     }
 
-    public Linha(Long id, String nome, List<TrechoLinha> listTrechoLinha) {
-        this.listTrechoLinha = listTrechoLinha;
+    public Linha(Long id, String nome) {
         this.id = id;
         this.nome = nome;
-    }
-
-    public List<TrechoLinha> getListTrechoLinha() {
-        return listTrechoLinha;
-    }
-
-    public void setListTrechoLinha(List<TrechoLinha> listTrechoLinha) {
-        this.listTrechoLinha = listTrechoLinha;
     }
 
     public Long getId() {

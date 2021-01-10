@@ -9,4 +9,6 @@ import java.util.UUID;
 
 public interface TrechoLinhaDAO extends DAO<TrechoLinha, UUID> {
     public List<TrechoLinha> getByTrechoId(UUID trechoId);
+
+    public List<TrechoLinha> getByLinhaId(Long linhaId);
 }

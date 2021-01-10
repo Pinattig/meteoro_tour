@@ -7,6 +7,7 @@ import br.edu.ifsp.domain.entities.relatorio.Relatorio;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
+import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
 import br.edu.ifsp.domain.usecases.viagem.ViagemDAO;
 
 import java.time.LocalDate;
@@ -15,9 +16,11 @@ import java.util.stream.Collectors;
 
 public class EmitirRelatoriosUseCase {
     private ViagemDAO viagemDAO;
+    private TrechoLinhaDAO trechoLinhaDAO;
 
-    public EmitirRelatoriosUseCase(ViagemDAO viagemDAO) {
+    public EmitirRelatoriosUseCase(ViagemDAO viagemDAO, TrechoLinhaDAO trechoLinhaDAO) {
         this.viagemDAO = viagemDAO;
+        this.trechoLinhaDAO = trechoLinhaDAO;
     }
 
     public Relatorio gerarRelatorio(LocalDate dataInicio, LocalDate dataFim) {
@@ -27,7 +30,7 @@ public class EmitirRelatoriosUseCase {
         List<Viagem> viagens = viagemDAO.getViagensByDate(dataInicio, dataFim);
         for (Viagem viagem : viagens) {
             InfoLinhaRelatorio infoLinhaRelatorio;
-            List<TrechoLinha> trechoLinhaList = viagem.getLinha().getListTrechoLinha();
+            List<TrechoLinha> trechoLinhaList = trechoLinhaDAO.getByLinhaId(viagem.getLinha().getId());
             if(!infoLinhaRelatorioMap.containsKey(viagem.getLinha().getId())){
 
                 for (TrechoLinha trechoLinha : trechoLinhaList) {

@@ -16,7 +16,20 @@ public class InMemoryTrechoLinhaDAO implements TrechoLinhaDAO {
         List<TrechoLinha> trechoLinhaList = new ArrayList<>();
 
         for (TrechoLinha trechoLinha : db.values()) {
-            if(trechoLinha.getId() == trechoId)
+            if(trechoLinha.getTrecho().getId() == trechoId)
+                trechoLinhaList.add(trechoLinha);
+        }
+
+        return trechoLinhaList;
+    }
+
+    @Override
+    public List<TrechoLinha> getByLinhaId(Long linhaId) {
+
+        List<TrechoLinha> trechoLinhaList = new ArrayList<>();
+
+        for (TrechoLinha trechoLinha : db.values()) {
+            if(trechoLinha.getLinha().getId() == linhaId)
                 trechoLinhaList.add(trechoLinha);
         }
 
