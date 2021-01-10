@@ -11,6 +11,7 @@ import br.edu.ifsp.utils.exceptions.PassageIsNotCreatedException;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -33,26 +34,29 @@ public class VenderPassagemUseCase {
 
 
         Map<String, Boolean> assentosDisponiveis  = viagem.getAssentosDisponiveis();
-        double precoTotal = getAmount(viagem.getTrechoLinhas());
+        Map<String, Double> amount = getAmount(viagem.getTrechoLinhas());
 
         if(tipoEspecial.equals("Idoso")){
             if(viagem.verificarAssentosPrefDisponiveis()) {
-            precoTotal = 0;
+            amount.put("passagem", 0d);
+            amount.put("ta", 0d);
             viagem.ocuparAssentosPref(assento);
             }
             else{
-                precoTotal = precoTotal / 2;
+                amount.put("passagem", amount.get("passagem")/2);
                 viagem.ocuparAssentos(assento);
             }
         }
 
         if(tipoEspecial.equals("Deficiente")){
-            precoTotal = 0;
+            amount.put("passagem", 0d);
             tipoEspecial.equals("Deficiente");
         }
 
         if(tipoEspecial.equals("Não"))
             viagem.ocuparAssentos(assento);
+
+        double precoTotal = amount.get("passagem") + (seguro ? amount.get("seguro") : 0);
 
         Long numeroPassagem = randomNumber();
         Passagem passagem = new Passagem(numeroPassagem, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial);
@@ -69,11 +73,20 @@ public class VenderPassagemUseCase {
         return numPassagem;
     }
 
-    private double getAmount(List<TrechoLinha> trechoLinhaList){
-        double amount = 0;
+    private Map<String, Double> getAmount(List<TrechoLinha> trechoLinhaList){
+        Map<String, Double> amount = new LinkedHashMap<>();
         for (TrechoLinha trechoLinha : trechoLinhaList) {
             Trecho trecho = trechoLinha.getTrecho();
-            amount += trecho.getValorPassagem() + trecho.getValorSeguro();
+            if(amount.isEmpty()){
+                amount.put("passagem", trecho.getValorPassagem() + trecho.getTaxaEmbarque());
+                amount.put("seguro", trecho.getValorSeguro());
+            }else{
+                Double passagem = amount.get("passagem") + trecho.getValorPassagem() + trecho.getTaxaEmbarque();
+                Double seguro = amount.get("seguro") + trecho.getValorSeguro();
+
+                amount.put("passagem", passagem);
+                amount.put("seguro", seguro);
+            }
         }
         return amount;
     }
