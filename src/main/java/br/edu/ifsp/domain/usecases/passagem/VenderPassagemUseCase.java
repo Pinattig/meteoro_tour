@@ -29,18 +29,15 @@ public class VenderPassagemUseCase {
     public Passagem venderPassagem(String cidadeOrigem, String cidadeDestino, LocalDate dataViagem, LocalTime horarioSaida, String assento, String nome, String cpf, String rg, String telefone, boolean seguro, TipoEspecial tipoEspecial) {
         Viagem viagem = gerarViagemUseCase.gerarViagem(dataViagem,cidadeOrigem,cidadeDestino,horarioSaida);
 
-        if(!viagem.verificarAssentosPrefDisponiveis() && !viagem.verificarAssentosDisponiveis())
+        if(!viagem.verificarAssentosDisponiveis())
             throw new NotAvaliableSeatException("não há assentos disponiveis");
 
-
-        Map<String, Boolean> assentosDisponiveis  = viagem.getAssentosDisponiveis();
         Map<String, Double> amount = getAmount(viagem.getTrechoLinhas());
 
         if(tipoEspecial.equals("Idoso")){
             if(viagem.verificarAssentosPrefDisponiveis()) {
-            amount.put("passagem", 0d);
-            amount.put("ta", 0d);
-            viagem.ocuparAssentosPref(assento);
+                amount.put("passagem", 0d);
+                viagem.ocuparAssentosPref(assento);
             }
             else{
                 amount.put("passagem", amount.get("passagem")/2);

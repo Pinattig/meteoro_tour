@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -25,11 +22,13 @@
     <list default="true" id="0dfc3ba8-b654-486b-9e33-1b779b5a56ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/InMemoryTrechoLinhaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/InMemoryTrechoLinhaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/InMemoryTrechoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/InMemoryTrechoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/linha/Linha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/linha/Linha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/EmitirRelatorioDiarioUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/EmitirRelatorioDiarioUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/EmitirRelatoriosUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/relatorio/EmitirRelatoriosUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/trecho/TrechoLinhaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/trecho/TrechoLinhaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/passagem/VenderPassagemUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/passagem/VenderPassagemUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/InMemoryTrechoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/InMemoryTrechoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/linha/Linha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/entities/linha/Linha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/passagem/VenderPassagemUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/passagem/VenderPassagemUseCase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +111,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -141,5 +140,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="246" key="GridCell.Tab.0.bottom" timestamp="1610317041006">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="246" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610317041006" />
+    <state width="1323" height="246" key="GridCell.Tab.0.center" timestamp="1610317041006">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="246" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610317041006" />
+    <state width="1323" height="246" key="GridCell.Tab.0.left" timestamp="1610317041006">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="246" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610317041006" />
+    <state width="1323" height="246" key="GridCell.Tab.0.right" timestamp="1610317041006">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="246" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610317041006" />
   </component>
 </project>

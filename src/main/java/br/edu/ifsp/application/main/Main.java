@@ -167,10 +167,27 @@ public class Main {
         Linha linha3 = new Linha(55L, "linha3");
         Linha linha4 = new Linha(12L, "linha4");
 
+
+
+
+
         gerenciarLinhaUseCase.insert(linha1);
         gerenciarLinhaUseCase.insert(linha2);
         gerenciarLinhaUseCase.insert(linha3);
         gerenciarLinhaUseCase.insert(linha4);
+
+
+
+        TrechoLinha trechoLinha1 = new TrechoLinha(LocalTime.of(9,30,0,0),1,linha1,assentosTrechoLinha1,trecho1);
+        TrechoLinha trechoLinha2 = new TrechoLinha(LocalTime.of(11,30,0,0),2,linha1,assentosTrechoLinha2,trecho2);
+        TrechoLinha trechoLinha3 = new TrechoLinha(LocalTime.of(13,30,0,0),3,linha1,assentosTrechoLinha3,trecho3);
+        TrechoLinha trechoLinha4 = new TrechoLinha(LocalTime.of(15,30,0,0),4,linha1,assentosTrechoLinha4,trecho4);
+
+        gerenciarLinhaUseCase.addTrechoLinha(trechoLinha1);
+        gerenciarLinhaUseCase.addTrechoLinha(trechoLinha2);
+        gerenciarLinhaUseCase.addTrechoLinha(trechoLinha3);
+        gerenciarLinhaUseCase.addTrechoLinha(trechoLinha4);
+
 
         List<Linha> linhas = gerenciarLinhaUseCase.getAll();
         System.out.println("Lista de linhas: " + linhas.size());
@@ -189,16 +206,23 @@ public class Main {
         linhas = gerenciarLinhaUseCase.getAll();
         System.out.println("Alteração do nome da segunda linha: " + linhas.get(1).getNome());
 
+        System.out.println("=====================================================================");
+
         Viagem viagem1 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 10), "São Paulo", "São Carlos", LocalTime.of(4,30,0,0));
-        Viagem viagem2 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 16), "São Carlos", "Ibaté", LocalTime.of(3,00,0,0));
+        Viagem viagem2 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 16), "São Carlos", "Ibaté", LocalTime.of(3,0,0,0));
         Viagem viagem3 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 22), "Ibaté", "Araraquara", LocalTime.of(5,15,0,0));
-        Viagem viagem4 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 29), "Narnia", "Hogwarts", LocalTime.of(7,00,0,0));
+        Viagem viagem4 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 29), "Narnia", "Hogwarts", LocalTime.of(7,0,0,0));
 
         Passagem passagem1 = venderPassagemUseCase.venderPassagem("São Paulo", "São Carlos", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "13", "Juca da Silva", "464.567.370-01", "35.938.378-6", "(74) 21059-6913", true, TipoEspecial.DEFICIENTE);
         Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
         Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
         Passagem passagem4 = venderPassagemUseCase.venderPassagem("Narnia", "Hogwarts", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "36", "João Paulo", "576.045.280-07",  "19.488.513-6", "(31) 83174-9960", true, TipoEspecial.NAO);
-        
+
+        System.out.println("=====================================================================");
+
+
+
+        //System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()));
     }
 
     private static void inMemoryInjection(){

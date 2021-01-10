@@ -16,9 +16,9 @@ public class InMemoryTrechoDAO implements TrechoDAO {
 
         for (Trecho trecho : db.values()) {
             if(trecho.getCidadeOrigem().equals(cidadeOrigem) && trecho.getCidadeDestino().equals(cidadeDestino))
+                //System.out.println("teste");
                 return trecho;
         }
-
         return null;
     }
 

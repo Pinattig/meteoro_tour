@@ -27,6 +27,7 @@ public class GerarViagemUseCase {
 
     public Viagem gerarViagem(LocalDate data, String cidadeOrigem, String cidadeDestino, LocalTime horarioSaida) {
         Trecho trecho = trechoDAO.getByCities(cidadeOrigem, cidadeDestino);
+        System.out.println("trecho = " + trecho);
         List<TrechoLinha> listTrecholinha = trechoLinhaDAO.getByTrechoId(trecho.getId());
         Linha linha = listTrecholinha.get(0).getLinha();
         List<TrechoLinha> trechosViagem = gerarTrechosViagem(cidadeOrigem, cidadeDestino, data, linha);
