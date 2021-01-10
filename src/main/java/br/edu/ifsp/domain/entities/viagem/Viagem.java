@@ -24,15 +24,15 @@ public class Viagem {
     public Viagem() {
     }
 
-    public Viagem(String cidadeOrigem, String cidadeDestino,Linha linha, LocalDate data, LocalTime horarioSaida) {
-        this(UUID.randomUUID(), cidadeOrigem, cidadeDestino, linha, data, horarioSaida);
+    public Viagem(String cidadeOrigem, String cidadeDestino,Linha linha, LocalDate data, LocalTime horarioSaida, List<TrechoLinha> trechosViagem) {
+        this(UUID.randomUUID(), cidadeOrigem, cidadeDestino, linha, data, horarioSaida, trechosViagem);
     }
 
-    public Viagem(UUID id, String cidadeOrigem, String cidadeDestino, Linha linha, LocalDate data, LocalTime horarioSaida) {
+    public Viagem(UUID id, String cidadeOrigem, String cidadeDestino, Linha linha, LocalDate data, LocalTime horarioSaida, List<TrechoLinha> trechosViagem) {
         this.id = id;
         this.cidadeOrigem = cidadeOrigem;
         this.cidadeDestino = cidadeDestino;
-        this.trechoLinhas = linha.gerarTrechosViagem(cidadeOrigem, cidadeDestino, data);
+        this.trechoLinhas = trechosViagem;
         this.linha = linha;
         this.data = LocalDate.now();
         this.horarioSaida = LocalTime.now();

@@ -15,7 +15,6 @@ public class Linha {
     private Long id;
     private String nome;
 
-    private List<TrechoLinha> listTrechoLinha;
 
     public Linha() {
     }
@@ -41,48 +40,11 @@ public class Linha {
         this.nome = nome;
     }
 
-    public List<TrechoLinha> gerarTrechosViagem(String cidadeOrigem, String cidadeDestino, LocalDate data) {
-        List<TrechoLinha> trechosViagem = new ArrayList<>();
-
-        for (TrechoLinha trechoLinha : listTrechoLinha) {
-            String trechoCidadeOrigem = trechoLinha.getTrecho().getCidadeOrigem();
-            if(trechoCidadeOrigem.equals(cidadeOrigem)){
-                trechosViagem.add(trechoLinha);
-                break;
-            }
-        }
-
-        if(trechosViagem.isEmpty())
-            return null;
-
-        String trechoCidadeDestino = trechosViagem.get(0).getTrecho().getCidadeDestino();
-        if(trechoCidadeDestino.equals(cidadeDestino))
-            return trechosViagem;
-
-        int index = trechosViagem.get(0).getOrdem();
-        for (int i = index + 1; i < listTrechoLinha.size(); i++) {
-            TrechoLinha trechoLinha = listTrechoLinha.get(i);
-            trechosViagem.add(trechoLinha);
-            String destinoTrechoLinha = trechoLinha.getTrecho().getCidadeDestino();
-            if(destinoTrechoLinha.equals(cidadeDestino))
-                break;
-        }
-
-        return trechosViagem;
-    }
-
-    public void addTrechoLinha(Trecho trecho, LocalTime horarioSaida) {
-        AssentosTrechoLinha assentos = new AssentosTrechoLinha(LocalDate.now());
-        TrechoLinha trechoLinha = new TrechoLinha(horarioSaida, listTrechoLinha.size()+1, this, assentos, trecho);
-        listTrechoLinha.add(trechoLinha);
-    }
-
     @Override
     public String toString() {
         return "Linha{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", trechoLinha=" + listTrechoLinha +
+                ", nome='" + nome +
                 '}';
     }
 }
