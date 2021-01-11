@@ -16,7 +16,7 @@ public class InMemoryViagemDAO implements ViagemDAO {
         List<Viagem> viagens = new ArrayList<>();
 
         for (Viagem viagem : db.values()) {
-            if(viagem.getData().isBefore(dataInicio) && viagem.getData().isAfter(dataFim))
+            if(dataInicio.isBefore(viagem.getData()) && dataFim.isAfter(viagem.getData()))
                 viagens.add(viagem);
         }
 

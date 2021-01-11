@@ -6,6 +6,7 @@ import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
+import br.edu.ifsp.domain.entities.relatorio.Relatorio;
 import br.edu.ifsp.domain.entities.trecho.AssentosTrechoLinha;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
@@ -30,6 +31,7 @@ import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 import br.edu.ifsp.domain.usecases.viagem.ViagemDAO;
 import br.edu.ifsp.utils.exceptions.PassageNotFoundException;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -56,7 +58,7 @@ public class Main {
     private static GerarViagemUseCase gerarViagemUseCase;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         inMemoryInjection();
 
@@ -227,8 +229,8 @@ public class Main {
 
         System.out.println("=====================================================================");
 
-        
-
+        Relatorio relatorio = emitirRelatoriosUseCase.gerarRelatorio(LocalDate.of(2021, 1, 1), LocalDate.of(2021, 1, 31));
+        relatorio.salvarEmArquivo();
 
        // System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()).get().toString());
     }
@@ -248,7 +250,7 @@ public class Main {
         fazerLoginUseCase = new FazerLoginUseCase(loginDAO);
         gerenciarOnibusUseCase = new GerenciarOnibusUseCase(onibusDAO);
         consultarPassagemVendidaUseCase = new ConsultarPassagemVendidaUseCase(passagemDAO);
-        gerarViagemUseCase = new GerarViagemUseCase(linhaDAO,trechoDAO,trechoLinhaDAO);
+        gerarViagemUseCase = new GerarViagemUseCase(linhaDAO,trechoDAO,trechoLinhaDAO, viagemDAO);
         venderPassagemUseCase = new VenderPassagemUseCase(passagemDAO,gerarViagemUseCase);
         devolverPassagemUseCase = new DevolverPassagemUseCase(passagemDAO);
         reagendarPassagensUseCase = new ReagendarPassagensUseCase(passagemDAO, venderPassagemUseCase);

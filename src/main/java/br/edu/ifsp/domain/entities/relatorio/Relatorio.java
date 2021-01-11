@@ -49,8 +49,22 @@ public class Relatorio {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             String fileName = "Relatorio_"+idRelatorio+"_"+LocalDate.now().format(formatter)+".csv";
             PrintWriter writer = new PrintWriter(path+fileName, "UTF-8");
-            //writer.println("o;green;falou;ta;falado");
-            //Inserir logica para montar EXCEL aqui bjos
+            writer.println("Nome da linha;Data da viagem; Horario do trecho; Nome do trecho; Fluxo de uso; Valor total");
+
+            for (InfoLinhaRelatorio infolinhaRelatorio : infolinhaRelatorios) {
+
+                for (InfoTrechoRelatorio infoTrechoRelatorio : infolinhaRelatorio.getInfoTrechoRelatorios()) {
+
+                    writer.println(
+                            infolinhaRelatorio.getNomeLinha() + ";" +
+                            infolinhaRelatorio.getData() + ";" +
+                            infoTrechoRelatorio.getHorario() + ";" +
+                            infoTrechoRelatorio.getNomeTrecho() + ";" +
+                            infoTrechoRelatorio.getFluxoUso() + ";" +
+                            infoTrechoRelatorio.getLucro()
+                    );
+                }
+            }
 
             writer.close();
         }catch (IOException e){
