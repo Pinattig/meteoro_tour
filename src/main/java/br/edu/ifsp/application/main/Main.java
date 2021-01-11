@@ -180,12 +180,10 @@ public class Main {
         TrechoLinha trechoLinha1 = new TrechoLinha(LocalTime.of(9,30,0,0),1,linha1,assentosTrechoLinha1,trecho1);
         TrechoLinha trechoLinha2 = new TrechoLinha(LocalTime.of(11,30,0,0),2,linha1,assentosTrechoLinha2,trecho2);
         TrechoLinha trechoLinha3 = new TrechoLinha(LocalTime.of(13,30,0,0),3,linha1,assentosTrechoLinha3,trecho3);
-        //TrechoLinha trechoLinha4 = new TrechoLinha(LocalTime.of(15,30,0,0),4,linha1,assentosTrechoLinha4,trecho4);
 
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha1);
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha2);
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha3);
-        //gerenciarLinhaUseCase.addTrechoLinha(trechoLinha4);
 
 
         List<Linha> linhas = gerenciarLinhaUseCase.getAll();
@@ -226,7 +224,7 @@ public class Main {
         devolverPassagemUseCase.devolverPassagem(consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem()));
         //consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem());
 
-   
+
         System.out.println("=====================================================================");
 
         
