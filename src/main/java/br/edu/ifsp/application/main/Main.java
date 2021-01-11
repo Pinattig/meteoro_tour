@@ -28,6 +28,7 @@ import br.edu.ifsp.domain.usecases.trecho.TrechoDAO;
 import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
 import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 import br.edu.ifsp.domain.usecases.viagem.ViagemDAO;
+import br.edu.ifsp.utils.exceptions.PassageNotFoundException;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -209,20 +210,23 @@ public class Main {
         Viagem viagem1 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 10), "São Paulo", "São Carlos", LocalTime.of(4,30,0,0));
         Viagem viagem2 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 16), "São Carlos", "Ibaté", LocalTime.of(3,0,0,0));
         Viagem viagem3 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 22), "Ibaté", "Araraquara", LocalTime.of(5,15,0,0));
-        //Viagem viagem4 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 29), "Narnia", "Hogwarts", LocalTime.of(7,0,0,0));
+
 
         Passagem passagem1 = venderPassagemUseCase.venderPassagem("São Paulo", "São Carlos", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "13", "Juca da Silva", "464.567.370-01", "35.938.378-6", "(74) 21059-6913", true, TipoEspecial.DEFICIENTE);
         Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
         Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
-        //Passagem passagem4 = venderPassagemUseCase.venderPassagem("Narnia", "Hogwarts", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "36", "João Paulo", "576.045.280-07",  "19.488.513-6", "(31) 83174-9960", true, TipoEspecial.NAO);
 
-        //System.out.println(passagem2.getViagem().getData());
-        reagendarPassagensUseCase.reagendar(passagem2.getNumPassagem(), LocalDate.of(2021, 1, 17));
-        reemitirPassagemUseCase.reemitirPassagem(passagem3.getCpf());
+        passagem2 = reagendarPassagensUseCase.reagendar(passagem2.getNumPassagem(), LocalDate.of(2021, 1, 17));
+        //System.out.println("Reagendamento da passagem 2 alterando a data: " + passagem2.getViagem().getData());
+
+        passagem3 = reemitirPassagemUseCase.reemitirPassagem(passagem3.getCpf()).get();
+        //System.out.println("Reemitindo a passagem 3: " + passagem3);
+
+        System.out.println("Devolvendo a passagem 1");
         devolverPassagemUseCase.devolverPassagem(consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem()));
+        //consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem());
 
-        //Passagem passagem = reagendarPassagensUseCase.getByCPF(passagem2.getCpf()).get();
-        //System.out.println(passagem.getViagem().getData());
+   
         System.out.println("=====================================================================");
 
         
