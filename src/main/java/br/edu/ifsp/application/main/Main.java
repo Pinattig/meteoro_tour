@@ -222,7 +222,7 @@ public class Main {
         passagem3 = reemitirPassagemUseCase.reemitirPassagem(passagem3.getCpf()).get();
         //System.out.println("Reemitindo a passagem 3: " + passagem3);
 
-        System.out.println("Devolvendo a passagem 1");
+        //System.out.println("Devolvendo a passagem 1");
         devolverPassagemUseCase.devolverPassagem(consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem()));
         //consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem());
 
