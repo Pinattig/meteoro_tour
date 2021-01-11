@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public class ReemitirPassagemUseCase {
     private ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase;
+    private PassagemDAO passagemDAO;
 
     public ReemitirPassagemUseCase(PassagemDAO passagemDAO) {
         this.consultarPassagemVendidaUseCase = new ConsultarPassagemVendidaUseCase(passagemDAO);
@@ -18,4 +19,6 @@ public class ReemitirPassagemUseCase {
             throw new PassageNotFoundException("A passagem não foi encontrada");
         return passagem;
     }
+
+
 }

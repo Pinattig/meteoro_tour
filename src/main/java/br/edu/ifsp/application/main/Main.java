@@ -60,10 +60,12 @@ public class Main {
         inMemoryInjection();
 
         //Login
+
+        //fazerLoginUseCase.loginAsSeller();
         //fazerLoginUseCase.createLogin("Gustavo", "Pinatti");
         //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "Gustavo"));
-        //System.out.println(fazerLoginUseCase.loginAsAdmin("pinatti", "Gustavo"));
-        //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "nome errado"));
+        //System.out.println(fazerLoginUseCase.loginAsAdmin("pinatti", "Gustavo"));  //SENHA ERRADA
+        //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "nome errado")); //NOME ERRADO
 
         //Gerenciar Trechos
         Trecho trecho1 = new Trecho("São Paulo", "São Carlos", 290, LocalTime.of(3,30,0,0), 85.00, 5.00, 20.00, "SP-SC");
@@ -77,22 +79,23 @@ public class Main {
         gerenciarTrechosUseCase.insert(trecho4);
 
         List<Trecho> trechos = gerenciarTrechosUseCase.getAll();
-        System.out.println("Lista de trechos: " + trechos.size());
+        //System.out.println("Lista de trechos: " + trechos.size());
 
         gerenciarTrechosUseCase.delete(trechos.get(3));
         trechos = gerenciarTrechosUseCase.getAll();
-        System.out.println("Lista de trechos após deletar o terceiro trecho: " + trechos.size());
+        //System.out.println("Lista de trechos após deletar o quarto trecho: " + trechos.size());
 
         gerenciarTrechosUseCase.insert(trecho4);
-        gerenciarTrechosUseCase.deleteByKey(trechos.get(2).getId());
         trechos = gerenciarTrechosUseCase.getAll();
-        System.out.println("Lista de trechos após deletar o segundo trecho pela chave: " + trechos.size());
+        gerenciarTrechosUseCase.deleteByKey(trechos.get(3).getId());
+        trechos = gerenciarTrechosUseCase.getAll();
+        //System.out.println("Lista de trechos após deletar o quarto trecho pela chave: " + trechos.size());
         gerenciarTrechosUseCase.deleteByKey(UUID.randomUUID());
 
         trecho2.setQuilometragem(50);
         gerenciarTrechosUseCase.update(trecho2);
         trechos = gerenciarTrechosUseCase.getAll();
-        System.out.println("Alteração de quilometragem do segundo trecho: " + trechos.get(1).getQuilometragem());
+        //System.out.println("Alteração de quilometragem do segundo trecho: " + trechos.get(1).getQuilometragem());
 
         System.out.println("=====================================================================");
 
@@ -102,6 +105,7 @@ public class Main {
         AssentosTrechoLinha assentosTrechoLinha4 = new AssentosTrechoLinha(LocalDate.of(2020, 1, 30));
 
         //List<TrechoLinha> trechoLinhaList = gerenciarTrechosUseCase.getAll();
+        System.out.println("=====================================================================");
 
         Funcionario funcionario1 = new Funcionario("884.295.278-85", "João da Silva", "20.453.187-1", "motorista");
         Funcionario funcionario2 = new Funcionario("021.331.658-78", "Guilherme Oliveira", "24.814.848-5", "motorista");
@@ -114,21 +118,21 @@ public class Main {
         gerenciarFuncionarioUseCase.insert(funcionario4);
 
         List<Funcionario> funcionarios = gerenciarFuncionarioUseCase.getAll();
-        System.out.println("Lista de funcionarios: " + funcionarios.size());
+        //System.out.println("Lista de funcionarios: " + funcionarios.size());
 
         gerenciarFuncionarioUseCase.delete(funcionarios.get(2));
         funcionarios = gerenciarFuncionarioUseCase.getAll();
-        System.out.println("Lista de trechos após deletar o segundo funcionario: " + funcionarios.size());
+        //System.out.println("Lista de trechos após deletar o terceiro funcionario: " + funcionarios.size());
 
         gerenciarFuncionarioUseCase.insert(funcionario3);
         gerenciarFuncionarioUseCase.deleteByKey(funcionarios.get(2).getCpf());
         funcionarios = gerenciarFuncionarioUseCase.getAll();
-        System.out.println("Lista de funcionarios após deletar o segundo funcionario pela chave: " + funcionarios.size());
+        //System.out.println("Lista de funcionarios após deletar o terceiro funcionario pela chave: " + funcionarios.size());
 
         funcionario2.setCargo("vendedor");
         gerenciarFuncionarioUseCase.edit(funcionario2);
         funcionarios = gerenciarFuncionarioUseCase.getAll();
-        System.out.println("Alteração do cargo do segundo funcionario: " + funcionarios.get(1).getCargo());
+        //System.out.println("Alteração do cargo do terceiro funcionario: " + funcionarios.get(1).getCargo());
 
         System.out.println("=====================================================================");
 
@@ -143,21 +147,21 @@ public class Main {
         gerenciarOnibusUseCase.insert(onibus4);
 
         List<Onibus> onibus = gerenciarOnibusUseCase.getAll();
-        System.out.println("Lista de onibus: " + onibus.size());
+        //System.out.println("Lista de onibus: " + onibus.size());
 
         gerenciarOnibusUseCase.delete(onibus.get(2));
         onibus = gerenciarOnibusUseCase.getAll();
-        System.out.println("Lista de onibus após deletar o segundo onibus: " + onibus.size());
+        //System.out.println("Lista de onibus após deletar o terceiro onibus: " + onibus.size());
 
         gerenciarOnibusUseCase.insert(onibus3);
         gerenciarOnibusUseCase.deleteByKey(onibus.get(2).getRenavam());
         onibus = gerenciarOnibusUseCase.getAll();
-        System.out.println("Lista de onibus após deletar o segundo onibus pela chave: " + onibus.size());
+        //System.out.println("Lista de onibus após deletar o terceiro onibus pela chave: " + onibus.size());
 
         onibus2.setPlaca("BHU3072");
         gerenciarOnibusUseCase.update(onibus2);
         onibus = gerenciarOnibusUseCase.getAll();
-        System.out.println("Alteração da placa do segundo onibus: " + onibus.get(1).getPlaca());
+        //System.out.println("Alteração da placa do terceiro onibus: " + onibus.get(1).getPlaca());
 
         System.out.println("=====================================================================");
 
@@ -167,62 +171,64 @@ public class Main {
         Linha linha3 = new Linha(55L, "linha3");
         Linha linha4 = new Linha(12L, "linha4");
 
-
-
-
-
         gerenciarLinhaUseCase.insert(linha1);
         gerenciarLinhaUseCase.insert(linha2);
         gerenciarLinhaUseCase.insert(linha3);
         gerenciarLinhaUseCase.insert(linha4);
 
-
-
         TrechoLinha trechoLinha1 = new TrechoLinha(LocalTime.of(9,30,0,0),1,linha1,assentosTrechoLinha1,trecho1);
         TrechoLinha trechoLinha2 = new TrechoLinha(LocalTime.of(11,30,0,0),2,linha1,assentosTrechoLinha2,trecho2);
         TrechoLinha trechoLinha3 = new TrechoLinha(LocalTime.of(13,30,0,0),3,linha1,assentosTrechoLinha3,trecho3);
-        TrechoLinha trechoLinha4 = new TrechoLinha(LocalTime.of(15,30,0,0),4,linha1,assentosTrechoLinha4,trecho4);
+        //TrechoLinha trechoLinha4 = new TrechoLinha(LocalTime.of(15,30,0,0),4,linha1,assentosTrechoLinha4,trecho4);
 
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha1);
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha2);
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha3);
-        gerenciarLinhaUseCase.addTrechoLinha(trechoLinha4);
+        //gerenciarLinhaUseCase.addTrechoLinha(trechoLinha4);
 
 
         List<Linha> linhas = gerenciarLinhaUseCase.getAll();
-        System.out.println("Lista de linhas: " + linhas.size());
+        //System.out.println("Lista de linhas: " + linhas.size());
 
         gerenciarLinhaUseCase.delete(linhas.get(2));
         linhas = gerenciarLinhaUseCase.getAll();
-        System.out.println("Lista de linhas após deletar a segundo linha: " + linhas.size());
+        //System.out.println("Lista de linhas após deletar a terceira linha: " + linhas.size());
 
         gerenciarLinhaUseCase.insert(linha3);
         gerenciarLinhaUseCase.deleteByKey(linhas.get(2).getId());
         linhas = gerenciarLinhaUseCase.getAll();
-        System.out.println("Lista de linhas após deletar a segunda linha pela chave: " + linhas.size());
+        //System.out.println("Lista de linhas após deletar a terceira linha pela chave: " + linhas.size());
 
         linha2.setNome("novoNomeLinha");
         gerenciarLinhaUseCase.update(linha2);
         linhas = gerenciarLinhaUseCase.getAll();
-        System.out.println("Alteração do nome da segunda linha: " + linhas.get(1).getNome());
+        //System.out.println("Alteração do nome da segunda linha: " + linhas.get(1).getNome());
 
         System.out.println("=====================================================================");
 
         Viagem viagem1 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 10), "São Paulo", "São Carlos", LocalTime.of(4,30,0,0));
         Viagem viagem2 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 16), "São Carlos", "Ibaté", LocalTime.of(3,0,0,0));
         Viagem viagem3 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 22), "Ibaté", "Araraquara", LocalTime.of(5,15,0,0));
-        Viagem viagem4 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 29), "Narnia", "Hogwarts", LocalTime.of(7,0,0,0));
+        //Viagem viagem4 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 29), "Narnia", "Hogwarts", LocalTime.of(7,0,0,0));
 
-        Passagem passagem1 = venderPassagemUseCase.venderPassagem("São Paulo", "São Carlos", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "13", "Juca da Silva", "464.567.370-01", "35.938.378-6", "(74) 21059-6913", true, TipoEspecial.DEFICIENTE);
-        Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
-        Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
-        Passagem passagem4 = venderPassagemUseCase.venderPassagem("Narnia", "Hogwarts", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "36", "João Paulo", "576.045.280-07",  "19.488.513-6", "(31) 83174-9960", true, TipoEspecial.NAO);
+        Passagem passagem1 = venderPassagemUseCase.venderPassagem("São Paulo", "São Carlos", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "13", "Juca da Silva", "464.567.370-01", "35.938.378-6", "(74) 21059-6913", true, TipoEspecial.DEFICIENTE);
+        Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
+        Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
+        //Passagem passagem4 = venderPassagemUseCase.venderPassagem("Narnia", "Hogwarts", LocalDate.of(2020, 1, 12), LocalTime.of(3,30,0,0), "36", "João Paulo", "576.045.280-07",  "19.488.513-6", "(31) 83174-9960", true, TipoEspecial.NAO);
 
+        //System.out.println(passagem2.getViagem().getData());
+        reagendarPassagensUseCase.reagendar(passagem2.getNumPassagem(), LocalDate.of(2021, 1, 17));
+        reemitirPassagemUseCase.reemitirPassagem(passagem3.getCpf());
+        devolverPassagemUseCase.devolverPassagem(consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem()));
+
+        //Passagem passagem = reagendarPassagensUseCase.getByCPF(passagem2.getCpf()).get();
+        //System.out.println(passagem.getViagem().getData());
         System.out.println("=====================================================================");
 
+        
 
 
-        //System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()));
+       // System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()).get().toString());
     }
 
     private static void inMemoryInjection(){
@@ -248,8 +254,6 @@ public class Main {
         emitirRelatoriosUseCase = new EmitirRelatoriosUseCase(viagemDAO, trechoLinhaDAO);
         emitirRelatorioDiarioUseCase = new EmitirRelatorioDiarioUseCase(viagemDAO, trechoLinhaDAO);
         gerenciarTrechosUseCase = new GerenciarTrechosUseCase(trechoDAO, trechoLinhaDAO);
-
-
 
     }
 }

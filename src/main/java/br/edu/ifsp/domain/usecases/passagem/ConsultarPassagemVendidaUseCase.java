@@ -12,11 +12,11 @@ public class ConsultarPassagemVendidaUseCase {
         this.passagemDAO = passagemDAO;
     }
 
-    public Optional<Passagem> consultarPassagem(Long numPassagem, String cpf){
+    public Optional<Passagem> consultarPassagem(Long numPassagem){
         Optional<Passagem> passagem = passagemDAO.findOne(numPassagem);
-        if(passagem.isEmpty())
-            passagem = passagemDAO.findByCpf(cpf);
-        return passagem;
+        if(!passagem.isEmpty())
+            return passagemDAO.findByCpf(passagem.get().getCpf());
+        return Optional.empty();
     }
     public Optional<Passagem> consultarPassagemByCpf(String cpf){
         return passagemDAO.findByCpf(cpf);

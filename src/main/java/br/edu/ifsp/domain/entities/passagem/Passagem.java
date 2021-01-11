@@ -13,17 +13,18 @@ public class Passagem {
     private String telefone;
     private boolean seguro;
     private TipoEspecial tipoEspecial;
+    private String assento;
 
     private Viagem viagem;
 
     public Passagem() {
     }
 
-    public Passagem(double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem,TipoEspecial tipoEspecial) {
-        this(null, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial);
+    public Passagem(double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem,TipoEspecial tipoEspecial, String assento) {
+        this(null, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial, assento);
     }
 
-    public Passagem(Long numPassagem, double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem, TipoEspecial tipoEspecial) {
+    public Passagem(Long numPassagem, double precoTotal, String nome, String cpf, String rg, String telefone, boolean seguro, Viagem viagem, TipoEspecial tipoEspecial, String assento) {
         this.numPassagem = numPassagem;
         this.precoTotal = precoTotal;
         this.nome = nome;
@@ -33,6 +34,16 @@ public class Passagem {
         this.seguro = seguro;
         this.viagem = viagem;
         this.tipoEspecial = tipoEspecial;
+        this.assento = assento;
+    }
+
+
+    public String getAssento() {
+        return assento;
+    }
+
+    public void setAssento(String assento) {
+        this.assento = assento;
     }
 
     public long getNumPassagem() {
@@ -95,6 +106,10 @@ public class Passagem {
         return tipoEspecial;
     }
 
+    public void setViagem(Viagem viagem) {
+        this.viagem = viagem;
+    }
+
     @Override
     public String toString() {
         return "Passagem{" +
@@ -105,6 +120,8 @@ public class Passagem {
                 ", rg='" + rg + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", seguro=" + seguro +
+                ", tipoEspecial=" + tipoEspecial +
+                ", assento='" + assento + '\'' +
                 ", viagem=" + viagem +
                 '}';
     }

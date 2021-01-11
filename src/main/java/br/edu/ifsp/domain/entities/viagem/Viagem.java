@@ -34,8 +34,8 @@ public class Viagem {
         this.cidadeDestino = cidadeDestino;
         this.trechoLinhas = trechosViagem;
         this.linha = linha;
-        this.data = LocalDate.now();
-        this.horarioSaida = LocalTime.now();
+        this.data = data;
+        this.horarioSaida = horarioSaida;
     }
 
     public UUID getId() {
@@ -72,6 +72,10 @@ public class Viagem {
 
     public Linha getLinha() {
         return linha;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     public Map<String, Boolean> getAssentosDisponiveis(){

@@ -3,6 +3,7 @@ package br.edu.ifsp.domain.usecases.passagem;
 import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 import br.edu.ifsp.utils.exceptions.NotAvaliableSeatException;
+import br.edu.ifsp.utils.exceptions.PassageIsExpirateException;
 import br.edu.ifsp.utils.exceptions.PassageNotFoundException;
 
 import java.util.Optional;
@@ -20,12 +21,12 @@ public class DevolverPassagemUseCase {
     }
     public void devolverPassagem(Optional<Passagem> passagem) {
 
-        if(consultarPassagemVendidaUseCase.consultarPassagem(passagem.get().getNumPassagem(),passagem.get().getNome()).isEmpty())
+        if(consultarPassagemVendidaUseCase.consultarPassagem(passagem.get().getNumPassagem()).isEmpty())
             throw new PassageNotFoundException("A passagem não foi encontrada");
 
-        if(!passagem.get().verificarValidade())
-            throw new NotAvaliableSeatException("Não há assentos disponiveis");
+        if(passagem.get().verificarValidade())
+            throw new PassageIsExpirateException("Passagem Expirada!");
 
-        passagemDAO.deleteByKey(passagem.get().getNumPassagem());
+        passagemDAO.delete(passagem.get());
     }
 }

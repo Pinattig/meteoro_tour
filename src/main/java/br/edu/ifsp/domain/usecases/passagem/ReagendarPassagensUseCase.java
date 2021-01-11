@@ -25,15 +25,24 @@ public class ReagendarPassagensUseCase {
 
     }
 
-    public Passagem reagendar(Long numPassagem, String cpf, LocalDate data, LocalTime horarioSaida, String assento){
-        Optional<Passagem> passagem = consultarPassagemVendidaUseCase.consultarPassagem(numPassagem,cpf);
+    public Passagem reagendar(Long numPassagem, LocalDate newDate){
+        Optional<Passagem> passagem = consultarPassagemVendidaUseCase.consultarPassagem(numPassagem);
+        return reagendarPassagem(passagem, newDate);
+    }
+
+    public Passagem reagendar(String cpf, LocalDate newDate){
+        Optional<Passagem> passagem = consultarPassagemVendidaUseCase.consultarPassagemByCpf(cpf);
+        return reagendarPassagem(passagem, newDate);
+    }
+
+    private Passagem reagendarPassagem(Optional<Passagem> passagem, LocalDate newDate) {
         if(passagem.isEmpty())
             throw new PassageNotFoundException("A passagem não foi encontrada");
-        if(!passagem.get().verificarValidade())
+        if(passagem.get().verificarValidade())
             throw new PassageIsExpirateException("A passagem está expirada");
 
         Viagem viagem = passagem.get().getViagem();
-        Passagem novaPassagem = venderPassagemUseCase.venderPassagem(viagem.getCidadeOrigem(),viagem.getCidadeDestino(),data,horarioSaida,assento,passagem.get().getNome(),passagem.get().getCpf(),passagem.get().getRg(),passagem.get().getTelefone(),passagem.get().isSeguro(),passagem.get().getTipoEspecial());
+        Passagem novaPassagem = venderPassagemUseCase.venderPassagem(viagem.getCidadeOrigem(),viagem.getCidadeDestino(),newDate,viagem.getHorarioSaida(),passagem.get().getAssento(),passagem.get().getNome(),passagem.get().getCpf(),passagem.get().getRg(),passagem.get().getTelefone(),passagem.get().isSeguro(),passagem.get().getTipoEspecial());
 
         if(!viagem.verificarAssentosDisponiveis())
             throw new NotAvaliableSeatException("Não há assentos disponiveis");
@@ -44,5 +53,7 @@ public class ReagendarPassagensUseCase {
         return novaPassagem;
     }
 
-
+    public Optional<Passagem> getByCPF(String cpf){
+        return passagemDAO.findByCpf(cpf);
+    }
 }

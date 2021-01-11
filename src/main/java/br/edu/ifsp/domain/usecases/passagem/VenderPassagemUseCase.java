@@ -56,7 +56,7 @@ public class VenderPassagemUseCase {
         double precoTotal = amount.get("passagem") + (seguro ? amount.get("seguro") : 0);
 
         Long numeroPassagem = randomNumber();
-        Passagem passagem = new Passagem(numeroPassagem, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial);
+        Passagem passagem = new Passagem(numeroPassagem, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial, assento);
 
         if(!passagemDAO.create(passagem))
             throw new PassageIsNotCreatedException("A passagem não foi criada");
