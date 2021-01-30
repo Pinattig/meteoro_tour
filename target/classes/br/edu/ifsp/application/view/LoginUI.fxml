@@ -12,7 +12,7 @@
       <Button fx:id="btnEntrarAdmin" layoutX="428.0" layoutY="192.0" mnemonicParsing="false" onAction="#entrarAdmin" text="Entrar" />
       <Separator layoutX="295.0" orientation="VERTICAL" prefHeight="253.0" prefWidth="19.0" />
       <Label fx:id="lbTituloVendedor" layoutX="88.0" layoutY="33.0" text="Entrar como Vendedor" />
-      <Label fx:id="lbTituloAdmin" layoutX="374.0" layoutY="33.0" text="Entrar como Administrador" />
+      <Label fx:id="lbTituloAdmin" layoutX="375.0" layoutY="33.0" text="Entrar como Administrador" />
       <Button fx:id="btnEntrarVendedor" layoutX="125.0" layoutY="101.0" mnemonicParsing="false" onAction="#entrarVendedor" text="Entrar" />
    </children>
 </AnchorPane>

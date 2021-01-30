@@ -1,6 +1,7 @@
 package br.edu.ifsp.application.main;
 
 import br.edu.ifsp.application.repository.*;
+import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
@@ -40,11 +41,11 @@ public class Main {
     private static GerenciarLinhaUseCase gerenciarLinhaUseCase;
     public static FazerLoginUseCase fazerLoginUseCase;
     private static GerenciarOnibusUseCase gerenciarOnibusUseCase;
-    private static ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase;
-    private static DevolverPassagemUseCase devolverPassagemUseCase;
-    private static ReagendarPassagensUseCase reagendarPassagensUseCase;
-    private static ReemitirPassagemUseCase reemitirPassagemUseCase;
-    private static VenderPassagemUseCase venderPassagemUseCase;
+    public static ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase;
+    public static DevolverPassagemUseCase devolverPassagemUseCase;
+    public static ReagendarPassagensUseCase reagendarPassagensUseCase;
+    public static ReemitirPassagemUseCase reemitirPassagemUseCase;
+    public static VenderPassagemUseCase venderPassagemUseCase;
     private static EmitirRelatoriosUseCase emitirRelatoriosUseCase;
     private static EmitirRelatorioDiarioUseCase emitirRelatorioDiarioUseCase;
     private static GerenciarTrechosUseCase gerenciarTrechosUseCase;
@@ -55,6 +56,13 @@ public class Main {
 
         inMemoryInjection();
 
+        popularComDadosFalsos();
+
+        WindowLoader.main(args);
+        // System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()).get().toString());
+    }
+
+    private static void popularComDadosFalsos() throws IOException {
         //Login
 
         fazerLoginUseCase.loginAsSeller();
@@ -93,7 +101,7 @@ public class Main {
         trechos = gerenciarTrechosUseCase.getAll();
         //System.out.println("Alteração de quilometragem do segundo trecho: " + trechos.get(1).getQuilometragem());
 
-        System.out.println("=====================================================================");
+        //System.out.println("=====================================================================");
 
         AssentosTrechoLinha assentosTrechoLinha1 = new AssentosTrechoLinha(LocalDate.of(2020, 1, 12));
         AssentosTrechoLinha assentosTrechoLinha2 = new AssentosTrechoLinha(LocalDate.of(2020, 1, 19));
@@ -101,7 +109,7 @@ public class Main {
         AssentosTrechoLinha assentosTrechoLinha4 = new AssentosTrechoLinha(LocalDate.of(2020, 1, 30));
 
         //List<TrechoLinha> trechoLinhaList = gerenciarTrechosUseCase.getAll();
-        System.out.println("=====================================================================");
+        //System.out.println("=====================================================================");
 
         Funcionario funcionario1 = new Funcionario("884.295.278-85", "João da Silva", "20.453.187-1", "motorista");
         Funcionario funcionario2 = new Funcionario("021.331.658-78", "Guilherme Oliveira", "24.814.848-5", "motorista");
@@ -130,7 +138,7 @@ public class Main {
         funcionarios = gerenciarFuncionarioUseCase.getAll();
         //System.out.println("Alteração do cargo do terceiro funcionario: " + funcionarios.get(1).getCargo());
 
-        System.out.println("=====================================================================");
+        //System.out.println("=====================================================================");
 
         Onibus onibus1 = new Onibus("37279891716", "FMH8701");
         Onibus onibus2 = new Onibus("31532184998", "DUQ7313");
@@ -159,7 +167,7 @@ public class Main {
         onibus = gerenciarOnibusUseCase.getAll();
         //System.out.println("Alteração da placa do terceiro onibus: " + onibus.get(1).getPlaca());
 
-        System.out.println("=====================================================================");
+        //System.out.println("=====================================================================");
 
 
         Linha linha1 = new Linha(22L, "linha1");
@@ -197,7 +205,7 @@ public class Main {
         linhas = gerenciarLinhaUseCase.getAll();
         //System.out.println("Alteração do nome da segunda linha: " + linhas.get(1).getNome());
 
-        System.out.println("=====================================================================");
+        //System.out.println("=====================================================================");
 
         Viagem viagem1 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 10), "São Paulo", "São Carlos", LocalTime.of(4,30,0,0));
         Viagem viagem2 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 16), "São Carlos", "Ibaté", LocalTime.of(3,0,0,0));
@@ -206,25 +214,25 @@ public class Main {
 
         Passagem passagem1 = venderPassagemUseCase.venderPassagem("São Paulo", "São Carlos", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "13", "Juca da Silva", "464.567.370-01", "35.938.378-6", "(74) 21059-6913", true, TipoEspecial.DEFICIENTE);
         Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
-        Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
+        Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2021, 2, 15), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
 
-        passagem2 = reagendarPassagensUseCase.reagendar(passagem2.getNumPassagem(), LocalDate.of(2021, 1, 17));
+        System.out.println("passagem3 = " + passagem3);
+        
+        //passagem2 = reagendarPassagensUseCase.reagendar(passagem2.getNumPassagem(), LocalDate.of(2021, 1, 17));
         //System.out.println("Reagendamento da passagem 2 alterando a data: " + passagem2.getViagem().getData());
 
-        passagem3 = reemitirPassagemUseCase.reemitirPassagem(passagem3.getCpf()).get();
+        //passagem3 = reemitirPassagemUseCase.reemitirPassagem(passagem3.getCpf()).get();
         //System.out.println("Reemitindo a passagem 3: " + passagem3);
 
         //System.out.println("Devolvendo a passagem 1");
-        devolverPassagemUseCase.devolverPassagem(consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem()));
+        //devolverPassagemUseCase.devolverPassagem(consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem()));
         //consultarPassagemVendidaUseCase.consultarPassagem(passagem1.getNumPassagem());
 
 
-        System.out.println("=====================================================================");
+        //System.out.println("=====================================================================");
 
         Relatorio relatorio = emitirRelatoriosUseCase.gerarRelatorio(LocalDate.of(2021, 1, 1), LocalDate.of(2021, 1, 31));
         relatorio.salvarEmArquivo();
-
-       // System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()).get().toString());
     }
 
     private static void inMemoryInjection(){
