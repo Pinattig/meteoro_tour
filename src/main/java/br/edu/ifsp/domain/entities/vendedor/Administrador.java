@@ -1,10 +1,10 @@
 package br.edu.ifsp.domain.entities.vendedor;
 
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
-import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.entities.relatorio.Relatorio;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
+import br.edu.ifsp.domain.entities.linha.Linha;
 
 import java.util.List;
 

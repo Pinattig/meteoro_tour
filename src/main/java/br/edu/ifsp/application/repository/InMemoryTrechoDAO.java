@@ -1,10 +1,8 @@
 package br.edu.ifsp.application.repository;
 
-import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.usecases.trecho.TrechoDAO;
 
-import java.time.LocalDate;
 import java.util.*;
 
 public class InMemoryTrechoDAO implements TrechoDAO {

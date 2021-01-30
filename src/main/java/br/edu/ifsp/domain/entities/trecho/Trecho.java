@@ -1,8 +1,6 @@
 package br.edu.ifsp.domain.entities.trecho;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 import java.util.UUID;
 
 public class Trecho {

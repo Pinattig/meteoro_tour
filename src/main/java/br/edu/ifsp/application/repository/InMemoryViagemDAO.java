@@ -1,6 +1,5 @@
 package br.edu.ifsp.application.repository;
 
-import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
 import br.edu.ifsp.domain.usecases.viagem.ViagemDAO;
 

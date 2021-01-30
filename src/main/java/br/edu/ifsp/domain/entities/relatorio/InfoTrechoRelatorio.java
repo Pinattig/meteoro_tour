@@ -1,7 +1,5 @@
 package br.edu.ifsp.domain.entities.relatorio;
 
-import br.edu.ifsp.domain.entities.relatorio.InfoLinhaRelatorio;
-
 import java.time.LocalTime;
 
 public class InfoTrechoRelatorio {

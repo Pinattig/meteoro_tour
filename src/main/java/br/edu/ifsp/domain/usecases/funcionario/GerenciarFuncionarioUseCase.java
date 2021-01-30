@@ -1,7 +1,6 @@
 package br.edu.ifsp.domain.usecases.funcionario;
 
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
-import br.edu.ifsp.utils.DAO;
 
 import java.util.List;
 

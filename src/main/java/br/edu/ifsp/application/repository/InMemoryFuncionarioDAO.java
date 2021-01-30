@@ -1,7 +1,6 @@
 package br.edu.ifsp.application.repository;
 
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
-import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.usecases.funcionario.FuncionarioDAO;
 
 import java.util.*;

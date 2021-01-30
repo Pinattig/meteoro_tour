@@ -1,7 +1,6 @@
 package br.edu.ifsp.domain.entities.viagem;
 
 import br.edu.ifsp.domain.entities.linha.Linha;
-import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 
 import java.time.LocalDate;

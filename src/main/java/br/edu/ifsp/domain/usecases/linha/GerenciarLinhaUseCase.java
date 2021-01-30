@@ -1,10 +1,8 @@
 package br.edu.ifsp.domain.usecases.linha;
 
 import br.edu.ifsp.domain.entities.linha.Linha;
-import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
-import br.edu.ifsp.utils.DAO;
 
 import java.util.List;
 

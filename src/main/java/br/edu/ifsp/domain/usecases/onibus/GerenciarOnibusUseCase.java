@@ -1,7 +1,6 @@
 package br.edu.ifsp.domain.usecases.onibus;
 
 import br.edu.ifsp.domain.entities.onibus.Onibus;
-import br.edu.ifsp.utils.DAO;
 
 import java.util.List;
 

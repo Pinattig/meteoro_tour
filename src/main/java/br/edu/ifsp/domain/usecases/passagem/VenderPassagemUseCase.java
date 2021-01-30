@@ -1,13 +1,13 @@
 package br.edu.ifsp.domain.usecases.passagem;
 
-import br.edu.ifsp.domain.entities.passagem.Passagem;
-import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
-import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 import br.edu.ifsp.utils.exceptions.NotAvaliableSeatException;
 import br.edu.ifsp.utils.exceptions.PassageIsNotCreatedException;
+import br.edu.ifsp.domain.entities.passagem.Passagem;
+import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
+import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

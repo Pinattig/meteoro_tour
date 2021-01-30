@@ -1,6 +1,5 @@
 package br.edu.ifsp.application.repository;
 
-import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.usecases.passagem.PassagemDAO;
 

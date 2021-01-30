@@ -4,19 +4,17 @@ import br.edu.ifsp.application.repository.*;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
-import br.edu.ifsp.domain.entities.passagem.Passagem;
-import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
 import br.edu.ifsp.domain.entities.relatorio.Relatorio;
 import br.edu.ifsp.domain.entities.trecho.AssentosTrechoLinha;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
-import br.edu.ifsp.domain.entities.vendedor.Administrador;
+import br.edu.ifsp.domain.entities.passagem.Passagem;
+import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
 import br.edu.ifsp.domain.usecases.funcionario.FuncionarioDAO;
 import br.edu.ifsp.domain.usecases.funcionario.GerenciarFuncionarioUseCase;
 import br.edu.ifsp.domain.usecases.linha.GerenciarLinhaUseCase;
 import br.edu.ifsp.domain.usecases.linha.LinhaDAO;
-import br.edu.ifsp.domain.usecases.login.AutenticarSenhaUseCase;
 import br.edu.ifsp.domain.usecases.login.FazerLoginUseCase;
 import br.edu.ifsp.domain.usecases.login.LoginDAO;
 import br.edu.ifsp.domain.usecases.onibus.GerenciarOnibusUseCase;
@@ -29,17 +27,12 @@ import br.edu.ifsp.domain.usecases.trecho.TrechoDAO;
 import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
 import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 import br.edu.ifsp.domain.usecases.viagem.ViagemDAO;
-import br.edu.ifsp.utils.exceptions.PassageNotFoundException;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -64,7 +57,7 @@ public class Main {
 
         //Login
 
-        //fazerLoginUseCase.loginAsSeller();
+        fazerLoginUseCase.loginAsSeller();
         //fazerLoginUseCase.createLogin("Gustavo", "Pinatti");
         //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "Gustavo"));
         //System.out.println(fazerLoginUseCase.loginAsAdmin("pinatti", "Gustavo"));  //SENHA ERRADA
@@ -186,7 +179,6 @@ public class Main {
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha1);
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha2);
         gerenciarLinhaUseCase.addTrechoLinha(trechoLinha3);
-
 
         List<Linha> linhas = gerenciarLinhaUseCase.getAll();
         //System.out.println("Lista de linhas: " + linhas.size());

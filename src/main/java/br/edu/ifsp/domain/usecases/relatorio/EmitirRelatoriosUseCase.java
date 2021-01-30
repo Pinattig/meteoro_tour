@@ -1,18 +1,16 @@
 package br.edu.ifsp.domain.usecases.relatorio;
 
-import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.relatorio.InfoLinhaRelatorio;
-import br.edu.ifsp.domain.entities.relatorio.InfoTrechoRelatorio;
 import br.edu.ifsp.domain.entities.relatorio.Relatorio;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
 import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
+import br.edu.ifsp.domain.entities.relatorio.InfoTrechoRelatorio;
 import br.edu.ifsp.domain.usecases.viagem.ViagemDAO;
 
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class EmitirRelatoriosUseCase {
     private ViagemDAO viagemDAO;

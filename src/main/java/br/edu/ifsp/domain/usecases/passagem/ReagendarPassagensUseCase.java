@@ -1,14 +1,12 @@
 package br.edu.ifsp.domain.usecases.passagem;
 
-import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
-import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 import br.edu.ifsp.utils.exceptions.NotAvaliableSeatException;
 import br.edu.ifsp.utils.exceptions.PassageIsExpirateException;
 import br.edu.ifsp.utils.exceptions.PassageNotFoundException;
+import br.edu.ifsp.domain.entities.passagem.Passagem;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Optional;
 
 public class ReagendarPassagensUseCase {
