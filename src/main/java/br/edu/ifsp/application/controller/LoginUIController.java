@@ -1,22 +1,17 @@
 package br.edu.ifsp.application.controller;
 
 
+import br.edu.ifsp.utils.UserPermissionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 import static br.edu.ifsp.application.main.Main.fazerLoginUseCase;
 
-public class LoginUIController {
+public class LoginUIController extends UserPermissionManager {
 
     @FXML private TextField txtLogin;
     @FXML private TextField txtSenha;
-    @FXML private Button btnEntrarVendedor;
-    @FXML private Button btnEntrarAdmin;
-
-    private static String userPermission;
-
 
     public void entrarAdmin(ActionEvent actionEvent) {
         String senha = txtSenha.getText();
@@ -24,14 +19,12 @@ public class LoginUIController {
 
         boolean isLogado =  fazerLoginUseCase.loginAsAdmin(senha, login);
         if(isLogado)
-            userPermission = "Administrador";
+            super.setUserPermission("Administrador");
     }
 
     public void entrarVendedor(ActionEvent actionEvent) {
-        userPermission = "Vendedor";
+        super.setUserPermission("Vendedor");
     }
 
-    public static String getUserPermission() {
-        return userPermission;
-    }
+
 }
