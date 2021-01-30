@@ -38,7 +38,7 @@ public class Main {
 
     private static GerenciarFuncionarioUseCase gerenciarFuncionarioUseCase;
     private static GerenciarLinhaUseCase gerenciarLinhaUseCase;
-    private static FazerLoginUseCase fazerLoginUseCase;
+    public static FazerLoginUseCase fazerLoginUseCase;
     private static GerenciarOnibusUseCase gerenciarOnibusUseCase;
     private static ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase;
     private static DevolverPassagemUseCase devolverPassagemUseCase;
