@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="456.0" prefWidth="644.0" style="-fx-background-color: #fffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.PassageUIController">
    <children>
-      <Pane fx:id="areaCamposPassagem" layoutX="23.0" layoutY="73.0" prefHeight="263.0" prefWidth="607.0" style="-fx-background-color: #FFFFFF;" visible="false">
+      <Pane fx:id="areaCamposPassagem" layoutX="23.0" layoutY="73.0" prefHeight="263.0" prefWidth="607.0" style="-fx-background-color: #FFFFFF;">
          <children>
              <CheckBox fx:id="cbSeguro" layoutX="8.0" layoutY="232.0" mnemonicParsing="false" text="Seguro" />
              <Label layoutX="8.0" layoutY="22.0" text="Número da passagem:" />
@@ -28,7 +28,7 @@
             <Label layoutX="319.0" layoutY="190.0" text="Data da viagem:" />
             <Label fx:id="lbNumeroViagem" layoutX="432.0" layoutY="148.0" prefHeight="17.0" prefWidth="158.0" text="abc" />
             <Label fx:id="lbDataViagem" layoutX="432.0" layoutY="190.0" prefHeight="17.0" prefWidth="158.0" text="abc" />
-            <TextField fx:id="txtDataViagem" layoutX="370.0" layoutY="189.0" prefHeight="25.0" prefWidth="103.0" visible="false" />
+            <TextField fx:id="txtDataViagem" layoutX="428.0" layoutY="189.0" prefHeight="25.0" prefWidth="158.0" visible="false" />
          </children></Pane>
       <Button fx:id="btnVenderPassagem" layoutX="500.0" layoutY="32.0" mnemonicParsing="false" onAction="#venderPassagem" prefHeight="25.0" prefWidth="131.0" text="Vender Passagem" />
       <Button fx:id="btnReemitirPassagem" layoutX="368.0" layoutY="355.0" mnemonicParsing="false" onAction="#reemitirPassagem" prefHeight="25.0" prefWidth="131.0" text="Reemitir Passagem" visible="false" />

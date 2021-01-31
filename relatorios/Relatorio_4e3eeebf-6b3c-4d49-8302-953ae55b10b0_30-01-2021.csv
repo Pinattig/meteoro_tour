@@ -1,0 +1,4 @@
+Nome da linha;Data da viagem; Horario do trecho; Nome do trecho; Fluxo de uso; Valor total
+linha1;2021-01-12;09:30;SP-SC;2;220.0
+linha1;2021-01-12;11:30;SC-IB;2;1090.0
+linha1;2021-01-12;13:30;IB-AR;2;330.0

@@ -4,6 +4,7 @@ import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.utils.exceptions.TrechoEmUsoException;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public class GerenciarTrechosUseCase {
@@ -40,6 +41,10 @@ public class GerenciarTrechosUseCase {
             throw new TrechoEmUsoException("O trecho já está em uso e não pode ser deletado");
 
         return trechoDAO.deleteByKey(key);
+    }
+
+    public Trecho findOneByKey(UUID key){
+        return trechoDAO.findOneByKey(key);
     }
 
 

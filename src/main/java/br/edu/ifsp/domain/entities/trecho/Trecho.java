@@ -101,7 +101,9 @@ public class Trecho {
     @Override
     public String toString() {
         return "Trecho{" +
-                "cidadeOrigem='" + cidadeOrigem + '\'' +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cidadeOrigem='" + cidadeOrigem + '\'' +
                 ", cidadeDestino='" + cidadeDestino + '\'' +
                 ", quilometragem=" + quilometragem +
                 ", tempoDuracao=" + tempoDuracao +

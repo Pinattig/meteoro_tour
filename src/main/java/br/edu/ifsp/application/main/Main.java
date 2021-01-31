@@ -48,7 +48,7 @@ public class Main {
     public static VenderPassagemUseCase venderPassagemUseCase;
     private static EmitirRelatoriosUseCase emitirRelatoriosUseCase;
     private static EmitirRelatorioDiarioUseCase emitirRelatorioDiarioUseCase;
-    private static GerenciarTrechosUseCase gerenciarTrechosUseCase;
+    public static GerenciarTrechosUseCase gerenciarTrechosUseCase;
     private static GerarViagemUseCase gerarViagemUseCase;
 
 
@@ -76,7 +76,7 @@ public class Main {
         Trecho trecho2 = new Trecho("São Carlos", "Ibaté", 10, LocalTime.of(0,20,0,0), 500.00, 15.00, 30.00, "SC-IB");
         Trecho trecho3 = new Trecho("Ibaté", "Araraquara", 50, LocalTime.of(0,45,0,0), 100.00, 15.00, 50.00, "IB-AR");
         Trecho trecho4 = new Trecho("Narnia", "Hogwarts", 50000, LocalTime.of(0,45,0,0), 100.00, 15.00, 50.00, "IB-AR");
-
+        System.out.println("trecho4 = " + trecho4);
         gerenciarTrechosUseCase.insert(trecho1);
         gerenciarTrechosUseCase.insert(trecho2);
         gerenciarTrechosUseCase.insert(trecho3);

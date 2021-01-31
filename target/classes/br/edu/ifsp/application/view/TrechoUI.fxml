@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.TrechoUIController">
+   <children>
+      <TextField fx:id="txtConsulta" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="235.0" text="Digite o id do trecho para pesquisar" />
+      <Button fx:id="btnConsulta" layoutX="263.0" layoutY="31.0" mnemonicParsing="false" onAction="#consultar" text="Consultar trecho" />
+      <Button fx:id="btnCadastrar" layoutX="385.0" layoutY="31.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar trecho" />
+      <Pane fx:id="areaCampoTrecho" layoutX="14.0" layoutY="89.0" prefHeight="191.0" prefWidth="497.0" visible="false">
+         <children>
+            <Label layoutX="17.0" layoutY="14.0" prefHeight="17.0" prefWidth="40.0" text="Nome:" />
+            <Label layoutX="22.0" layoutY="51.0" text="Cidade origem: " />
+            <Label layoutX="249.0" layoutY="51.0" text="Valor do trecho:" />
+            <Label layoutX="22.0" layoutY="90.0" text="Cidade de destino:" />
+            <Label layoutX="249.0" layoutY="90.0" text="Taxa de embarque: " />
+            <Label layoutX="249.0" layoutY="14.0" text="Tempo de duração:" />
+            <Label layoutX="22.0" layoutY="127.0" text="Quilometragem: " />
+            <Label layoutX="249.0" layoutY="127.0" text="Valor do seguro:" />
+            <Label fx:id="lbNome" layoutX="127.0" layoutY="14.0" prefHeight="17.0" prefWidth="120.0" />
+            <Label fx:id="lbCidadeOrigem" layoutX="127.0" layoutY="51.0" prefHeight="17.0" prefWidth="120.0" />
+            <Label fx:id="lbCidadeDestino" layoutX="127.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" />
+            <Label fx:id="lbQuilometragem" layoutX="127.0" layoutY="127.0" prefHeight="17.0" prefWidth="120.0" />
+            <Label fx:id="lbDuracao" layoutX="363.0" layoutY="14.0" prefHeight="17.0" prefWidth="120.0" />
+            <Label fx:id="lbValor" layoutX="363.0" layoutY="51.0" prefHeight="17.0" prefWidth="120.0" />
+            <Label fx:id="lbEmbarque" layoutX="363.0" layoutY="90.0" prefHeight="17.0" prefWidth="120.0" />
+            <Label fx:id="lbSeguro" layoutX="363.0" layoutY="127.0" prefHeight="17.0" prefWidth="120.0" />
+         </children>
+      </Pane>
+      <Button fx:id="btnEditar" layoutX="37.0" layoutY="280.0" mnemonicParsing="false" onAction="#editar" text="Editar trecho" visible="false" />
+      <Button fx:id="btnRemover" layoutX="171.0" layoutY="280.0" mnemonicParsing="false" onAction="#remover" text="Remover trecho" visible="false" />
+   </children>
+</AnchorPane>
