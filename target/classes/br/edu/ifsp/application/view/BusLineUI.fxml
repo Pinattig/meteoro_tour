@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="204.0" prefWidth="533.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.BusLineUIController">
+   <children>
+      <TextField fx:id="txtConsultarLinha" layoutX="34.0" layoutY="33.0" prefHeight="25.0" prefWidth="244.0" />
+      <Button fx:id="btnConsultarLinha" layoutX="300.0" layoutY="33.0" mnemonicParsing="false" onAction="#consultarLinha" prefHeight="25.0" prefWidth="102.0" text="Consultar linha" />
+      <Button fx:id="btnCadastrarLinha" layoutX="417.0" layoutY="33.0" mnemonicParsing="false" onAction="#cadastrarLinha" prefHeight="25.0" prefWidth="102.0" text="Cadastrar Linha" />
+      <Pane fx:id="areaCamposLinha" layoutX="34.0" layoutY="76.0" prefHeight="56.0" prefWidth="244.0">
+         <children>
+            <Label fx:id="lbNomeLinha" layoutX="47.0" layoutY="17.0" prefHeight="17.0" prefWidth="188.0" />
+            <Label layoutY="17.0" text="Nome:" />
+         </children></Pane>
+      <Button fx:id="btnEditarLinha" layoutX="61.0" layoutY="152.0" mnemonicParsing="false" onAction="#editarLinha" prefHeight="25.0" prefWidth="102.0" text="Editar linha" />
+      <Button fx:id="btnRemoverLinha" layoutX="176.0" layoutY="152.0" mnemonicParsing="false" onAction="#removerLinha" prefHeight="25.0" prefWidth="102.0" text="Remover linha" />
+   </children>
+</AnchorPane>

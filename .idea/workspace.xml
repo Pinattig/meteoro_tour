@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -23,9 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c55617b-2c69-4385-bae2-14a1f7d8c07c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AdminMainUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/AdminMainUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/view/WindowLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/view/WindowLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/BusUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/BusUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/TrechoUIController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/InMemoryTrechoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/repository/InMemoryTrechoDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/PassageUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/PassageUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/SellPassageUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/SellPassageUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/TrechoUI.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/WindowLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/WindowLoader.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +142,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -180,21 +184,21 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612055658204" />
-    <state width="1323" height="177" key="GridCell.Tab.0.bottom" timestamp="1612055295313">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1612110946028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612055295313" />
-    <state width="1323" height="177" key="GridCell.Tab.0.center" timestamp="1612055295312">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612110946028" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1612110946028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612055295312" />
-    <state width="1323" height="177" key="GridCell.Tab.0.left" timestamp="1612055295312">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612110946028" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1612110946028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612055295312" />
-    <state width="1323" height="177" key="GridCell.Tab.0.right" timestamp="1612055295312">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612110946028" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1612110946028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612055295312" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612110946028" />
   </component>
 </project>

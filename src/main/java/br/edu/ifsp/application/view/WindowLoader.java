@@ -18,7 +18,7 @@ public class WindowLoader extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("TrechoUI"), 606, 253);
+        scene = new Scene(loadFXML("PatchUI"), 606, 253);
         stage.setScene(scene);
         stage.show();
     }

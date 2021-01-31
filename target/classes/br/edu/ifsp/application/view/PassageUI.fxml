@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="456.0" prefWidth="644.0" style="-fx-background-color: #fffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.PassageUIController">
    <children>
-      <Pane fx:id="areaCamposPassagem" layoutX="23.0" layoutY="73.0" prefHeight="263.0" prefWidth="607.0" style="-fx-background-color: #FFFFFF;">
+      <Pane fx:id="areaCamposPassagem" layoutX="23.0" layoutY="73.0" prefHeight="263.0" prefWidth="607.0" style="-fx-background-color: #FFFFFF;" visible="false">
          <children>
              <CheckBox fx:id="cbSeguro" layoutX="8.0" layoutY="232.0" mnemonicParsing="false" text="Seguro" />
              <Label layoutX="8.0" layoutY="22.0" text="Número da passagem:" />
