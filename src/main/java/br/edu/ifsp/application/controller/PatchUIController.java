@@ -15,7 +15,7 @@ import java.util.UUID;
 
 import static br.edu.ifsp.application.main.Main.gerenciarTrechosUseCase;
 
-public class TrechoUIController {
+public class PatchUIController {
 
     @FXML TextField txtConsulta;
 
