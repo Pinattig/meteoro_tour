@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="280.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.RegisterPatchUIController">
+   <children>
+      <Label layoutX="32.0" layoutY="85.0" text="Cidade de origem:" />
+      <Label layoutX="32.0" layoutY="127.0" text="Cidade de destino:" />
+      <Label layoutX="32.0" layoutY="172.0" text="Quilometragem:" />
+      <Label layoutX="317.0" layoutY="45.0" text="Tempo de duração:" />
+      <Label layoutX="317.0" layoutY="85.0" text="Valor do trecho:" />
+      <Label layoutX="318.0" layoutY="127.0" text="Taxa de embrarque:" />
+      <Label layoutX="318.0" layoutY="172.0" text="Valor do seguro:" />
+      <Label layoutX="32.0" layoutY="45.0" text="Nome:" />
+      <TextField fx:id="txtNome" layoutX="138.0" layoutY="41.0" />
+      <TextField fx:id="txtCidadeOrigem" layoutX="138.0" layoutY="81.0" />
+      <TextField fx:id="txtCidadeDestino" layoutX="138.0" layoutY="123.0" />
+      <TextField fx:id="txtQuilometragem" layoutX="138.0" layoutY="168.0" />
+      <TextField fx:id="txtTempoDuracao" layoutX="436.0" layoutY="41.0" />
+      <TextField fx:id="txtValorTrecho" layoutX="436.0" layoutY="81.0" />
+      <TextField fx:id="txtTaxaEmbarque" layoutX="436.0" layoutY="123.0" />
+      <TextField fx:id="txtValorSeguro" layoutX="436.0" layoutY="168.0" />
+      <Button fx:id="btnCadastrar" layoutX="518.0" layoutY="223.0" mnemonicParsing="false" onAction="#cadastrarTrecho" text="Cadastrar" />
+   </children>
+</AnchorPane>

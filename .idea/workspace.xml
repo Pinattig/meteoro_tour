@@ -23,16 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c55617b-2c69-4385-bae2-14a1f7d8c07c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/BusLineUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/EmployeeUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterEmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/BusLineUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/EmployeeUI.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterEmployeeUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterBusController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterBusLineUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterPatchUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterBusLineUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterBusUI.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterPatchUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/SellPassageUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/SellPassageUI.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/TrechoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/TrechoUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/BusLineUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/BusLineUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/TrechoUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/PatchUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

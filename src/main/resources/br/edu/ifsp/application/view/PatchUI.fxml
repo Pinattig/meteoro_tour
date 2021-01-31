@@ -10,8 +10,8 @@
       <Button fx:id="btnCadastrar" layoutX="385.0" layoutY="31.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar trecho" />
       <Pane fx:id="areaCampoTrecho" layoutX="14.0" layoutY="89.0" prefHeight="191.0" prefWidth="497.0">
          <children>
-            <Label layoutX="17.0" layoutY="14.0" prefHeight="17.0" prefWidth="40.0" text="Nome:" />
-            <Label layoutX="22.0" layoutY="51.0" text="Cidade origem: " />
+            <Label layoutX="22.0" layoutY="14.0" prefHeight="17.0" prefWidth="40.0" text="Nome:" />
+            <Label layoutX="22.0" layoutY="51.0" text="Cidade de origem: " />
             <Label layoutX="249.0" layoutY="51.0" text="Valor do trecho:" />
             <Label layoutX="22.0" layoutY="90.0" text="Cidade de destino:" />
             <Label layoutX="249.0" layoutY="90.0" text="Taxa de embarque: " />
