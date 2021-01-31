@@ -26,7 +26,7 @@ public class LoginUIController extends UserPermissionManager {
             boolean isLogado =  fazerLoginUseCase.loginAsAdmin(senha, login);
             if(isLogado){
                 super.setUserPermission("Administrador");
-                WindowLoader.setRoot("BusUI");
+                WindowLoader.setRoot("EmployeeUI");
             }else{
                 lbMsgError.setVisible(true);
                 lbMsgError.setText("Usuário ou senha incorretos");

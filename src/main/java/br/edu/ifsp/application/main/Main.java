@@ -37,7 +37,7 @@ import java.util.UUID;
 
 public class Main {
 
-    private static GerenciarFuncionarioUseCase gerenciarFuncionarioUseCase;
+    public static GerenciarFuncionarioUseCase gerenciarFuncionarioUseCase;
     private static GerenciarLinhaUseCase gerenciarLinhaUseCase;
     public static FazerLoginUseCase fazerLoginUseCase;
     public static GerenciarOnibusUseCase gerenciarOnibusUseCase;

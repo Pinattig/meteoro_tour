@@ -44,6 +44,7 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
+    public void setCpf(String cpf){this.cpf = cpf; }
     @Override
     public String toString() {
         return "Funcionario{" +
