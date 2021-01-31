@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="297.0" prefWidth="634.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.BusUIController">
+    <children>
+      <Button fx:id="btnCadastrarOnibus" layoutX="478.0" layoutY="121.0" mnemonicParsing="false" onAction="#cadastrarOnibus" prefHeight="25.0" prefWidth="131.0" text="Cadastrar Onibus" />
+      <TableView fx:id="busTable" layoutX="23.0" layoutY="46.0" prefHeight="200.0" prefWidth="445.0">
+        <columns>
+          <TableColumn fx:id="clPlaca" prefWidth="213.0" text="Placa" />
+          <TableColumn fx:id="clRenavam" prefWidth="231.0" text="Renavan" />
+        </columns>
+      </TableView>
+      <Label layoutX="181.0" layoutY="14.0" text="Onibus cadastrados" />
+      <Button fx:id="btnExcluir" layoutX="382.0" layoutY="258.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="86.0" text="Excluir" />
+      <Label fx:id="msgFeedback" layoutX="23.0" layoutY="262.0" text="Label" visible="false" />
+    </children>
+</AnchorPane>

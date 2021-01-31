@@ -6,10 +6,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Optional;
 
 import static br.edu.ifsp.application.main.Main.*;
@@ -42,7 +42,7 @@ public class PassageUIController {
     @FXML
     Label lbAssento;
     @FXML
-    Label lbError;
+    Label lbMsgFeedback;
 
     @FXML
     Button btnConsultarPassagem;
@@ -72,8 +72,6 @@ public class PassageUIController {
     }
 
     public void venderPassagem(ActionEvent actionEvent) throws IOException {
-        //venderPassagemUseCase.venderPassagem(passagem);
-
         WindowLoader.setRoot("SellPassageUI");
     }
 
@@ -82,8 +80,7 @@ public class PassageUIController {
             String cpfCliente = lbCpfCliente.getText();
             reemitirPassagemUseCase.reemitirPassagem(cpfCliente);
         } catch (RuntimeException e) {
-            lbError.setText(e.getMessage());
-            lbError.setVisible(true);
+            exibirMensagemErro(e.getMessage());
         }
     }
 
@@ -93,9 +90,11 @@ public class PassageUIController {
             String dataViagem = txtDataViagem.getText();
             lbDataViagem.setText(dataViagem);
             alterarEstadosCampoData();
+            String text = "Mensagem reagendada com sucesso";
+            exibirMensagemSucesso(text);
+
         } catch (RuntimeException e) {
-            lbError.setText(e.getMessage());
-            lbError.setVisible(true);
+            exibirMensagemErro(e.getMessage());
         }
     }
 
@@ -108,23 +107,30 @@ public class PassageUIController {
     public void devolverPassagem(ActionEvent actionEvent) {
         try {
             devolverPassagemUseCase.devolverPassagem(passagemConsultada);
+
+            String text = "Mensagem devolvida com sucesso";
+            exibirMensagemSucesso(text);
         } catch (RuntimeException e) {
-            lbError.setText(e.getMessage());
-            lbError.setVisible(true);
+            exibirMensagemErro(e.getMessage());
         }
     }
 
     public void consultarPassagem(ActionEvent actionEvent) {
-        Long numPassagem = Long.parseLong(txtConsultarPassagem.getText());
-        passagemConsultada = consultarPassagemVendidaUseCase.consultarPassagem(numPassagem);
+        try{
+            Long numPassagem = Long.parseLong(txtConsultarPassagem.getText());
+            passagemConsultada = consultarPassagemVendidaUseCase.consultarPassagem(numPassagem);
+            restaurarEstados();
+            inserirTextoDosCampos();
+            areaCamposPassagem.setVisible(true);
+            habilitarBotoes(true);
+            
+        }catch (RuntimeException e){
+            exibirMensagemErro(e.getMessage());
+        }
 
-        setarTextoDosCampos();
-        areaCamposPassagem.setVisible(true);
-
-        habilitarBotoes(true);
     }
 
-    private void setarTextoDosCampos() {
+    private void inserirTextoDosCampos() {
         lbNumeroPassagem.setText(String.valueOf(passagemConsultada.get().getNumPassagem()));
         lbValorPassagem.setText(String.valueOf(passagemConsultada.get().getPrecoTotal()));
         lbNomeCliente.setText(passagemConsultada.get().getNome());
@@ -149,5 +155,28 @@ public class PassageUIController {
         lbDataViagem.setVisible(!lbDataViagem.isVisible());
         habilitarBotoes(btnReagendar.isVisible());
         btnReagendar.setVisible(!btnReagendar.isVisible());
+    }
+
+    private void restaurarEstados(){
+        areaCamposPassagem.setVisible(true);
+        habilitarBotoes(false);
+        lbMsgFeedback.setVisible(false);
+        btnReagendar.setVisible(false);
+    }
+
+    private void exibirMensagem(String text, Color msgColor){
+        lbMsgFeedback.setText(text);
+        lbMsgFeedback.setTextFill(msgColor);
+        lbMsgFeedback.setVisible(true);
+    }
+
+    private void exibirMensagemErro(String text){
+        Color color = Color.web("#ff0000", 0.8);
+        exibirMensagem(text, color);
+    }
+
+    private void exibirMensagemSucesso(String text){
+        Color color = Color.web("#000000", 0.8);
+        exibirMensagem(text, color);
     }
 }

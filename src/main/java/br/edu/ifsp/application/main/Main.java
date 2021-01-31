@@ -40,7 +40,7 @@ public class Main {
     private static GerenciarFuncionarioUseCase gerenciarFuncionarioUseCase;
     private static GerenciarLinhaUseCase gerenciarLinhaUseCase;
     public static FazerLoginUseCase fazerLoginUseCase;
-    private static GerenciarOnibusUseCase gerenciarOnibusUseCase;
+    public static GerenciarOnibusUseCase gerenciarOnibusUseCase;
     public static ConsultarPassagemVendidaUseCase consultarPassagemVendidaUseCase;
     public static DevolverPassagemUseCase devolverPassagemUseCase;
     public static ReagendarPassagensUseCase reagendarPassagensUseCase;
@@ -65,8 +65,8 @@ public class Main {
     private static void popularComDadosFalsos() throws IOException {
         //Login
 
-        fazerLoginUseCase.loginAsSeller();
-        //fazerLoginUseCase.createLogin("Gustavo", "Pinatti");
+        //fazerLoginUseCase.loginAsSeller();
+        fazerLoginUseCase.createLogin("Gustavo", "Pinatti");
         //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "Gustavo"));
         //System.out.println(fazerLoginUseCase.loginAsAdmin("pinatti", "Gustavo"));  //SENHA ERRADA
         //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "nome errado")); //NOME ERRADO

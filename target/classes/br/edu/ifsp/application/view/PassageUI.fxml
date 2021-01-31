@@ -36,7 +36,7 @@
       <Button fx:id="btnDevolverPassagem" layoutX="68.0" layoutY="355.0" mnemonicParsing="false" onAction="#devolverPassagem" prefHeight="25.0" prefWidth="131.0" text="Devolver Passagem" visible="false" />
       <Button fx:id="btnConsultarPassagem" layoutX="314.0" layoutY="32.0" mnemonicParsing="false" onAction="#consultarPassagem" prefHeight="25.0" prefWidth="131.0" text="Consultar Passagem" />
       <TextField fx:id="txtConsultarPassagem" layoutX="23.0" layoutY="32.0" prefHeight="25.0" prefWidth="275.0" />
-      <Label fx:id="lbError" layoutX="23.0" layoutY="405.0" prefHeight="17.0" prefWidth="477.0" visible="false" />
+      <Label fx:id="lbMsgFeedback" layoutX="23.0" layoutY="405.0" prefHeight="17.0" prefWidth="477.0" visible="false" />
       <Button fx:id="btnReagendar" layoutX="368.0" layoutY="355.0" mnemonicParsing="false" onAction="#reagendarPassagem" prefHeight="25.0" prefWidth="131.0" text="Reagendar" visible="false" />
    </children>
 </AnchorPane>

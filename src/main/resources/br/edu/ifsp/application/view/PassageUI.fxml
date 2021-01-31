@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="456.0" prefWidth="644.0" style="-fx-background-color: #fffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.PassageUIController">
    <children>
-      <Pane fx:id="areaCamposPassagem" layoutX="23.0" layoutY="73.0" prefHeight="263.0" prefWidth="607.0" style="-fx-background-color: #FFFFFF;">
+      <Pane fx:id="areaCamposPassagem" layoutX="23.0" layoutY="73.0" prefHeight="263.0" prefWidth="607.0" style="-fx-background-color: #FFFFFF;" visible="false">
          <children>
              <CheckBox fx:id="cbSeguro" layoutX="8.0" layoutY="232.0" mnemonicParsing="false" text="Seguro" />
              <Label layoutX="8.0" layoutY="22.0" text="Número da passagem:" />
@@ -36,7 +36,7 @@
       <Button fx:id="btnDevolverPassagem" layoutX="68.0" layoutY="355.0" mnemonicParsing="false" onAction="#devolverPassagem" prefHeight="25.0" prefWidth="131.0" text="Devolver Passagem" visible="false" />
       <Button fx:id="btnConsultarPassagem" layoutX="314.0" layoutY="32.0" mnemonicParsing="false" onAction="#consultarPassagem" prefHeight="25.0" prefWidth="131.0" text="Consultar Passagem" />
       <TextField fx:id="txtConsultarPassagem" layoutX="23.0" layoutY="32.0" prefHeight="25.0" prefWidth="275.0" />
-      <Label fx:id="lbError" layoutX="23.0" layoutY="405.0" prefHeight="17.0" prefWidth="477.0" visible="false" />
+      <Label fx:id="lbMsgFeedback" layoutX="23.0" layoutY="405.0" prefHeight="17.0" prefWidth="477.0" visible="false" />
       <Button fx:id="btnReagendar" layoutX="368.0" layoutY="355.0" mnemonicParsing="false" onAction="#reagendarPassagem" prefHeight="25.0" prefWidth="131.0" text="Reagendar" visible="false" />
    </children>
 </AnchorPane>

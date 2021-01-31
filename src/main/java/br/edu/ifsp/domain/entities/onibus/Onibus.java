@@ -1,5 +1,7 @@
 package br.edu.ifsp.domain.entities.onibus;
 
+import javafx.beans.property.StringProperty;
+
 public class Onibus {
     private String renavam;
     private String placa;
@@ -23,6 +25,11 @@ public class Onibus {
     public void setPlaca(String placa) {
         this.placa = placa;
     }
+    public void setRenavam(String renavam) {
+        this.renavam = renavam;
+    }
+
+
 
     @Override
     public String toString() {

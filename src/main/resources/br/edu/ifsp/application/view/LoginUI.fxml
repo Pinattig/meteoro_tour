@@ -3,16 +3,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="253.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.LoginUIController">
+<AnchorPane prefHeight="266.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.LoginUIController">
    <children>
       <Label fx:id="lbLogin" layoutX="336.0" layoutY="80.0" text="Login:" />
       <Label fx:id="lbSenha" layoutX="335.0" layoutY="130.0" text="Senha:" />
       <TextField fx:id="txtLogin" layoutX="378.0" layoutY="76.0" />
       <TextField fx:id="txtSenha" layoutX="378.0" layoutY="126.0" />
       <Button fx:id="btnEntrarAdmin" layoutX="428.0" layoutY="192.0" mnemonicParsing="false" onAction="#entrarAdmin" text="Entrar" />
-      <Separator layoutX="295.0" orientation="VERTICAL" prefHeight="253.0" prefWidth="19.0" />
+      <Separator layoutX="295.0" orientation="VERTICAL" prefHeight="266.0" prefWidth="19.0" />
       <Label fx:id="lbTituloVendedor" layoutX="88.0" layoutY="33.0" text="Entrar como Vendedor" />
       <Label fx:id="lbTituloAdmin" layoutX="375.0" layoutY="33.0" text="Entrar como Administrador" />
       <Button fx:id="btnEntrarVendedor" layoutX="125.0" layoutY="101.0" mnemonicParsing="false" onAction="#entrarVendedor" text="Entrar" />
+      <Label fx:id="lbMsgError" layoutX="347.0" layoutY="227.0" visible="false" />
    </children>
 </AnchorPane>
