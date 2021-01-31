@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="281.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.EmployeeUIController">
+    <children>
+        <TextField fx:id="txtConsultar" layoutX="34.0" layoutY="33.0" prefHeight="25.0" prefWidth="244.0" />
+        <Button fx:id="btnConsultar" layoutX="281.0" layoutY="33.0" mnemonicParsing="false" onAction="#consultarFuncionario" prefHeight="25.0" prefWidth="132.0" text="Consultar funcionário" />
+        <Button fx:id="btnCadastrar" layoutX="451.0" layoutY="33.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" prefHeight="25.0" prefWidth="132.0" text="Cadastrar funcionário" />
+        <Pane fx:id="areaCampos" layoutX="34.0" layoutY="76.0" prefHeight="108.0" prefWidth="463.0" visible="false">
+            <children>
+                <Label fx:id="lbNome" layoutX="45.0" layoutY="17.0" prefHeight="17.0" prefWidth="142.0" />
+                <Label layoutY="17.0" text="Nome:" />
+            <Label layoutX="4.0" layoutY="61.0" text="Cpf:" />
+            <Label fx:id="lbCargo" layoutX="284.0" layoutY="61.0" prefHeight="17.0" prefWidth="142.0" />
+            <Label layoutX="218.0" layoutY="61.0" text="Cargo:" />
+            <Label fx:id="lbRg" layoutX="284.0" layoutY="17.0" prefHeight="17.0" prefWidth="142.0" />
+            <Label layoutX="218.0" layoutY="17.0" text="Rg:" />
+            <Label fx:id="lbCpf" layoutX="45.0" layoutY="61.0" prefHeight="17.0" prefWidth="142.0" />
+            </children></Pane>
+        <Button fx:id="btnEditar" layoutX="218.0" layoutY="223.0" mnemonicParsing="false" onAction="#editarFuncionario" prefHeight="25.0" prefWidth="132.0" text="Editar funcionário" visible="false" />
+        <Button fx:id="btnRemover" layoutX="365.0" layoutY="223.0" mnemonicParsing="false" onAction="#removerFuncionario" prefHeight="25.0" prefWidth="132.0" text="Remover funcionário" visible="false" />
+    </children>
+</AnchorPane>

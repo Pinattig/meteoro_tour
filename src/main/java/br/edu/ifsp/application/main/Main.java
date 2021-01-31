@@ -231,8 +231,8 @@ public class Main {
 
         //System.out.println("=====================================================================");
 
-        Relatorio relatorio = emitirRelatoriosUseCase.gerarRelatorio(LocalDate.of(2021, 1, 1), LocalDate.of(2021, 1, 31));
-        relatorio.salvarEmArquivo();
+        //Relatorio relatorio = emitirRelatoriosUseCase.gerarRelatorio(LocalDate.of(2021, 1, 1), LocalDate.of(2021, 1, 31));
+        //relatorio.salvarEmArquivo();
     }
 
     private static void inMemoryInjection(){
