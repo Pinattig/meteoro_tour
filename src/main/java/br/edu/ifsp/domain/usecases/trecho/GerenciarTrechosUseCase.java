@@ -1,6 +1,7 @@
 package br.edu.ifsp.domain.usecases.trecho;
 
 import br.edu.ifsp.domain.entities.trecho.Trecho;
+import br.edu.ifsp.utils.exceptions.PatchNotFoundException;
 import br.edu.ifsp.utils.exceptions.TrechoEmUsoException;
 
 import java.util.List;
@@ -44,6 +45,10 @@ public class GerenciarTrechosUseCase {
     }
 
     public Trecho findOneByKey(UUID key){
+
+        if(trechoDAO.findOneByKey(key) == null)
+            throw new PatchNotFoundException("Trecho não encontrado");
+
         return trechoDAO.findOneByKey(key);
     }
 
