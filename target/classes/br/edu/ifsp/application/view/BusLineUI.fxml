@@ -3,17 +3,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="204.0" prefWidth="533.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.BusLineUIController">
+<AnchorPane prefHeight="412.0" prefWidth="530.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.BusLineUIController">
    <children>
-      <TextField fx:id="txtConsultarLinha" layoutX="34.0" layoutY="33.0" prefHeight="25.0" prefWidth="244.0" />
-      <Button fx:id="btnConsultarLinha" layoutX="300.0" layoutY="33.0" mnemonicParsing="false" onAction="#consultarLinha" prefHeight="25.0" prefWidth="102.0" text="Consultar linha" />
-      <Button fx:id="btnCadastrarLinha" layoutX="417.0" layoutY="33.0" mnemonicParsing="false" onAction="#cadastrarLinha" prefHeight="25.0" prefWidth="102.0" text="Cadastrar Linha" />
-      <Pane fx:id="areaCamposLinha" layoutX="34.0" layoutY="76.0" prefHeight="56.0" prefWidth="244.0">
+      <TextField fx:id="txtConsultarLinha" layoutX="17.0" layoutY="33.0" prefHeight="25.0" prefWidth="244.0" />
+      <Button fx:id="btnConsultarLinha" layoutX="276.0" layoutY="33.0" mnemonicParsing="false" onAction="#consultarLinha" prefHeight="25.0" prefWidth="102.0" text="Consultar linha" />
+      <Button fx:id="btnCadastrarLinha" layoutX="394.0" layoutY="33.0" mnemonicParsing="false" onAction="#cadastrarLinha" prefHeight="25.0" prefWidth="102.0" text="Cadastrar linha" />
+      <Pane fx:id="areaCamposLinha" layoutX="17.0" layoutY="62.0" prefHeight="56.0" prefWidth="244.0" visible="false">
          <children>
             <Label fx:id="lbNomeLinha" layoutX="47.0" layoutY="17.0" prefHeight="17.0" prefWidth="188.0" />
             <Label layoutY="17.0" text="Nome:" />
          </children></Pane>
-      <Button fx:id="btnEditarLinha" layoutX="61.0" layoutY="152.0" mnemonicParsing="false" onAction="#editarLinha" prefHeight="25.0" prefWidth="102.0" text="Editar linha" />
-      <Button fx:id="btnRemoverLinha" layoutX="176.0" layoutY="152.0" mnemonicParsing="false" onAction="#removerLinha" prefHeight="25.0" prefWidth="102.0" text="Remover linha" />
+      <Button fx:id="btnRemoverLinha" layoutX="292.0" layoutY="77.0" mnemonicParsing="false" onAction="#removerLinha" prefHeight="25.0" prefWidth="102.0" text="Remover linha" visible="false" />
+      <TableView fx:id="trechosLinhaTable" layoutX="17.0" layoutY="153.0" prefHeight="200.0" prefWidth="462.0" visible="false">
+        <columns>
+          <TableColumn fx:id="clId" prefWidth="141.0" text="Id" />
+          <TableColumn fx:id="clNome" minWidth="0.0" prefWidth="132.0" text="Nome" />
+            <TableColumn fx:id="clIndex" prefWidth="77.0" text="Index" />
+            <TableColumn fx:id="clHorario" prefWidth="111.0" text="Horario de Saida" />
+        </columns>
+      </TableView>
+      <Button fx:id="addTrecho" layoutX="172.0" layoutY="365.0" mnemonicParsing="false" onAction="#adicionarTrechoLinha" text="Adicionar trecho" visible="false" />
+      <TextField fx:id="txtTrechoId" layoutX="17.0" layoutY="365.0" visible="false" />
+      <Label layoutX="17.0" layoutY="133.0" text="Trechos associados à linha:" visible="false" />
    </children>
 </AnchorPane>

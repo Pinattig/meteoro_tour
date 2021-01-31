@@ -59,11 +59,9 @@ public class EmployeeUIController {
 
 
     private void loadData() {
-
         List<Funcionario> funcionarios = gerenciarFuncionarioUseCase.getAll();
         tableData.clear();
         tableData.addAll(funcionarios);
-
     }
 
     private void bindColumnsTableToModelProperties() {

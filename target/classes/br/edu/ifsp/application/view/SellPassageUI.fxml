@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="560.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.SellPassageUIController">
+<AnchorPane prefHeight="560.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.RegisterPassageUIController">
     <children>
         <Label fx:id="lbNumeroPassagem" layoutX="33.0" layoutY="31.0" text="Número da passagem:" />
         <Label fx:id="lbValorPassagem" layoutX="32.0" layoutY="73.0" text="Valor da passagem:" />

@@ -91,10 +91,10 @@ public class Main {
 
         gerenciarTrechosUseCase.insert(trecho4);
         trechos = gerenciarTrechosUseCase.getAll();
-        //gerenciarTrechosUseCase.deleteByKey(trechos.get(3).getId());
-        //trechos = gerenciarTrechosUseCase.getAll();
+        gerenciarTrechosUseCase.deleteByKey(trechos.get(3).getId());
+        trechos = gerenciarTrechosUseCase.getAll();
         //System.out.println("Lista de trechos após deletar o quarto trecho pela chave: " + trechos.size());
-        //gerenciarTrechosUseCase.deleteByKey(UUID.randomUUID());
+        gerenciarTrechosUseCase.deleteByKey(UUID.randomUUID());
 
         trecho2.setQuilometragem(50);
         gerenciarTrechosUseCase.update(trecho2);
@@ -233,7 +233,6 @@ public class Main {
 
         //Relatorio relatorio = emitirRelatoriosUseCase.gerarRelatorio(LocalDate.of(2021, 1, 1), LocalDate.of(2021, 1, 31));
         //relatorio.salvarEmArquivo();
-        System.out.println("gerenciarTrechosUseCase.getAll() = " + gerenciarTrechosUseCase.getAll());
     }
 
     private static void inMemoryInjection(){

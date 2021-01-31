@@ -5,6 +5,7 @@ import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
 
 import java.util.List;
+import java.util.Optional;
 
 public class GerenciarLinhaUseCase {
 
@@ -50,8 +51,16 @@ public class GerenciarLinhaUseCase {
         return linhaDAO.deleteByKey(key);
     }
 
+    public Optional<Linha> getOne(Long id){
+        return linhaDAO.findOne(id);
+    }
+
     public boolean addTrechoLinha(TrechoLinha trechoLinha){
         return trechoLinhaDAO.create(trechoLinha);
+    }
+
+    public List<TrechoLinha> getTrechosLinhaByKey(Long key){
+        return trechoLinhaDAO.getByLinhaId(key);
     }
 
 }

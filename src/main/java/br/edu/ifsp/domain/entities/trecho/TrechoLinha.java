@@ -74,6 +74,14 @@ public class TrechoLinha {
         this.assentosTrechoLinha.setAssento(key);
     }
 
+    public String getTrechoName(){
+        return trecho != null ? trecho.getNome() : null;
+    }
+
+    public UUID getTrechoId(){
+        return  trecho != null ? trecho.getId() : null;
+    }
+
     @Override
     public String toString() {
         return "TrechoLinha{" +

@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 
-public class SellPassageUIController {
+public class RegisterPassageUIController {
 
     @FXML Label lbNumeroPassagem;
     @FXML Label lbValorPassagem;
