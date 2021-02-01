@@ -76,7 +76,7 @@ public class Main {
         Trecho trecho2 = new Trecho("São Carlos", "Ibaté", 10, LocalTime.of(0,20,0,0), 500.00, 15.00, 30.00, "SC-IB");
         Trecho trecho3 = new Trecho("Ibaté", "Araraquara", 50, LocalTime.of(0,45,0,0), 100.00, 15.00, 50.00, "IB-AR");
         Trecho trecho4 = new Trecho("Narnia", "Hogwarts", 50000, LocalTime.of(0,45,0,0), 100.00, 15.00, 50.00, "IB-AR");
-        System.out.println("trecho4 = " + trecho4);
+        //System.out.println("trecho4 = " + trecho4);
         gerenciarTrechosUseCase.insert(trecho1);
         gerenciarTrechosUseCase.insert(trecho2);
         gerenciarTrechosUseCase.insert(trecho3);
@@ -216,7 +216,7 @@ public class Main {
         Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
         Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2021, 2, 15), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
 
-        System.out.println("passagem3 = " + passagem3);
+        //System.out.println("passagem3 = " + passagem3);
         
         //passagem2 = reagendarPassagensUseCase.reagendar(passagem2.getNumPassagem(), LocalDate.of(2021, 1, 17));
         //System.out.println("Reagendamento da passagem 2 alterando a data: " + passagem2.getViagem().getData());
@@ -233,7 +233,7 @@ public class Main {
 
         //Relatorio relatorio = emitirRelatoriosUseCase.gerarRelatorio(LocalDate.of(2021, 1, 1), LocalDate.of(2021, 1, 31));
         //relatorio.salvarEmArquivo();
-        System.out.println("gerenciarTrechosUseCase.getAll() = " + gerenciarTrechosUseCase.getAll());
+        //System.out.println("gerenciarTrechosUseCase.getAll() = " + gerenciarTrechosUseCase.getAll());
     }
 
     private static void inMemoryInjection(){

@@ -69,7 +69,7 @@ public class PatchUIController {
     }
 
     public void cadastrar(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("SellTrechoUI");
+        WindowLoader.setRoot("RegisterPatchUI");
     }
 
     public void editar(ActionEvent actionEvent) {
@@ -182,30 +182,34 @@ public class PatchUIController {
     }
 
     private boolean verificarErrosNosCampos() {
+        return tentarConverterParaDouble(txtEditarKm.getText()) && tentarConverterParaDouble(txtEditarValor.getText())
+                && tentarConverterParaDouble(txtEditarEmbarque.getText()) && tentarConverterParaDouble(txtEditarSeguro.getText());
+
+        /*
         if(verificarCamposVazios()){
             return tentarConverterParaDouble(txtEditarKm.getText()) && tentarConverterParaDouble(txtEditarValor.getText())
                     && tentarConverterParaDouble(txtEditarEmbarque.getText()) && tentarConverterParaDouble(txtEditarSeguro.getText());
         }
         else
             return false;
-
+*/
     }
 
-    private boolean verificarCamposVazios(){
-        return !(txtEditarSeguro.getText().equals("")
-                || txtEditarDestino.getText().equals("")
-                || txtEditarEmbarque.getText().equals("")
-                || txtEditarKm.getText().equals("")
-                || txtEditarNome.getText().equals("")
-                || txtEditarOrigem.getText().equals("")
-                || txtEditarSeguro.getText().equals("")
-                || txtEditarValor.getText().equals(""));
-
-    }
+//    private boolean verificarCamposVazios(){
+//        return !(txtEditarSeguro.getText().equals("")
+//                || txtEditarDestino.getText().equals("")
+//                || txtEditarEmbarque.getText().equals("")
+//                || txtEditarKm.getText().equals("")
+//                || txtEditarNome.getText().equals("")
+//                || txtEditarOrigem.getText().equals("")
+//                || txtEditarSeguro.getText().equals("")
+//                || txtEditarValor.getText().equals(""));
+//
+//    }
 
     private boolean tentarConverterParaDouble(String numero){
         try{
-            double num = Double.parseDouble(numero);
+            Double.parseDouble(numero);
             return true;
         }catch(Exception e){
             return false;

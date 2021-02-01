@@ -28,7 +28,13 @@ public class InMemoryTrechoDAO implements TrechoDAO {
 
     @Override
     public Optional<Trecho> findOne(UUID key) {
-        return null;
+        if(db.containsKey(key)){
+            Optional<Trecho> trecho = Optional.ofNullable(db.get(key));
+            return trecho;
+        }
+
+        else
+            return null;
     }
 
     @Override
@@ -63,7 +69,6 @@ public class InMemoryTrechoDAO implements TrechoDAO {
     @Override
     public Trecho findOneByKey(UUID key) {
         if(db.containsKey(key))
-            
             return db.get(key);
         else
             return null;

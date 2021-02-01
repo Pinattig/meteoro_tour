@@ -16,6 +16,7 @@ public class Trecho {
 
 
     public Trecho() {
+
     }
 
     public Trecho(String cidadeOrigem, String cidadeDestino, double quilometragem, LocalTime tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro, String nome) {

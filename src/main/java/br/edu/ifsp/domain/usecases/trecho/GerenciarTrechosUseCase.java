@@ -24,7 +24,18 @@ public class GerenciarTrechosUseCase {
     }
 
     public Object insert(Trecho trecho){
-        return trechoDAO.create(trecho);
+
+        if(trecho == null)
+            throw new IllegalArgumentException("O trecho é nulo");
+
+        if(verificarCampos(trecho))
+            throw new IllegalArgumentException("Há campos nulos");
+
+
+        if(Optional.ofNullable(trechoDAO.findOne(trecho.getId())).isEmpty())
+            return trechoDAO.create(trecho);
+        return false;
+
     }
 
     public boolean update(Trecho trecho){
@@ -52,5 +63,11 @@ public class GerenciarTrechosUseCase {
         return trechoDAO.findOneByKey(key);
     }
 
+
+    private boolean verificarCampos(Trecho trecho) {
+        return trecho.getNome().equals("")
+                || trecho.getCidadeDestino().equals("")
+                || trecho.getCidadeOrigem().equals("");
+    }
 
 }
