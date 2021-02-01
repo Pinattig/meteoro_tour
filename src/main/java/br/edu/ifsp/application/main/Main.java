@@ -1,11 +1,10 @@
 package br.edu.ifsp.application.main;
 
-import br.edu.ifsp.application.repository.*;
+import br.edu.ifsp.application.repository.inMemory.*;
 import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
-import br.edu.ifsp.domain.entities.relatorio.Relatorio;
 import br.edu.ifsp.domain.entities.trecho.AssentosTrechoLinha;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
@@ -33,7 +32,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.UUID;
 
 public class Main {
 
