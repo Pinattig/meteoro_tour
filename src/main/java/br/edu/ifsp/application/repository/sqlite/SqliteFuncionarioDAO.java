@@ -70,7 +70,7 @@ public class SqliteFuncionarioDAO implements FuncionarioDAO {
 
     @Override
     public boolean update(Funcionario funcionario) {
-        String sql = "UPDATE FUNCIONARIO(nome, rg, cargo) VALUES cpf = ?";
+        String sql = "UPDATE FUNCIONARIO(nome, rg, cargo) VALUES (?,?,?) WHERE cpf = ?";
         try(PreparedStatement preparedStatement = ConnectionFactory.createPreparedStatement(sql)){
             preparedStatement.setString(1,funcionario.getNome());
             preparedStatement.setString(2,funcionario.getRg());

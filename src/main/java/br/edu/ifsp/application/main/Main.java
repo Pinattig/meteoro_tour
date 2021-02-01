@@ -2,9 +2,7 @@ package br.edu.ifsp.application.main;
 
 
 import br.edu.ifsp.application.repository.inMemory.*;
-import br.edu.ifsp.application.repository.sqlite.BuildDatabase;
-import br.edu.ifsp.application.repository.sqlite.SqliteFuncionarioDAO;
-import br.edu.ifsp.application.repository.sqlite.SqliteOnibusDAO;
+import br.edu.ifsp.application.repository.sqlite.*;
 import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.linha.Linha;
@@ -241,11 +239,11 @@ public class Main {
 
     private static void inMemoryInjection(){
         FuncionarioDAO funcionarioDAO = new SqliteFuncionarioDAO();
-        LinhaDAO linhaDAO = new InMemoryLinhaDAO();
+        LinhaDAO linhaDAO = new SqliteLinhaDAO();
         LoginDAO loginDAO = new InMemoryLoginDAO();
         OnibusDAO onibusDAO = new SqliteOnibusDAO();
         PassagemDAO passagemDAO = new InMemoryPassagemDAO();
-        TrechoDAO trechoDAO = new InMemoryTrechoDAO();
+        TrechoDAO trechoDAO = new SqliteTrechoDAO();
         TrechoLinhaDAO trechoLinhaDAO = new InMemoryTrechoLinhaDAO();
         ViagemDAO viagemDAO = new InMemoryViagemDAO();
 

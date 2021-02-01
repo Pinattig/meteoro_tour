@@ -89,7 +89,7 @@ public class SqliteLinhaDAO implements LinhaDAO {
 
     @Override
     public boolean delete(Linha linha) {
-        if(linha == null || linha.getId().equals(""))
+        if(linha == null)
             throw new IllegalArgumentException("O linha não deve ser vazia");
 
         return deleteByKey(linha.getId());
