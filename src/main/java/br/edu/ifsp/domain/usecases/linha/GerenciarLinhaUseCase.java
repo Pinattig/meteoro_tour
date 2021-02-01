@@ -1,6 +1,7 @@
 package br.edu.ifsp.domain.usecases.linha;
 
 import br.edu.ifsp.domain.entities.linha.Linha;
+import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
 
@@ -23,12 +24,19 @@ public class GerenciarLinhaUseCase {
     }
 
     public boolean insert(Linha linha){
-        return linhaDAO.create(linha);
+        if(linha == null)
+            throw new IllegalArgumentException("A linha é nula!");
+        if(linhaDAO.findOne(linha.getId()).isPresent())
+            throw new IllegalArgumentException("O linha ja existe!");
+        if(verificarCampos(linha))
+            return linhaDAO.create(linha);
+        return false;
     }
 
     public boolean update(Linha linha){
         List<TrechoLinha> trechoLinhaList = trechoLinhaDAO.getByLinhaId(linha.getId());
         for (TrechoLinha trechoLinha : trechoLinhaList) {
+
             trechoLinha.setLinha(linha);
             trechoLinhaDAO.update(trechoLinha);
         }
@@ -61,6 +69,10 @@ public class GerenciarLinhaUseCase {
 
     public List<TrechoLinha> getTrechosLinhaByKey(Long key){
         return trechoLinhaDAO.getByLinhaId(key);
+    }
+
+    private boolean verificarCampos(Linha linha) {
+        return !(linha.getNome().equals(""));
     }
 
 }

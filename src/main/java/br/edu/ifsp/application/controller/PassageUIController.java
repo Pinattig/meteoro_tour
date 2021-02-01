@@ -72,7 +72,7 @@ public class PassageUIController {
     }
 
     public void venderPassagem(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("SellPassageUI");
+        WindowLoader.setRoot("SellPassageUI", 570, 745);
     }
 
     public void reemitirPassagem(ActionEvent actionEvent) {

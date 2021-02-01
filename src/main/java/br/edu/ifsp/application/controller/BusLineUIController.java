@@ -31,6 +31,7 @@ public class BusLineUIController {
     @FXML private TextField txtTrechoId;
     @FXML private Label lbNomeLinha;
 
+
     @FXML private Button btnRemoverLinha;
     @FXML private Button addTrecho;
 

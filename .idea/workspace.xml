@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,25 +22,46 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c55617b-2c69-4385-bae2-14a1f7d8c07c" name="Default Changelist" comment="">
+    <list default="true" id="47de13cf-ce2b-4b4b-ad10-25924c9a640c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterBusUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterEmployeeUIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterBusUIController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterEmployeeUIController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AdminMainUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/AdminMainUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/BusLineUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/BusLineUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/BusUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/BusUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/EmployeeUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/EmployeeUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/LoginUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/LoginUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/PassageUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/PassageUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/PatchUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/PatchUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterPatchUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterPatchUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/InMemoryTrechoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/repository/InMemoryTrechoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/trecho/Trecho.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/entities/trecho/Trecho.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/trecho/GerenciarTrechosUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/trecho/GerenciarTrechosUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterPatchUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterPatchUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterBusController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterBusLineUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterBusLineUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/controller/RegisterEmployeeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/view/WindowLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/application/view/WindowLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/funcionario/GerenciarFuncionarioUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/funcionario/GerenciarFuncionarioUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linha/GerenciarLinhaUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/linha/GerenciarLinhaUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/onibus/GerenciarOnibusUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/edu/ifsp/domain/usecases/onibus/GerenciarOnibusUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/BusUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/BusUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterBusLineUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterBusLineUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterBusUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterBusUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterEmployeeUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/br/edu/ifsp/application/view/RegisterEmployeeUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/AdminMainUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/AdminMainUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/BusLineUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/BusLineUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/BusUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/BusUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/EmployeeUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/EmployeeUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/LoginUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/LoginUIController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/PatchUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/PatchUIController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/PatchUIController.class~HEAD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterBusController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterBusLineUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterBusLineUIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterEmployeeController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterPatchUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/RegisterPatchUIController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/controller/TrechoUIController.class~HEAD" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/PatchUI.fxml~HEAD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/PatchUI.fxml~main" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterPatchUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterPatchUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterBusLineUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterBusLineUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterBusUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterBusUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterEmployeeUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/RegisterEmployeeUI.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/WindowLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/application/view/WindowLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/trecho/GerenciarTrechosUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/trecho/GerenciarTrechosUseCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/onibus/GerenciarOnibusUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/edu/ifsp/domain/usecases/onibus/GerenciarOnibusUseCase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +80,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -90,6 +122,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.edu.ifsp.App" />
       <module name="meteoro_tour" />
@@ -137,7 +180,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -170,59 +213,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser" timestamp="1612128885924">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="451" y="65" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1612128885924" />
-    <state x="413" y="111" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1612055658204">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612055658204" />
-    <state x="430" y="255" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1612129557340">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="430" y="255" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1612129557340" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1612137217556">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612137217556" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1612137217556">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612137217556" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1612137217555">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612137217555" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1612137217556">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612137217556" />
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom" timestamp="1612131109077">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612131109077" />
-    <state width="1323" height="184" key="GridCell.Tab.1.center" timestamp="1612131109077">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612131109077" />
-    <state width="1323" height="184" key="GridCell.Tab.1.left" timestamp="1612131109077">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612131109077" />
-    <state width="1323" height="184" key="GridCell.Tab.1.right" timestamp="1612131109077">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="184" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612131109077" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1612136522295">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1612136522295" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612122157953">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1612122157953" />
   </component>
 </project>

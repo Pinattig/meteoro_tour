@@ -1,5 +1,6 @@
 package br.edu.ifsp.application.controller;
 
+import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import javafx.collections.FXCollections;
@@ -11,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.util.List;
 
 import static br.edu.ifsp.application.main.Main.gerenciarFuncionarioUseCase;
@@ -41,7 +43,8 @@ public class EmployeeUIController {
         loadData();
     }
 
-    public void cadastrarFuncionario(ActionEvent actionEvent) {
+    public void cadastrarFuncionario(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("RegisterEmployeeUI", 240, 580);
     }
 
     public void removerFuncionario(ActionEvent actionEvent) {

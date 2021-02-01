@@ -17,11 +17,23 @@ public class GerenciarOnibusUseCase {
     }
 
     public Object insert(Onibus onibus){
-        return onibusDAO.create(onibus);
+        if(onibus == null)
+            throw new IllegalArgumentException("O onibus é nulo!");
+        if(onibusDAO.findOne(onibus.getRenavam()).isPresent())
+            throw new IllegalArgumentException("O onibus ja existe!");
+        if(verificarCampos(onibus))
+            return onibusDAO.create(onibus);
+        return false;
     }
 
     public boolean update(Onibus onibus){
-        return onibusDAO.update(onibus);
+        if(onibus == null)
+            throw new IllegalArgumentException("O onibus é nulo!");
+        if(onibusDAO.findOne(onibus.getRenavam()).isEmpty())
+            throw new IllegalArgumentException("O onibus não existe!");
+        if(verificarCampos(onibus))
+            return onibusDAO.update(onibus);
+        return false;
     }
 
     public boolean delete(Onibus onibus){
@@ -31,4 +43,9 @@ public class GerenciarOnibusUseCase {
     public boolean deleteByKey(String key){
         return onibusDAO.deleteByKey(key);
     }
+
+    private boolean verificarCampos(Onibus onibus) {
+        return !(onibus.getRenavam().equals("") || onibus.getPlaca().equals(""));
+    }
+
 }

@@ -18,14 +18,21 @@ public class WindowLoader extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("PatchUI"), 606, 253);
+        scene = new Scene(loadFXML("AdminMainUI"), 606, 253);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void setRoot(String fxml,int altura,int largura) throws IOException {
+        scene.getWindow().setHeight(altura);
+        scene.getWindow().setWidth(largura);
+        scene.setRoot(loadFXML(fxml));
     }
 
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
+
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();

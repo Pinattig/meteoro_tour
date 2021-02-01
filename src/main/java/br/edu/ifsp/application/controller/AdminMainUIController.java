@@ -16,22 +16,22 @@ public class AdminMainUIController {
     @FXML Button btnGerenciarTrecho;
 
     public void gerenciarPassagem(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("PassageUI");
+        WindowLoader.setRoot("PassageUI", 455, 655);
     }
 
     public void gerenciarFuncionario(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("EmployeeUI");
+        WindowLoader.setRoot("EmployeeUI", 335, 610);
     }
 
     public void gerenciarOnibus(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("BusUI");
+        WindowLoader.setRoot("BusUI", 330, 640);
     }
 
     public void gerenciarLinha(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("BusLineUI");
+        WindowLoader.setRoot("BusLineUI", 425, 545);
     }
 
     public void gerenciarTrecho(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("PatchUI");
+        WindowLoader.setRoot("PatchUI", 410, 550);
     }
 }

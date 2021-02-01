@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="297.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.BusUIController">
+<AnchorPane prefHeight="332.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.BusUIController">
     <children>
       <Button fx:id="btnCadastrarOnibus" layoutX="478.0" layoutY="121.0" mnemonicParsing="false" onAction="#cadastrarOnibus" prefHeight="25.0" prefWidth="131.0" text="Cadastrar Onibus" />
       <TableView fx:id="busTable" layoutX="23.0" layoutY="46.0" prefHeight="200.0" prefWidth="445.0">

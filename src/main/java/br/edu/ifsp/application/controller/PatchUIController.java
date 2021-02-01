@@ -69,7 +69,7 @@ public class PatchUIController {
     }
 
     public void cadastrar(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("RegisterPatchUI");
+        WindowLoader.setRoot("RegisterPatchUI", 290, 630);
     }
 
     public void editar(ActionEvent actionEvent) {

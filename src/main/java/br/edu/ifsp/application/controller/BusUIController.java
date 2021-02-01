@@ -1,5 +1,6 @@
 package br.edu.ifsp.application.controller;
 
+import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.util.List;
 
 import static br.edu.ifsp.application.main.Main.gerenciarOnibusUseCase;
@@ -38,7 +40,8 @@ public class BusUIController {
         loadData();
     }
 
-    public void cadastrarOnibus(ActionEvent actionEvent) {
+    public void cadastrarOnibus(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("RegisterBusUI", 215, 390);
     }
 
     public void delete(ActionEvent actionEvent) {
