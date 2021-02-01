@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import static br.edu.ifsp.application.main.Main.gerenciarLinhaUseCase;
+
 public class SqliteViagemDAO implements ViagemDAO {
     @Override
     public List<Viagem> getViagensByDate(LocalDate dataInicio, LocalDate dataFim) {
@@ -116,7 +118,7 @@ public class SqliteViagemDAO implements ViagemDAO {
     private Viagem resultSetEntity(ResultSet resultSet) throws SQLException {
         return new Viagem(resultSet.getString("cidadeOrigem"),
                         resultSet.getString("cidadeDestino"),
-                        resultSet.getString("linha"),
+                        gerenciarLinhaUseCase.getOne(Long.valueOf(resultSet.getString("linha"))),
                         LocalDate.parse(resultSet.getString("data")),
                         LocalTime.parse(resultSet.getString("horarioSaida")),
                         SqliteTrechoLinhaDAO.findAll());
