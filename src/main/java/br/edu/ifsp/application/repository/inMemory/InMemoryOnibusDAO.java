@@ -1,4 +1,4 @@
-package br.edu.ifsp.application.repository;
+package br.edu.ifsp.application.repository.inMemory;
 
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.usecases.onibus.OnibusDAO;

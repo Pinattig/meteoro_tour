@@ -13,7 +13,7 @@
             <Label fx:id="lbNomeLinha" layoutX="47.0" layoutY="17.0" prefHeight="17.0" prefWidth="188.0" />
             <Label layoutY="17.0" text="Nome:" />
          </children></Pane>
-      <Button fx:id="btnRemoverLinha" layoutX="292.0" layoutY="77.0" mnemonicParsing="false" onAction="#removerLinha" prefHeight="25.0" prefWidth="102.0" text="Remover linha" visible="false" />
+      <Button fx:id="btnRemoverLinha" layoutX="276.0" layoutY="78.0" mnemonicParsing="false" onAction="#removerLinha" prefHeight="25.0" prefWidth="102.0" text="Remover linha" visible="false" />
       <TableView fx:id="trechosLinhaTable" layoutX="17.0" layoutY="153.0" prefHeight="200.0" prefWidth="462.0" visible="false">
         <columns>
           <TableColumn fx:id="clId" prefWidth="141.0" text="Id" />
