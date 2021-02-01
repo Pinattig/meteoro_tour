@@ -58,9 +58,9 @@ public class PatchUIController {
     public void consultar(ActionEvent actionEvent) {
         try{
             String nameTrecho = txtConsulta.getText();
-            if(trechoConsultado == null)
+            trechoConsultado = gerenciarTrechosUseCase.findOneByKey(UUID.fromString(nameTrecho));
+            if(trechoConsultado != null)
                 habilitarBotoes();
-            trechoConsultado = gerenciarTrechosUseCase.findOneByName(nameTrecho);
             areaCampoTrecho.setVisible(true);
             setarTextDosCampos();
 

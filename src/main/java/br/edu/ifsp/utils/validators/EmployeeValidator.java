@@ -7,6 +7,10 @@ public class EmployeeValidator implements IValidator<Funcionario>{
 
     private String mensage;
 
+    public EmployeeValidator() {
+        this.mensage = "";
+    }
+
     @Override
     public String validateFields(Funcionario object) {
         validateObject(object);

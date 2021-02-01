@@ -8,6 +8,10 @@ public class PassageValidator implements IValidator<Passagem> {
 
     private String mensage;
 
+    public PassageValidator() {
+        this.mensage = "";
+    }
+
     @Override
     public String validateFields(Passagem object) {
         validateObject(object);

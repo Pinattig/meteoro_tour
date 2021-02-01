@@ -6,6 +6,10 @@ public class BusValidator implements IValidator <Onibus>{
 
     private String message;
 
+    public BusValidator() {
+        this.message = "";
+    }
+
     @Override
     public String validateFields(Onibus object) {
         validatePlaca(object.getPlaca());
