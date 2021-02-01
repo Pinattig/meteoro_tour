@@ -27,6 +27,7 @@ public class BuildDatabase {
             statement.addBatch(createLoginTable());
             statement.addBatch(createOnibusTable());
             statement.addBatch(createTrechoTable());
+            statement.addBatch(createTrechoLinhaTable());
             statement.addBatch(createViagemTable());
             statement.addBatch(createPassagemTable());
             statement.executeBatch();

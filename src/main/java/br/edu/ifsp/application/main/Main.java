@@ -1,7 +1,9 @@
 package br.edu.ifsp.application.main;
 
+
 import br.edu.ifsp.application.repository.inMemory.*;
 import br.edu.ifsp.application.repository.sqlite.BuildDatabase;
+import br.edu.ifsp.application.repository.sqlite.SqliteOnibusDAO;
 import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.linha.Linha;
@@ -240,7 +242,7 @@ public class Main {
         FuncionarioDAO funcionarioDAO = new InMemoryFuncionarioDAO();
         LinhaDAO linhaDAO = new InMemoryLinhaDAO();
         LoginDAO loginDAO = new InMemoryLoginDAO();
-        OnibusDAO onibusDAO = new InMemoryOnibusDAO();
+        OnibusDAO onibusDAO = new SqliteOnibusDAO();
         PassagemDAO passagemDAO = new InMemoryPassagemDAO();
         TrechoDAO trechoDAO = new InMemoryTrechoDAO();
         TrechoLinhaDAO trechoLinhaDAO = new InMemoryTrechoLinhaDAO();
