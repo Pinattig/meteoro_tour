@@ -4,6 +4,9 @@ import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.usecases.trecho.TrechoLinhaDAO;
+import br.edu.ifsp.utils.exceptions.InvalidFieldsException;
+import br.edu.ifsp.utils.validators.BusLineValidator;
+import br.edu.ifsp.utils.validators.IValidator;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,11 +15,13 @@ public class GerenciarLinhaUseCase {
 
     private LinhaDAO linhaDAO;
     private TrechoLinhaDAO trechoLinhaDAO;
+    private IValidator validator;
 
     public GerenciarLinhaUseCase(LinhaDAO linhaDAO, TrechoLinhaDAO trechoLinhaDAO)
     {
         this.linhaDAO = linhaDAO;
         this.trechoLinhaDAO = trechoLinhaDAO;
+        this.validator = new BusLineValidator();
     }
 
     public List<Linha> getAll(){
@@ -24,16 +29,22 @@ public class GerenciarLinhaUseCase {
     }
 
     public boolean insert(Linha linha){
-        if(linha == null)
-            throw new IllegalArgumentException("A linha é nula!");
+
+        String msg = validator.validateFields(linha);
+        if(!msg.equals(""))
+            throw new InvalidFieldsException(msg);
+
         if(linhaDAO.findOne(linha.getId()).isPresent())
-            throw new IllegalArgumentException("O linha ja existe!");
-        if(verificarCampos(linha))
-            return linhaDAO.create(linha);
-        return false;
+            throw new IllegalArgumentException("A linha ja existe!");
+
+        return linhaDAO.create(linha);
     }
 
     public boolean update(Linha linha){
+        String msg = validator.validateFields(linha);
+        if(!msg.equals(""))
+            throw new InvalidFieldsException(msg);
+
         List<TrechoLinha> trechoLinhaList = trechoLinhaDAO.getByLinhaId(linha.getId());
         for (TrechoLinha trechoLinha : trechoLinhaList) {
 
@@ -44,6 +55,10 @@ public class GerenciarLinhaUseCase {
     }
 
     public boolean delete(Linha linha){
+        String msg = validator.validateFields(linha);
+        if(!msg.equals(""))
+            throw new InvalidFieldsException(msg);
+
         List<TrechoLinha> trechoLinhaList = trechoLinhaDAO.getByLinhaId(linha.getId());
         for (TrechoLinha trechoLinha : trechoLinhaList) {
             trechoLinhaDAO.delete(trechoLinha);
@@ -69,10 +84,6 @@ public class GerenciarLinhaUseCase {
 
     public List<TrechoLinha> getTrechosLinhaByKey(Long key){
         return trechoLinhaDAO.getByLinhaId(key);
-    }
-
-    private boolean verificarCampos(Linha linha) {
-        return !(linha.getNome().equals(""));
     }
 
 }

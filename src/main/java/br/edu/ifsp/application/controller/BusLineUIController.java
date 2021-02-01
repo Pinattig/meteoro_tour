@@ -1,5 +1,6 @@
 package br.edu.ifsp.application.controller;
 
+import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
@@ -16,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
 
+import java.io.IOException;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.UUID;
@@ -65,9 +67,8 @@ public class BusLineUIController {
         }
     }
 
-    public void cadastrarLinha(ActionEvent actionEvent) {
-
-
+    public void cadastrarLinha(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("PassageUI", 160, 344);
     }
 
     public void adicionarTrechoLinha(ActionEvent actionEvent) {

@@ -3,11 +3,14 @@ package br.edu.ifsp.domain.usecases.passagem;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
+import br.edu.ifsp.utils.exceptions.InvalidFieldsException;
 import br.edu.ifsp.utils.exceptions.NotAvaliableSeatException;
 import br.edu.ifsp.utils.exceptions.PassageIsNotCreatedException;
 import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
 import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
+import br.edu.ifsp.utils.validators.IValidator;
+import br.edu.ifsp.utils.validators.PassageValidator;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -19,12 +22,13 @@ import java.util.Random;
 public class VenderPassagemUseCase {
     private PassagemDAO passagemDAO;
     private GerarViagemUseCase gerarViagemUseCase;
+    private IValidator validator;
 
     public VenderPassagemUseCase(PassagemDAO passagemDAO, GerarViagemUseCase gerarViagemUseCase) {
         this.passagemDAO = passagemDAO;
         this.gerarViagemUseCase = gerarViagemUseCase;
+        this.validator = new PassageValidator();
     }
-
 
     public Passagem venderPassagem(String cidadeOrigem, String cidadeDestino, LocalDate dataViagem, LocalTime horarioSaida, String assento, String nome, String cpf, String rg, String telefone, boolean seguro, TipoEspecial tipoEspecial) {
         Viagem viagem = gerarViagemUseCase.gerarViagem(dataViagem,cidadeOrigem,cidadeDestino,horarioSaida);
@@ -58,8 +62,13 @@ public class VenderPassagemUseCase {
         Long numeroPassagem = randomNumber();
         Passagem passagem = new Passagem(numeroPassagem, precoTotal, nome, cpf, rg, telefone, seguro, viagem, tipoEspecial, assento);
 
-        if(!passagemDAO.create(passagem))
-            throw new PassageIsNotCreatedException("A passagem não foi criada");
+        String msg = validator.validateFields(passagem);
+
+        if(!msg.equals(""))
+            throw new InvalidFieldsException(msg);
+
+        passagemDAO.create(passagem);
+
         return passagem;
     }
 
