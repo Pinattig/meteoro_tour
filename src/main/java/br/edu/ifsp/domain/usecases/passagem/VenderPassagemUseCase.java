@@ -5,15 +5,12 @@ import br.edu.ifsp.domain.entities.trecho.TrechoLinha;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
 import br.edu.ifsp.utils.exceptions.InvalidFieldsException;
 import br.edu.ifsp.utils.exceptions.NotAvaliableSeatException;
-import br.edu.ifsp.utils.exceptions.PassageIsNotCreatedException;
 import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.entities.passagem.TipoEspecial;
 import br.edu.ifsp.domain.usecases.viagem.GerarViagemUseCase;
 import br.edu.ifsp.utils.validators.IValidator;
 import br.edu.ifsp.utils.validators.PassageValidator;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +27,7 @@ public class VenderPassagemUseCase {
         this.validator = new PassageValidator();
     }
 
-    public Passagem venderPassagem(String cidadeOrigem, String cidadeDestino, LocalDate dataViagem, LocalTime horarioSaida, String assento, String nome, String cpf, String rg, String telefone, boolean seguro, TipoEspecial tipoEspecial) {
+    public Passagem venderPassagem(String cidadeOrigem, String cidadeDestino, String dataViagem, String horarioSaida, String assento, String nome, String cpf, String rg, String telefone, boolean seguro, TipoEspecial tipoEspecial) {
         Viagem viagem = gerarViagemUseCase.gerarViagem(dataViagem,cidadeOrigem,cidadeDestino,horarioSaida);
 
         if(!viagem.verificarAssentosDisponiveis())

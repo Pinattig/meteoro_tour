@@ -18,7 +18,18 @@ import java.util.UUID;
 public class SqliteTrechoDAO implements TrechoDAO {
     @Override
     public Trecho getByCities(String cidadeOrigem, String cidadeDestino) {
-        return null;
+        String sql = "SELECT * FROM TRECHO WHERE cidadeOrigem = ? and cidadeDestino = ?";
+        Trecho trecho = null;
+        try(PreparedStatement preparedStatement = ConnectionFactory.createPreparedStatement(sql)) {
+            preparedStatement.setString(1, cidadeOrigem);
+            preparedStatement.setString(2, cidadeDestino);
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next())
+                trecho = resultSetEntity(rs);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return trecho;
     }
 
     @Override

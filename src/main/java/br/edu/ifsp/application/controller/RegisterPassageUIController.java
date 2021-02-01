@@ -52,15 +52,15 @@ public class RegisterPassageUIController {
         try{
             venderPassagemUseCase.venderPassagem(txtOrigem.getText(),
                     txtDestino.getText(),
-                    LocalDate.parse(txtData.getText()),
-                    LocalTime.parse(txtHora.getText()),
+                    txtData.getText(),
+                    txtHora.getText(),
                     txtAssento.getText(),
                     txtNomeCliente.getText(),
                     txtCpfCliente.getText(),
                     txtRgCliente.getText(),
                     txtTelefoneCliente.getText(),
                     cbSeguro.isSelected(),
-                    TipoEspecial.valueOf(txtTipoEspecial.getText()));
+                    TipoEspecial.NAO);
             lbMsgFeedBack.setText("Passagem criada com sucesso");
         }catch (RuntimeException e){
             lbMsgFeedBack.setText(e.getMessage());

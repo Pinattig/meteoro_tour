@@ -28,11 +28,11 @@ public class GerarViagemUseCase {
         this.viagemDAO = viagemDAO;
     }
 
-    public Viagem gerarViagem(LocalDate data, String cidadeOrigem, String cidadeDestino, LocalTime horarioSaida) {
+    public Viagem gerarViagem(String data, String cidadeOrigem, String cidadeDestino, String horarioSaida) {
         Trecho trecho = trechoDAO.getByCities(cidadeOrigem, cidadeDestino);
         List<TrechoLinha> listTrecholinha = trechoLinhaDAO.getByTrechoId(trecho.getId());
         Linha linha = listTrecholinha.get(0).getLinha();
-        List<TrechoLinha> trechosViagem = gerarTrechosViagem(cidadeOrigem, cidadeDestino, data, linha);
+        List<TrechoLinha> trechosViagem = gerarTrechosViagem(cidadeOrigem, cidadeDestino, LocalDate.parse(data), linha);
         Viagem viagem = new Viagem(cidadeOrigem, cidadeDestino, linha, data, horarioSaida, trechosViagem);
         viagemDAO.create(viagem);
         return viagem;

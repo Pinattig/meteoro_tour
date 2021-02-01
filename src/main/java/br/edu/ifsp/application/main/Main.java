@@ -204,14 +204,14 @@ public class Main {
 
         //System.out.println("=====================================================================");
 
-        Viagem viagem1 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 10), "São Paulo", "São Carlos", LocalTime.of(4,30,0,0));
-        Viagem viagem2 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 16), "São Carlos", "Ibaté", LocalTime.of(3,0,0,0));
-        Viagem viagem3 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 22), "Ibaté", "Araraquara", LocalTime.of(5,15,0,0));
+//        Viagem viagem1 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 10), "São Paulo", "São Carlos", LocalTime.of(4,30,0,0));
+//        Viagem viagem2 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 16), "São Carlos", "Ibaté", LocalTime.of(3,0,0,0));
+//        Viagem viagem3 = gerarViagemUseCase.gerarViagem(LocalDate.of(2020, 1, 22), "Ibaté", "Araraquara", LocalTime.of(5,15,0,0));
 
 
-        Passagem passagem1 = venderPassagemUseCase.venderPassagem("São Paulo", "São Carlos", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "13", "Juca da Silva", "464.567.370-01", "35.938.378-6", "(74) 21059-6913", true, TipoEspecial.DEFICIENTE);
-        Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
-        Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2021, 2, 15), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
+//        Passagem passagem1 = venderPassagemUseCase.venderPassagem("São Paulo", "São Carlos", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "13", "Juca da Silva", "464.567.370-01", "35.938.378-6", "(74) 21059-6913", true, TipoEspecial.DEFICIENTE);
+//        Passagem passagem2 = venderPassagemUseCase.venderPassagem("São Carlos", "Ibaté", LocalDate.of(2021, 1, 12), LocalTime.of(3,30,0,0), "17", "Marcos Oliveira", "071.853.200-70", "23.703.707-5", "(32) 55342-0093", false, TipoEspecial.IDOSO);
+//        Passagem passagem3 = venderPassagemUseCase.venderPassagem("Ibaté", "Araraquara", LocalDate.of(2021, 2, 15), LocalTime.of(3,30,0,0), "22", "Mario Medeiros", "227.837.680-20", "45.372.855-8", "(19) 43202-0775", false, TipoEspecial.NAO);
 
         //System.out.println("passagem3 = " + passagem3);
         

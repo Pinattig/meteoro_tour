@@ -27,7 +27,7 @@ public class GerenciarFuncionarioUseCase {
         if(!msg.equals(""))
             throw new InvalidFieldsException(msg);
 
-        return funcionarioDao.create(funcionario);
+        return funcionarioDao.update(funcionario);
     }
 
     public boolean insert(Funcionario funcionario){

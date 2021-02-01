@@ -20,7 +20,7 @@ public class Viagem {
     private List<TrechoLinha> trechoLinhas;
     private Linha linha;
 
-    public Viagem() {
+    public Viagem(String cidadeOrigem, String cidadeDestino, Linha linha, String data, String horarioSaida, List<TrechoLinha> trechosViagem) {
     }
 
     public Viagem(String cidadeOrigem, String cidadeDestino,Linha linha, LocalDate data, LocalTime horarioSaida, List<TrechoLinha> trechosViagem) {
