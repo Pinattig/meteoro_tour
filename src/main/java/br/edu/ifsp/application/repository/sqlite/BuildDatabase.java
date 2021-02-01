@@ -116,7 +116,7 @@ public class BuildDatabase {
         StringBuilder builder = new StringBuilder();
 
         builder.append("CREATE TABLE TRECHO (\n");
-        builder.append("id integer primary key,\n");
+        builder.append("id text primary key,\n");
         builder.append("cidadeOrigem text not null,\n");
         builder.append("nome text not null,\n");
         builder.append("cidadeDestino text not null,\n");

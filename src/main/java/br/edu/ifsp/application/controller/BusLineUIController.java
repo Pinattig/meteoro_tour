@@ -68,7 +68,7 @@ public class BusLineUIController {
     }
 
     public void cadastrarLinha(ActionEvent actionEvent) throws IOException {
-        WindowLoader.setRoot("PassageUI", 160, 344);
+        WindowLoader.setRoot("RegisterBusLineUI", 160, 344);
     }
 
     public void adicionarTrechoLinha(ActionEvent actionEvent) {

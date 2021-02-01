@@ -6,6 +6,10 @@ public class BusLineValidator implements IValidator<Linha>{
 
     private String message;
 
+    public BusLineValidator() {
+        this.message = "";
+    }
+
     @Override
     public String validateFields(Linha object) {
         validateObject(object);

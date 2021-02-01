@@ -31,6 +31,7 @@ public class RegisterBusLineUIController {
             lbError.setText("Linha cadastrada com sucesso!");
         } catch (RuntimeException e) {
             lbError.setText(e.getMessage());
+            System.out.println("e.getMessage() = " + e.getMessage());
         }
     }
 

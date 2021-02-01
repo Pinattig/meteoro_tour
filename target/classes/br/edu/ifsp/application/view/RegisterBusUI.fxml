@@ -9,7 +9,8 @@
       <Label layoutX="48.0" layoutY="100.0" text="Renavam:" />
       <TextField fx:id="txtPlaca" layoutX="113.0" layoutY="46.0" prefHeight="25.0" prefWidth="180.0" />
       <TextField fx:id="txtRenavam" layoutX="113.0" layoutY="96.0" prefHeight="25.0" prefWidth="180.0" />
-      <Button fx:id="btnCadastrar" layoutX="298.0" layoutY="167.0" mnemonicParsing="false" onAction="#cadastrarOnibus" text="Cadastrar" />
-      <Label fx:id="lbError" layoutX="49.0" layoutY="171.0" prefHeight="17.0" prefWidth="234.0" />
+      <Button fx:id="btnCadastrar" layoutX="156.0" layoutY="155.0" mnemonicParsing="false" onAction="#cadastrarOnibus" text="Cadastrar" />
+      <Label fx:id="lbMsgFeedback" layoutX="52.0" layoutY="130.0" prefHeight="17.0" prefWidth="234.0" />
+      <Button fx:id="btnVoltar" layoutX="22.0" layoutY="167.0" mnemonicParsing="false" onAction="#backToAction" prefHeight="25.0" prefWidth="60.0" text="Voltar" />
    </children>
 </AnchorPane>
