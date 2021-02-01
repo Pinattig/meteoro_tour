@@ -1,14 +1,19 @@
 package br.edu.ifsp.domain.usecases.onibus;
 
 import br.edu.ifsp.domain.entities.onibus.Onibus;
+import br.edu.ifsp.utils.exceptions.InvalidFieldsException;
+import br.edu.ifsp.utils.validators.BusValidator;
+import br.edu.ifsp.utils.validators.IValidator;
 
 import java.util.List;
 
 public class GerenciarOnibusUseCase {
 
     private OnibusDAO onibusDAO;
+    private IValidator validator;
 
     public GerenciarOnibusUseCase(OnibusDAO onibusDAO) {
+        this.validator = new BusValidator();
         this.onibusDAO = onibusDAO;
     }
 
@@ -17,26 +22,28 @@ public class GerenciarOnibusUseCase {
     }
 
     public Object insert(Onibus onibus){
-        if(onibus == null)
-            throw new IllegalArgumentException("O onibus é nulo!");
-        if(onibusDAO.findOne(onibus.getRenavam()).isPresent())
-            throw new IllegalArgumentException("O onibus ja existe!");
-        if(verificarCampos(onibus))
-            return onibusDAO.create(onibus);
-        return false;
+        String msg = validator.validateFields(onibus);
+        if(!msg.equals(""))
+            throw new InvalidFieldsException(msg);
+
+        return onibusDAO.create(onibus);
     }
 
     public boolean update(Onibus onibus){
-        if(onibus == null)
-            throw new IllegalArgumentException("O onibus é nulo!");
-        if(onibusDAO.findOne(onibus.getRenavam()).isEmpty())
-            throw new IllegalArgumentException("O onibus não existe!");
-        if(verificarCampos(onibus))
-            return onibusDAO.update(onibus);
-        return false;
+
+        String msg = validator.validateFields(onibus);
+        if(!msg.equals(""))
+            throw new InvalidFieldsException(msg);
+
+        return onibusDAO.update(onibus);
     }
 
     public boolean delete(Onibus onibus){
+
+        String msg = validator.validateFields(onibus);
+        if(!msg.equals(""))
+            throw new InvalidFieldsException(msg);
+
         return onibusDAO.delete(onibus);
     }
 

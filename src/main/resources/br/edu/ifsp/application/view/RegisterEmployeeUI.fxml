@@ -13,7 +13,8 @@
       <TextField fx:id="txtCpf" layoutX="117.0" layoutY="98.0" />
       <TextField fx:id="txtRg" layoutX="345.0" layoutY="41.0" />
       <TextField fx:id="txtCargo" layoutX="345.0" layoutY="98.0" />
-      <Button fx:id="btnCadastrar" layoutX="427.0" layoutY="163.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" text="Cadastrar" />
-      <Label fx:id="lbError" layoutX="66.0" layoutY="188.0" prefHeight="17.0" prefWidth="336.0" />
+      <Button fx:id="btnCadastrar" layoutX="427.0" layoutY="189.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" text="Cadastrar" />
+      <Label fx:id="lbError" layoutX="62.0" layoutY="146.0" prefHeight="17.0" prefWidth="336.0" />
+      <Button fx:id="btnVoltar" layoutX="54.0" layoutY="189.0" mnemonicParsing="false" onAction="#backToAction" text="Voltar" />
    </children>
 </AnchorPane>

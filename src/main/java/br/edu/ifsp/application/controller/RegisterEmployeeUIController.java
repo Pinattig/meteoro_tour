@@ -1,11 +1,14 @@
 package br.edu.ifsp.application.controller;
 
+import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 import static br.edu.ifsp.application.main.Main.gerenciarFuncionarioUseCase;
 import static br.edu.ifsp.application.main.Main.gerenciarOnibusUseCase;
@@ -35,9 +38,13 @@ public class RegisterEmployeeUIController {
 
         try {
             gerenciarFuncionarioUseCase.insert(funcionario);
-            System.out.println(gerenciarFuncionarioUseCase.getAll());
+            lbError.setText("Funcionário cadastrado com sucesso!");
         } catch (RuntimeException e) {
             lbError.setText(e.getMessage());
         }
+    }
+
+    public void backToAction(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("EmployeeUI", 335, 610);
     }
 }

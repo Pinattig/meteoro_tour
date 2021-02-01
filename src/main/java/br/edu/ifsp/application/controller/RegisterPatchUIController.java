@@ -26,15 +26,10 @@ public class RegisterPatchUIController {
 
     @FXML Label lbError;
 
-
-
-
     public void cadastrarTrecho(ActionEvent actionEvent) {
-
         try{
             Trecho trecho = pegarValoresDosCampos();
             gerenciarTrechosUseCase.insert(trecho);
-            System.out.println("gerenciarTrechosUseCase.getAll() = " + gerenciarTrechosUseCase.getAll());
         }catch(RuntimeException e){
             lbError.setText(e.getMessage());
         }
@@ -55,11 +50,5 @@ public class RegisterPatchUIController {
         return trecho;
 
     }
-    private Double tryParseDouble(String text){
-        try{
-            return Double.parseDouble(text);
-        }catch(IllegalArgumentException e){
-            return 0.0;
-        }
-    }
+
 }
