@@ -18,7 +18,7 @@ public class FazerLoginUseCase {
         return true;
     }
 
-    public boolean createLogin(String login, String senha){
-        return loginDAO.createLogin(senha, login);
+    public boolean createLogin(String login, String senha, String nome){
+        return loginDAO.createLogin(senha, login, nome);
     }
 }

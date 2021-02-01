@@ -44,6 +44,9 @@ public class BusUIController {
         WindowLoader.setRoot("RegisterBusUI", 215, 390);
     }
 
+    public void backToAction(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("AdminMainUI", 269, 481);
+    }
     public void delete(ActionEvent actionEvent) {
         Onibus selectedItem = busTable.getSelectionModel().getSelectedItem();
         if(selectedItem != null){

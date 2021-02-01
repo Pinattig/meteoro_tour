@@ -1,5 +1,6 @@
 package br.edu.ifsp.application.controller;
 
+import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.time.LocalTime;
 
 import static br.edu.ifsp.application.main.Main.gerenciarTrechosUseCase;
@@ -29,7 +31,7 @@ public class RegisterPatchUIController {
     public void cadastrarTrecho(ActionEvent actionEvent) {
         try{
             Trecho trecho = pegarValoresDosCampos();
-            gerenciarTrechosUseCase.insert(trecho);
+            System.out.println(gerenciarTrechosUseCase.insert(trecho));
             lbError.setText("Trecho cadastrado com sucesso!");
         }catch(RuntimeException e){
             lbError.setText(e.getMessage());
@@ -52,4 +54,7 @@ public class RegisterPatchUIController {
 
     }
 
+    public void backToAction(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("PatchUI", 410, 550);
+    }
 }

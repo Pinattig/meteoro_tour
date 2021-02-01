@@ -16,6 +16,7 @@
       </TableView>
       <Label fx:id="lbTitle" layoutX="231.0" layoutY="20.0" text="Funcionários cadastrados" />
       <Button fx:id="btnDelete" layoutX="490.0" layoutY="257.0" mnemonicParsing="false" onAction="#removerFuncionario" prefHeight="25.0" prefWidth="80.0" text="Excluir" />
-      <Label fx:id="msgFeedback" layoutX="27.0" layoutY="294.0" text="Label" visible="false" />
+      <Label fx:id="msgFeedback" layoutX="27.0" layoutY="294.0" prefHeight="17.0" prefWidth="476.0" text="Label" visible="false" />
+      <Button fx:id="btnVoltar" layoutX="521.0" layoutY="290.0" mnemonicParsing="false" onAction="#backToAction" text="Voltar" />
     </children>
 </AnchorPane>

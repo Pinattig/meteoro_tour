@@ -15,7 +15,7 @@ public class InMemoryLoginDAO implements LoginDAO {
     }
 
     @Override
-    public boolean createLogin(String senha, String login){
+    public boolean createLogin(String senha, String login, String nome){
         db.put(login, senha);
         return true;
     }

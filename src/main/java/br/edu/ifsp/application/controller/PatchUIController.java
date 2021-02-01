@@ -57,11 +57,13 @@ public class PatchUIController {
 
     public void consultar(ActionEvent actionEvent) {
         try{
-            String idTrecho = txtConsulta.getText();
-            trechoConsultado = gerenciarTrechosUseCase.findOneByKey(UUID.fromString(idTrecho));
+            String nameTrecho = txtConsulta.getText();
+            if(trechoConsultado == null)
+                habilitarBotoes();
+            trechoConsultado = gerenciarTrechosUseCase.findOneByName(nameTrecho);
             areaCampoTrecho.setVisible(true);
             setarTextDosCampos();
-            habilitarBotoes();
+
         }catch (RuntimeException e){
             exibirMensagemErro(e.getMessage());
         }
@@ -73,7 +75,6 @@ public class PatchUIController {
     }
 
     public void editar(ActionEvent actionEvent) {
-        edicao = true;
         exibirCamposParaEditar();
         btnAtualizar.setVisible(true);
         txtConsulta.setDisable(true);
@@ -111,10 +112,17 @@ public class PatchUIController {
         if(!verificarErrosNosCampos())
             exibirMensagemErro("Há campos com valores incorretos");
         else{
-            SetarNovosValoresParaOTrecho();
-            gerenciarTrechosUseCase.update(trechoConsultado);
-            cancelar(actionEvent);
-            modoAtualizar = true;
+            try{
+                System.out.println(trechoConsultado);
+                System.out.println(gerenciarTrechosUseCase.update(trechoConsultado));
+                SetarNovosValoresParaOTrecho();
+
+                cancelar(actionEvent);
+                setarTextDosCampos();
+                exibirMensagem("Trecho editado com sucesso", Color.web("#000000", 0.8));
+            }catch (RuntimeException e){
+                exibirMensagemErro(e.getMessage());
+            }
 
         }
     }
@@ -146,17 +154,13 @@ public class PatchUIController {
     }
 
     public void cancelar(ActionEvent actionEvent) {
-        if(edicao){
-            btnCancelar.setVisible(false);
-            btnAtualizar.setVisible(false);
-            lbMsgFeedback.setText("");
-            exibirCamposParaEditar();
-            txtConsulta.setDisable(false);
-            edicao = false;
-        }
-        else if(modoAtualizar)
-            consultar(actionEvent);
-        limparCampos();
+        btnCancelar.setVisible(false);
+        btnAtualizar.setVisible(false);
+        lbMsgFeedback.setText("");
+        exibirCamposParaEditar();
+        txtConsulta.setDisable(false);
+        setarTextDosCampos();
+
     }
 
     private void setarCamposParaEditar(){
@@ -185,27 +189,7 @@ public class PatchUIController {
         return tentarConverterParaDouble(txtEditarKm.getText()) && tentarConverterParaDouble(txtEditarValor.getText())
                 && tentarConverterParaDouble(txtEditarEmbarque.getText()) && tentarConverterParaDouble(txtEditarSeguro.getText());
 
-        /*
-        if(verificarCamposVazios()){
-            return tentarConverterParaDouble(txtEditarKm.getText()) && tentarConverterParaDouble(txtEditarValor.getText())
-                    && tentarConverterParaDouble(txtEditarEmbarque.getText()) && tentarConverterParaDouble(txtEditarSeguro.getText());
-        }
-        else
-            return false;
-*/
     }
-
-//    private boolean verificarCamposVazios(){
-//        return !(txtEditarSeguro.getText().equals("")
-//                || txtEditarDestino.getText().equals("")
-//                || txtEditarEmbarque.getText().equals("")
-//                || txtEditarKm.getText().equals("")
-//                || txtEditarNome.getText().equals("")
-//                || txtEditarOrigem.getText().equals("")
-//                || txtEditarSeguro.getText().equals("")
-//                || txtEditarValor.getText().equals(""));
-//
-//    }
 
     private boolean tentarConverterParaDouble(String numero){
         try{
@@ -223,4 +207,7 @@ public class PatchUIController {
     }
 
 
+    public void backToAction(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("AdminMainUI", 269, 481);
+    }
 }

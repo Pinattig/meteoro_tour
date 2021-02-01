@@ -60,6 +60,9 @@ public class EmployeeUIController {
         }
     }
 
+    public void backToAction(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("AdminMainUI", 269, 481);
+    }
 
     private void loadData() {
         List<Funcionario> funcionarios = gerenciarFuncionarioUseCase.getAll();

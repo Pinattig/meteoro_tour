@@ -1,5 +1,6 @@
 package br.edu.ifsp.application.repository.sqlite;
 
+import br.edu.ifsp.domain.entities.linha.Linha;
 import br.edu.ifsp.domain.entities.onibus.Onibus;
 import br.edu.ifsp.domain.entities.viagem.Viagem;
 import br.edu.ifsp.domain.usecases.trecho.TrechoDAO;
@@ -16,6 +17,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static br.edu.ifsp.application.main.Main.gerenciarLinhaUseCase;
+import static br.edu.ifsp.application.main.Main.gerenciarTrechosUseCase;
 
 public class SqliteViagemDAO implements ViagemDAO {
     @Override
@@ -116,11 +118,12 @@ public class SqliteViagemDAO implements ViagemDAO {
     }
 
     private Viagem resultSetEntity(ResultSet resultSet) throws SQLException {
+        Linha linha = gerenciarLinhaUseCase.getOne(Long.valueOf(resultSet.getString("linha"))).get();
         return new Viagem(resultSet.getString("cidadeOrigem"),
                         resultSet.getString("cidadeDestino"),
-                        gerenciarLinhaUseCase.getOne(Long.valueOf(resultSet.getString("linha"))),
+                        linha,
                         LocalDate.parse(resultSet.getString("data")),
                         LocalTime.parse(resultSet.getString("horarioSaida")),
-                        SqliteTrechoLinhaDAO.findAll());
+                        gerenciarLinhaUseCase.getTrechosLinhaByKey(linha.getId()));
     }
 }

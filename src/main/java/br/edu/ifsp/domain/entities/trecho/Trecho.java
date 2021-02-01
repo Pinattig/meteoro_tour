@@ -31,6 +31,18 @@ public class Trecho {
         this.nome = nome;
     }
 
+    public Trecho(UUID id,String cidadeOrigem, String cidadeDestino, double quilometragem, LocalTime tempoDuracao, double valorPassagem, double taxaEmbarque, double valorSeguro, String nome) {
+        this.id = id;
+        this.cidadeOrigem = cidadeOrigem;
+        this.cidadeDestino = cidadeDestino;
+        this.quilometragem = quilometragem;
+        this.tempoDuracao = tempoDuracao;
+        this.valorPassagem = valorPassagem;
+        this.taxaEmbarque = taxaEmbarque;
+        this.valorSeguro = valorSeguro;
+        this.nome = nome;
+    }
+
     public UUID getId() {
         return id;
     }

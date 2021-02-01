@@ -74,6 +74,10 @@ public class InMemoryTrechoDAO implements TrechoDAO {
             return null;
     }
 
+    @Override
+    public Trecho findOneByName(String name) {
+        return null;
+    }
 
 
 }

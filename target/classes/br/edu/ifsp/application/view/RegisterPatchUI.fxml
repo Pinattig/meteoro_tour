@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="280.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.RegisterPatchUIController">
+<AnchorPane prefHeight="280.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.RegisterPatchUIController">
    <children>
       <Label layoutX="32.0" layoutY="85.0" text="Cidade de origem:" />
       <Label layoutX="32.0" layoutY="127.0" text="Cidade de destino:" />
@@ -21,7 +21,8 @@
       <TextField fx:id="txtValorTrecho" layoutX="436.0" layoutY="81.0" />
       <TextField fx:id="txtTaxaEmbarque" layoutX="436.0" layoutY="123.0" />
       <TextField fx:id="txtValorSeguro" layoutX="436.0" layoutY="168.0" />
-      <Button fx:id="btnCadastrar" layoutX="518.0" layoutY="223.0" mnemonicParsing="false" onAction="#cadastrarTrecho" text="Cadastrar" />
-      <Label fx:id="lbError" layoutX="32.0" layoutY="248.0" />
+      <Button fx:id="btnCadastrar" layoutX="31.0" layoutY="213.0" mnemonicParsing="false" onAction="#cadastrarTrecho" text="Cadastrar" />
+      <Label fx:id="lbError" layoutX="31.0" layoutY="249.0" prefHeight="17.0" prefWidth="551.0" />
+      <Button fx:id="btnVoltar" layoutX="533.0" layoutY="213.0" mnemonicParsing="false" onAction="#backToAction" text="Voltar" />
    </children>
 </AnchorPane>

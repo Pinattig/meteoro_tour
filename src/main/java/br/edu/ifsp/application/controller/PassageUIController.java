@@ -2,6 +2,7 @@ package br.edu.ifsp.application.controller;
 
 import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.passagem.Passagem;
+import br.edu.ifsp.utils.UserPermissionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -56,7 +57,8 @@ public class PassageUIController {
     Button btnReemitirPassagem;
     @FXML
     Button btnReagendar;
-
+    @FXML
+    Button btnVoltar;
 
     @FXML
     CheckBox cbSeguro;
@@ -68,6 +70,8 @@ public class PassageUIController {
 
     @FXML
     private void initialize() {
+        if(!UserPermissionManager.getUserPermission().equals("Administrador"))
+            btnVoltar.setVisible(false);
 
     }
 
@@ -128,6 +132,10 @@ public class PassageUIController {
             exibirMensagemErro(e.getMessage());
         }
 
+    }
+
+    public void backToAction(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("AdminMainUI", 269, 481);
     }
 
     private void inserirTextoDosCampos() {

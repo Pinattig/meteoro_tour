@@ -15,5 +15,6 @@
       <Label layoutX="181.0" layoutY="14.0" text="Onibus cadastrados" />
       <Button fx:id="btnExcluir" layoutX="382.0" layoutY="258.0" mnemonicParsing="false" onAction="#delete" prefHeight="25.0" prefWidth="86.0" text="Excluir" />
       <Label fx:id="msgFeedback" layoutX="23.0" layoutY="262.0" text="Label" visible="false" />
+      <Button fx:id="btnVoltar" layoutX="25.0" layoutY="293.0" mnemonicParsing="false" onAction="#backToAction" text="Voltar" />
     </children>
 </AnchorPane>

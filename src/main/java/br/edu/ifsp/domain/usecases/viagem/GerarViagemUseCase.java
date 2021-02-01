@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class GerarViagemUseCase {
 
@@ -67,5 +68,7 @@ public class GerarViagemUseCase {
         return trechosViagem;
     }
 
-
+    public Viagem findOne(UUID id){
+        return viagemDAO.findOne(id).get();
+    }
 }

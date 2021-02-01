@@ -49,25 +49,21 @@ public class Main {
     private static EmitirRelatoriosUseCase emitirRelatoriosUseCase;
     private static EmitirRelatorioDiarioUseCase emitirRelatorioDiarioUseCase;
     public static GerenciarTrechosUseCase gerenciarTrechosUseCase;
-    private static GerarViagemUseCase gerarViagemUseCase;
+    public static GerarViagemUseCase gerarViagemUseCase;
 
 
     public static void main(String[] args) throws IOException {
 
-        inMemoryInjection();
-
-        //popularComDadosFalsos();
-        setarBancoDeDados();
-
+        sqliteInjection();
+        //inMemoryInjection();
         WindowLoader.main(args);
-        // System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()).get().toString());
     }
 
     private static void popularComDadosFalsos() throws IOException {
         //Login
 
         //fazerLoginUseCase.loginAsSeller();
-        fazerLoginUseCase.createLogin("Gustavo", "Pinatti");
+        fazerLoginUseCase.createLogin("Gustavo", "Pinatti", "");
         //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "Gustavo"));
         //System.out.println(fazerLoginUseCase.loginAsAdmin("pinatti", "Gustavo"));  //SENHA ERRADA
         //System.out.println(fazerLoginUseCase.loginAsAdmin("Pinatti", "nome errado")); //NOME ERRADO
@@ -237,13 +233,13 @@ public class Main {
         //System.out.println("gerenciarTrechosUseCase.getAll() = " + gerenciarTrechosUseCase.getAll());
     }
 
-    private static void inMemoryInjection(){
-        FuncionarioDAO funcionarioDAO = new SqliteFuncionarioDAO();
-        LinhaDAO linhaDAO = new SqliteLinhaDAO();
+    private static void inMemoryInjection() throws IOException {
+        FuncionarioDAO funcionarioDAO = new InMemoryFuncionarioDAO();
+        LinhaDAO linhaDAO = new InMemoryLinhaDAO();
         LoginDAO loginDAO = new InMemoryLoginDAO();
-        OnibusDAO onibusDAO = new SqliteOnibusDAO();
+        OnibusDAO onibusDAO = new InMemoryOnibusDAO();
         PassagemDAO passagemDAO = new InMemoryPassagemDAO();
-        TrechoDAO trechoDAO = new SqliteTrechoDAO();
+        TrechoDAO trechoDAO = new InMemoryTrechoDAO();
         TrechoLinhaDAO trechoLinhaDAO = new InMemoryTrechoLinhaDAO();
         ViagemDAO viagemDAO = new InMemoryViagemDAO();
 
@@ -261,6 +257,35 @@ public class Main {
         emitirRelatorioDiarioUseCase = new EmitirRelatorioDiarioUseCase(viagemDAO, trechoLinhaDAO);
         gerenciarTrechosUseCase = new GerenciarTrechosUseCase(trechoDAO, trechoLinhaDAO);
 
+        popularComDadosFalsos();
+    }
+
+    private static void sqliteInjection(){
+        FuncionarioDAO funcionarioDAO = new SqliteFuncionarioDAO();
+        LinhaDAO linhaDAO = new SqliteLinhaDAO();
+        LoginDAO loginDAO = new SqliteLoginDAO();
+        OnibusDAO onibusDAO = new SqliteOnibusDAO();
+        PassagemDAO passagemDAO = new SqlitePassagemDAO();
+        TrechoDAO trechoDAO = new SqliteTrechoDAO();
+        TrechoLinhaDAO trechoLinhaDAO = new SqliteTrechoLinhaDAO();
+        ViagemDAO viagemDAO = new SqliteViagemDAO();
+
+        gerenciarFuncionarioUseCase = new GerenciarFuncionarioUseCase(funcionarioDAO);
+        gerenciarLinhaUseCase = new GerenciarLinhaUseCase(linhaDAO, trechoLinhaDAO);
+        fazerLoginUseCase = new FazerLoginUseCase(loginDAO);
+        gerenciarOnibusUseCase = new GerenciarOnibusUseCase(onibusDAO);
+        consultarPassagemVendidaUseCase = new ConsultarPassagemVendidaUseCase(passagemDAO);
+        gerarViagemUseCase = new GerarViagemUseCase(linhaDAO,trechoDAO,trechoLinhaDAO, viagemDAO);
+        venderPassagemUseCase = new VenderPassagemUseCase(passagemDAO,gerarViagemUseCase);
+        devolverPassagemUseCase = new DevolverPassagemUseCase(passagemDAO);
+        reagendarPassagensUseCase = new ReagendarPassagensUseCase(passagemDAO, venderPassagemUseCase);
+        reemitirPassagemUseCase = new ReemitirPassagemUseCase(passagemDAO);
+        emitirRelatoriosUseCase = new EmitirRelatoriosUseCase(viagemDAO, trechoLinhaDAO);
+        emitirRelatorioDiarioUseCase = new EmitirRelatorioDiarioUseCase(viagemDAO, trechoLinhaDAO);
+        gerenciarTrechosUseCase = new GerenciarTrechosUseCase(trechoDAO, trechoLinhaDAO);
+
+        setarBancoDeDados();
+        //loginDAO.createLogin("Pinatti", "Gustavo", "Gustavo Pinatti");
     }
 
     private static void setarBancoDeDados(){

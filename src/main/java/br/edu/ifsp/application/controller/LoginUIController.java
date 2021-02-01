@@ -26,7 +26,7 @@ public class LoginUIController extends UserPermissionManager {
             boolean isLogado =  fazerLoginUseCase.loginAsAdmin(senha, login);
             if(isLogado){
                 super.setUserPermission("Administrador");
-                WindowLoader.setRoot("BusLineUI", 425, 545);
+                WindowLoader.setRoot("AdminMainUI", 425, 545);
             }else{
                 lbMsgError.setVisible(true);
                 lbMsgError.setText("Usuário ou senha incorretos");
@@ -39,7 +39,7 @@ public class LoginUIController extends UserPermissionManager {
 
     public void entrarVendedor(ActionEvent actionEvent) throws IOException {
         super.setUserPermission("Vendedor");
-        WindowLoader.setRoot("PassageUI", 465, 655);
+        WindowLoader.setRoot("PassageUI", 475, 655);
     }
 
 

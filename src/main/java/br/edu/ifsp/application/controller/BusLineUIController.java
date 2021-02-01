@@ -85,6 +85,10 @@ public class BusLineUIController {
     public void removerLinha(ActionEvent actionEvent) {
     }
 
+    public void backToAction(ActionEvent actionEvent) throws IOException {
+        WindowLoader.setRoot("AdminMainUI", 269, 481);
+    }
+
     private void setEditableColumns(){
         clIndex.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         clIndex.setOnEditCommit(e -> {

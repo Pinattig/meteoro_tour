@@ -2,6 +2,7 @@ package br.edu.ifsp.application.repository.sqlite;
 
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.linha.Linha;
+import br.edu.ifsp.domain.entities.passagem.Passagem;
 import br.edu.ifsp.domain.entities.trecho.Trecho;
 import br.edu.ifsp.domain.usecases.trecho.TrechoDAO;
 
@@ -22,12 +23,40 @@ public class SqliteTrechoDAO implements TrechoDAO {
 
     @Override
     public Trecho findOneByKey(UUID key) {
-        return null;
+
+        String sql = "SELECT * FROM TRECHO WHERE id = ?";
+        Trecho trecho = null;
+        try(PreparedStatement preparedStatement = ConnectionFactory.createPreparedStatement(sql)) {
+            preparedStatement.setString(1, String.valueOf(key));
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next())
+                trecho = resultSetEntity(rs);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return trecho;
+    }
+
+    @Override
+    public Trecho findOneByName(String name) {
+        String sql = "SELECT * FROM TRECHO WHERE nome = ?";
+        Trecho trecho = null;
+        try(PreparedStatement preparedStatement = ConnectionFactory.createPreparedStatement(sql)) {
+            preparedStatement.setString(1, String.valueOf(name));
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next())
+                trecho = resultSetEntity(rs);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        System.out.println(trecho);
+        return trecho;
     }
 
     @Override
     public boolean create(Trecho trecho) {
-        String sql = "INSERT INTO TRECHO (cidadeOrigem, cidadeDestino, quilometragem, tempoDuracao, valorPassagem,taxaEmbarque,valorSeguro,nome) values(?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO TRECHO (cidadeOrigem, cidadeDestino, quilometragem, tempoDuracao, valorPassagem,taxaEmbarque,valorSeguro,nome,id) values(?,?,?,?,?,?,?,?,?)";
         try(PreparedStatement preparedStatement = ConnectionFactory.createPreparedStatement(sql)){
             preparedStatement.setString(1,trecho.getCidadeOrigem());
             preparedStatement.setString(2,trecho.getCidadeDestino());
@@ -37,6 +66,7 @@ public class SqliteTrechoDAO implements TrechoDAO {
             preparedStatement.setDouble(6,trecho.getTaxaEmbarque());
             preparedStatement.setDouble(7,trecho.getValorSeguro());
             preparedStatement.setString(8,trecho.getNome());
+            preparedStatement.setString(9,trecho.getId().toString());
             preparedStatement.execute();
             return true;
         } catch (SQLException throwables) {
@@ -82,7 +112,7 @@ public class SqliteTrechoDAO implements TrechoDAO {
 
     @Override
     public boolean update(Trecho trecho) {
-        String sql = "UPDATE TRECHO(cidadeOrigem, cidadeDestino, quilometragem, tempoDuracao, valorPassagem,taxaEmbarque,valorSeguro,nome) values(?,?,?,?,?,?,?,?) where id = ?";
+        String sql = "UPDATE TRECHO SET cidadeOrigem = ?, cidadeDestino = ?, quilometragem = ?, tempoDuracao = ?, valorPassagem = ?,taxaEmbarque = ?,valorSeguro = ?,nome = ? where id = ?";
         try(PreparedStatement preparedStatement = ConnectionFactory.createPreparedStatement(sql)){
             preparedStatement.setString(1,trecho.getCidadeOrigem());
             preparedStatement.setString(2,trecho.getCidadeDestino());
@@ -92,9 +122,10 @@ public class SqliteTrechoDAO implements TrechoDAO {
             preparedStatement.setDouble(6,trecho.getTaxaEmbarque());
             preparedStatement.setDouble(7,trecho.getValorSeguro());
             preparedStatement.setString(8,trecho.getNome());
-            preparedStatement.setString(8, String.valueOf(trecho.getId()));
-            preparedStatement.execute();
-            return true;
+            preparedStatement.setString(9, String.valueOf(trecho.getId()));
+
+            return preparedStatement.execute();
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -124,7 +155,8 @@ public class SqliteTrechoDAO implements TrechoDAO {
 
 
     private Trecho resultSetEntity(ResultSet resultSet) throws SQLException {
-        return new Trecho(resultSet.getString("cidadeOrigem"),
+        return new Trecho(UUID.fromString(resultSet.getString("id")),
+                        resultSet.getString("cidadeOrigem"),
                         resultSet.getString("cidadeDestino"),
                         resultSet.getDouble("quilometragem"),
                         LocalTime.parse(resultSet.getString("tempoDuracao")),

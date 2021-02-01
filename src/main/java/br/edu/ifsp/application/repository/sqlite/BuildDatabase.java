@@ -15,6 +15,10 @@ public class BuildDatabase {
         }
     }
 
+    public void forceBuildDB(){
+            buidTables();
+    }
+
     private boolean isDatabaseMissing() {
         return !Files.exists(Paths.get("database.db"));
     }
@@ -118,7 +122,7 @@ public class BuildDatabase {
         builder.append("CREATE TABLE TRECHO (\n");
         builder.append("id text primary key,\n");
         builder.append("cidadeOrigem text not null,\n");
-        builder.append("nome text not null,\n");
+        builder.append("nome text not null UNIQUE,\n");
         builder.append("cidadeDestino text not null,\n");
         builder.append("quilometragem integer not null,\n");
         builder.append("tempoDuracao text not null,\n");

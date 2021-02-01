@@ -25,5 +25,6 @@
       <Button fx:id="addTrecho" layoutX="172.0" layoutY="365.0" mnemonicParsing="false" onAction="#adicionarTrechoLinha" text="Adicionar trecho" visible="false" />
       <TextField fx:id="txtTrechoId" layoutX="17.0" layoutY="365.0" visible="false" />
       <Label layoutX="17.0" layoutY="133.0" text="Trechos associados à linha:" visible="false" />
+      <Button fx:id="btnVoltar" layoutX="453.0" layoutY="365.0" mnemonicParsing="false" onAction="#backToAction" text="Voltar" />
    </children>
 </AnchorPane>

@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.PatchUIController">
+<AnchorPane prefHeight="400.0" prefWidth="538.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.application.controller.PatchUIController">
    <children>
-      <TextField fx:id="txtConsulta" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="235.0" text="Digite o id do trecho para pesquisar" />
+      <TextField fx:id="txtConsulta" layoutX="14.0" layoutY="31.0" prefHeight="25.0" prefWidth="235.0" promptText="Digite o id do trecho para pesquisar" />
       <Button fx:id="btnConsulta" layoutX="263.0" layoutY="31.0" mnemonicParsing="false" onAction="#consultar" text="Consultar trecho" />
       <Button fx:id="btnCadastrar" layoutX="385.0" layoutY="31.0" mnemonicParsing="false" onAction="#cadastrar" text="Cadastrar trecho" />
       <Pane fx:id="areaCampoTrecho" layoutX="14.0" layoutY="89.0" prefHeight="191.0" prefWidth="497.0" visible="false">
@@ -38,8 +38,9 @@
       </Pane>
       <Button fx:id="btnEditar" layoutX="37.0" layoutY="280.0" mnemonicParsing="false" onAction="#editar" text="Editar trecho" visible="false" />
       <Button fx:id="btnRemover" layoutX="171.0" layoutY="280.0" mnemonicParsing="false" onAction="#remover" text="Remover trecho" visible="false" />
-      <Button fx:id="btnAtualizar" layoutX="448.0" layoutY="355.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar" visible="false" />
+      <Button fx:id="btnAtualizar" layoutX="100.0" layoutY="355.0" mnemonicParsing="false" onAction="#atualizar" text="Atualizar" visible="false" />
       <Button fx:id="btnCancelar" layoutX="27.0" layoutY="355.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" visible="false" />
       <Label fx:id="lbMsgFeedback" layoutX="37.0" layoutY="323.0" />
+      <Button fx:id="btnVoltar" layoutX="437.0" layoutY="355.0" mnemonicParsing="false" onAction="#backToAction" text="Voltar" />
    </children>
 </AnchorPane>

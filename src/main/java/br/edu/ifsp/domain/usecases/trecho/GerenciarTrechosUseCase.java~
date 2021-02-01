@@ -35,7 +35,10 @@ public class GerenciarTrechosUseCase {
         if(!msg.equals(""))
             throw new InvalidFieldsException(msg);
 
-        return trechoDAO.create(trecho);
+
+        if(Optional.ofNullable(trechoDAO.findOne(trecho.getId())).isEmpty())
+            return trechoDAO.create(trecho);
+        return false;
 
     }
 

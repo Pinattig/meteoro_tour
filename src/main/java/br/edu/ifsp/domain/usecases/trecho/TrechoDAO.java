@@ -9,4 +9,5 @@ public interface TrechoDAO extends DAO<Trecho, UUID> {
 
     public Trecho getByCities(String cidadeOrigem, String cidadeDestino);
     public Trecho findOneByKey(UUID key);
+    public Trecho findOneByName(String name);
 }

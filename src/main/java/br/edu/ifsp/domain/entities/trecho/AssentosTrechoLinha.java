@@ -5,6 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class AssentosTrechoLinha {
+    private Integer id;
     private LocalDate data;
     private Map<String, Boolean> assentosVendidos;
     private Integer assentosPrefDisponiveis;
@@ -19,6 +20,14 @@ public class AssentosTrechoLinha {
         this.assentosVendidos = initializeSeats();
         this.assentosPrefDisponiveis = 2;
         this.assentosDisponiveis = 44;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public LocalDate getData() {

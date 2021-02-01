@@ -30,7 +30,7 @@
             <Label fx:id="lbDataViagem" layoutX="432.0" layoutY="190.0" prefHeight="17.0" prefWidth="158.0" text="abc" />
             <TextField fx:id="txtDataViagem" layoutX="428.0" layoutY="189.0" prefHeight="25.0" prefWidth="158.0" visible="false" />
          </children></Pane>
-      <Button fx:id="btnVenderPassagem" layoutX="500.0" layoutY="32.0" mnemonicParsing="false" onAction="#venderPassagem" prefHeight="25.0" prefWidth="131.0" text="Vender Passagem" />
+      <Button fx:id="btnVenderPassagem" layoutX="476.0" layoutY="32.0" mnemonicParsing="false" onAction="#venderPassagem" prefHeight="25.0" prefWidth="131.0" text="Vender Passagem" />
       <Button fx:id="btnReemitirPassagem" layoutX="368.0" layoutY="355.0" mnemonicParsing="false" onAction="#reemitirPassagem" prefHeight="25.0" prefWidth="131.0" text="Reemitir Passagem" visible="false" />
       <Button fx:id="btnReagendarPassagem" layoutX="218.0" layoutY="355.0" mnemonicParsing="false" onAction="#habilitarCampoData" prefHeight="25.0" prefWidth="131.0" text="Reagendar Passagem" visible="false" />
       <Button fx:id="btnDevolverPassagem" layoutX="68.0" layoutY="355.0" mnemonicParsing="false" onAction="#devolverPassagem" prefHeight="25.0" prefWidth="131.0" text="Devolver Passagem" visible="false" />
@@ -38,5 +38,6 @@
       <TextField fx:id="txtConsultarPassagem" layoutX="23.0" layoutY="32.0" prefHeight="25.0" prefWidth="275.0" />
       <Label fx:id="lbMsgFeedback" layoutX="23.0" layoutY="405.0" prefHeight="17.0" prefWidth="477.0" visible="false" />
       <Button fx:id="btnReagendar" layoutX="368.0" layoutY="355.0" mnemonicParsing="false" onAction="#reagendarPassagem" prefHeight="25.0" prefWidth="131.0" text="Reagendar" visible="false" />
+      <Button fx:id="btnVoltar" layoutX="566.0" layoutY="401.0" mnemonicParsing="false" onAction="#backToAction" text="Voltar" />
    </children>
 </AnchorPane>
