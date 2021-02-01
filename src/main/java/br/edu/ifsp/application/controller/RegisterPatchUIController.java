@@ -30,6 +30,7 @@ public class RegisterPatchUIController {
         try{
             Trecho trecho = pegarValoresDosCampos();
             gerenciarTrechosUseCase.insert(trecho);
+            lbError.setText("Trecho cadastrado com sucesso!");
         }catch(RuntimeException e){
             lbError.setText(e.getMessage());
         }
