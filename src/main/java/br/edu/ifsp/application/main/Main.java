@@ -1,6 +1,7 @@
 package br.edu.ifsp.application.main;
 
 import br.edu.ifsp.application.repository.inMemory.*;
+import br.edu.ifsp.application.repository.sqlite.BuildDatabase;
 import br.edu.ifsp.application.view.WindowLoader;
 import br.edu.ifsp.domain.entities.funcionario.Funcionario;
 import br.edu.ifsp.domain.entities.linha.Linha;
@@ -54,7 +55,8 @@ public class Main {
 
         inMemoryInjection();
 
-        popularComDadosFalsos();
+        //popularComDadosFalsos();
+        setarBancoDeDados();
 
         WindowLoader.main(args);
         // System.out.println(consultarPassagemVendidaUseCase.consultarPassagemByCpf(passagem1.getCpf()).get().toString());
@@ -258,5 +260,11 @@ public class Main {
         emitirRelatorioDiarioUseCase = new EmitirRelatorioDiarioUseCase(viagemDAO, trechoLinhaDAO);
         gerenciarTrechosUseCase = new GerenciarTrechosUseCase(trechoDAO, trechoLinhaDAO);
 
+    }
+
+    private static void setarBancoDeDados(){
+        BuildDatabase db = new BuildDatabase();
+        db.buildDatabaseIfMissing();
+        System.out.println("Tabelas criadas");
     }
 }

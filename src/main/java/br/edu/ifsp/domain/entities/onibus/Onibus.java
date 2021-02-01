@@ -2,6 +2,7 @@ package br.edu.ifsp.domain.entities.onibus;
 
 import javafx.beans.property.StringProperty;
 
+
 public class Onibus {
     private String renavam;
     private String placa;
